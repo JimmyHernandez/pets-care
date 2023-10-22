@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "530362594248",
+    "project_id": "petsweb-390e8",
+    "storage_bucket": "petsweb-390e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530362594248:android:244b90ad627bd73a8a86fd",
+        "android_client_info": {
+          "package_name": "com.example.pets_care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEx9egE9lgaYmQ7-BAHWa1hKzADyYO4i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

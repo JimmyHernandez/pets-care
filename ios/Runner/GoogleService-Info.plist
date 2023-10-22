@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBMxOLyg3hO1l4BdF0Ia44xYu1i_rs6VpY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>530362594248</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.petsCare</string>
+	<key>PROJECT_ID</key>
+	<string>petsweb-390e8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>petsweb-390e8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:530362594248:ios:eea0c8a5e3aa4a418a86fd</string>
+</dict>
+</plist>

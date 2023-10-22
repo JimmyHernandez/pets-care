@@ -1,0 +1,1014 @@
+{
+  "dog_breeds": [
+    {
+      "dog_id": 1,
+      "breed": "Chihuahua",
+      "weight": "2-6 lbs",
+      "food": "High-quality dog food, small portions",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "12-20 years",
+      "description": "Chihuahuas are small-sized dogs known for their loyalty and big personalities."
+    },
+    {
+      "dog_id": 2,
+      "breed": "Labrador Retriever",
+      "weight": "55-80 lbs",
+      "food": "Balanced diet, exercise portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 months",
+      "lifetime": "10-14 years",
+      "description": "Labrador Retrievers are friendly, outgoing, and high-spirited companions."
+    },
+    {
+      "dog_id": 3,
+      "breed": "German Shepherd",
+      "weight": "50-90 lbs",
+      "food": "High-quality dog food, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "9-13 years",
+      "description": "German Shepherds are intelligent, obedient, and versatile working dogs."
+    },
+    {
+      "dog_id": 4,
+      "breed": "Golden Retriever",
+      "weight": "55-75 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-12 years",
+      "description": "Golden Retrievers are friendly, intelligent, and devoted family dogs."
+    },
+    {
+      "dog_id": 5,
+      "breed": "Siberian Husky",
+      "weight": "35-60 lbs",
+      "food": "High-protein diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 6-8 weeks",
+      "lifetime": "12-15 years",
+      "description": "Siberian Huskies are energetic, friendly, and independent dogs with a striking appearance."
+    },
+    {
+      "dog_id": 6,
+      "breed": "Boxer",
+      "weight": "50-70 lbs",
+      "food": "High-quality dog food, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-12 years",
+      "description": "Boxers are playful, energetic, and affectionate dogs known for their strong build."
+    },
+    {
+      "dog_id": 7,
+      "breed": "Yorkshire Terrier",
+      "weight": "4-7 lbs",
+      "food": "Balanced diet, small portions",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "11-15 years",
+      "description": "Yorkshire Terriers are small-sized, energetic, and affectionate companions."
+    },
+    {
+      "dog_id": 8,
+      "breed": "Bulldog",
+      "weight": "40-50 lbs",
+      "food": "Balanced diet, watch for overeating",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 months",
+      "lifetime": "8-12 years",
+      "description": "Bulldogs are docile, determined, and friendly dogs known for their distinctive wrinkled face."
+    },
+    {
+      "dog_id": 9,
+      "breed": "Dachshund",
+      "weight": "16-32 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-16 years",
+      "description": "Dachshunds are curious, lively, and brave dogs with a distinctive long body."
+    },
+    {
+      "dog_id": 10,
+      "breed": "Shih Tzu",
+      "weight": "9-16 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "10-18 years",
+      "description": "Shih Tzus are affectionate, outgoing, and charming dogs known for their long, flowing coat."
+    },
+    {
+      "dog_id": 11,
+      "breed": "Beagle",
+      "weight": "20-25 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-15 years",
+      "description": "Beagles are friendly, curious, and merry dogs known for their distinctive bay."
+    },
+    {
+      "dog_id": 12,
+      "breed": "Rottweiler",
+      "weight": "80-135 lbs",
+      "food": "High-quality dog food, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "8-10 years",
+      "description": "Rottweilers are confident, courageous, and versatile working dogs."
+    },
+    {
+      "dog_id": 13,
+      "breed": "Poodle",
+      "weight": "Miniature: 10-15 lbs, Standard: 45-70 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-15 years",
+      "description": "Poodles are intelligent, active, and alert dogs known for their curly coat."
+    },
+    {
+      "dog_id": 14,
+      "breed": "Pug",
+      "weight": "14-18 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 months",
+      "lifetime": "12-15 years",
+      "description": "Pugs are charming, mischievous, and loving dogs with a distinctive wrinkled face."
+    },
+    {
+      "dog_id": 15,
+      "breed": "Dalmatian",
+      "weight": "50-70 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-13 years",
+      "description": "Dalmatians are energetic, outgoing, and distinctive dogs known for their spots."
+    },
+    {
+      "dog_id": 16,
+      "breed": "Doberman Pinscher",
+      "weight": "60-100 lbs",
+      "food": "High-quality dog food, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-13 years",
+      "description": "Doberman Pinschers are intelligent, alert, and loyal working dogs."
+    },
+    {
+      "dog_id": 17,
+      "breed": "Bichon Frise",
+      "weight": "10-20 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-15 years",
+      "description": "Bichon Frises are cheerful, affectionate, and playful dogs with a fluffy white coat."
+    },
+    {
+      "dog_id": 18,
+      "breed": "Schnauzer",
+      "weight": "Miniature: 11-20 lbs, Standard: 35-50 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-15 years",
+      "description": "Schnauzers are smart, fearless, and alert dogs known for their distinctive beard and eyebrows."
+    },
+    {
+      "dog_id": 19,
+      "breed": "Cocker Spaniel",
+      "weight": "25-30 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-14 years",
+      "description": "Cocker Spaniels are gentle, affectionate, and merry dogs known for their beautiful coat."
+    },
+    {
+      "dog_id": 20,
+      "breed": "French Bulldog",
+      "weight": "16-28 lbs",
+      "food": "Balanced diet, watch for overeating",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 months",
+      "lifetime": "10-12 years",
+      "description": "French Bulldogs are adaptable, playful, and affectionate dogs with a distinctive bat-like ear."
+    },
+    {
+      "dog_id": 21,
+      "breed": "Pomeranian",
+      "weight": "3-7 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "12-16 years",
+      "description": "Pomeranians are lively, intelligent, and extroverted dogs known for their fluffy coat."
+    },
+    {
+      "dog_id": 22,
+      "breed": "Great Dane",
+      "weight": "140-175 lbs",
+      "food": "High-quality dog food, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "7-10 years",
+      "description": "Great Danes are gentle, friendly, and giant-sized dogs with a noble appearance."
+    },
+    {
+      "dog_id": 23,
+      "breed": "Pembroke Welsh Corgi",
+      "weight": "25-30 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-15 years",
+      "description": "Pembroke Welsh Corgis are intelligent, affectionate, and short-legged dogs with a big heart."
+    },
+    {
+      "dog_id": 24,
+      "breed": "Basset Hound",
+      "weight": "40-65 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 months",
+      "lifetime": "10-12 years",
+      "description": "Basset Hounds are easygoing, affectionate, and low-slung dogs known for their long ears."
+    },
+    {
+      "dog_id": 25,
+      "breed": "Shetland Sheepdog",
+      "weight": "20-30 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-14 years",
+      "description": "Shetland Sheepdogs are intelligent, lively, and graceful dogs with a thick double coat."
+    },
+    {
+      "dog_id": 26,
+      "breed": "Border Collie",
+      "weight": "30-45 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-14 years",
+      "description": "Border Collies are intelligent, energetic, and highly trainable working dogs."
+    },
+    {
+      "dog_id": 27,
+      "breed": "Shiba Inu",
+      "weight": "17-23 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 6-8 weeks",
+      "lifetime": "12-15 years",
+      "description": "Shiba Inus are spirited, alert, and independent dogs known for their fox-like appearance."
+    },
+    {
+      "dog_id": 28,
+      "breed": "Maltese",
+      "weight": "4-7 lbs",
+      "food": "Balanced diet, small portions",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "12-15 years",
+      "description": "Maltese are affectionate, playful, and elegant dogs with a long, silky coat."
+    },
+    {
+      "dog_id": 29,
+      "breed": "Pekingese",
+      "weight": "7-14 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "12-14 years",
+      "description": "Pekingese are regal, affectionate, and independent dogs known for their lion-like mane."
+    },
+    {
+      "dog_id": 30,
+      "breed": "Australian Shepherd",
+      "weight": "40-65 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-16 years",
+      "description": "Australian Shepherds are intelligent, energetic, and highly trainable herding dogs."
+    },
+    {
+      "dog_id": 31,
+      "breed": "Bichón Maltés",
+      "weight": "4-7 lbs",
+      "food": "Balanced diet, small portions",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "12-15 years",
+      "description": "Bichon Maltes are affectionate, playful, and elegant dogs with a long, silky coat."
+    },
+    {
+      "dog_id": 32,
+      "breed": "Chihuahua",
+      "weight": "2-6 lbs",
+      "food": "Balanced diet, small portions",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Weekly",
+      "lifetime": "12-20 years",
+      "description": "Chihuahuas are tiny but confident dogs known for their loyalty and courage."
+    },
+    {
+      "dog_id": 33,
+      "breed": "Shih Tzu",
+      "weight": "9-16 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "10-16 years",
+      "description": "Shih Tzus are charming companion dogs known for their long, flowing coat."
+    },
+    {
+      "dog_id": 34,
+      "breed": "Pit Bull Terrier",
+      "weight": "30-70 lbs",
+      "food": "Protein-rich diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "10-15 years",
+      "description": "Pit Bull Terriers are strong and energetic dogs that can be loving and loyal with proper socialization and training."
+    },
+    {
+      "dog_id": 35,
+      "breed": "Bulldog Francés",
+      "weight": "16-28 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "10-12 years",
+      "description": "French Bulldogs are small, charming dogs known for their playful and affectionate nature."
+    },
+    {
+      "dog_id": 36,
+      "breed": "Chow Chow",
+      "weight": "40-70 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "9-15 years",
+      "description": "Chow Chows are ancient Chinese dogs known for their dense coat and distinctive blue/black tongue. They can be independent but loyal to their families."
+    },
+    {
+      "dog_id": 37,
+      "breed": "Dachshund",
+      "weight": "11-32 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "12-16 years",
+      "description": "Dachshunds, also known as wiener dogs, are long-bodied, short-legged dogs known for their bravery and curiosity."
+    },
+    {
+      "dog_id": 38,
+      "breed": "Labrador Retriever",
+      "weight": "55-80 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "10-14 years",
+      "description": "Labrador Retrievers are highly popular and versatile dogs. They are friendly, intelligent, and enjoy the company of people and other dogs."
+    },
+    {
+      "dog_id": 39,
+      "breed": "Golden Retriever",
+      "weight": "55-75 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "10-12 years",
+      "description": "Golden Retrievers are known for their kindness and appreciative nature. They are very intelligent and get along well with families and other animals."
+    },
+    {
+      "dog_id": 40,
+      "breed": "Schnauzer Miniatura",
+      "weight": "11-20 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "12-15 years",
+      "description": "Miniature Schnauzers are energetic and alert. They are known for their distinctive beard and eyebrows. They are loyal and make good companions."
+    },
+    {
+      "dog_id": 41,
+      "breed": "Yorkshire Terrier",
+      "weight": "4-7 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "11-15 years",
+      "description": "Yorkshire Terriers, or Yorkies, are small-sized dogs with a big personality. They are lively, affectionate, and make great companions."
+    },
+    {
+      "dog_id": 42,
+      "breed": "Poodle Miniatura",
+      "weight": "10-15 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 4-6 weeks",
+      "lifetime": "10-15 years",
+      "description": "Miniature Poodles are intelligent and active dogs known for their curly coat. They are obedient and make excellent family pets."
+    },
+    {
+      "dog_id": 43,
+      "breed": "Dálmata",
+      "weight": "50-70 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "10-13 years",
+      "description": "Dalmatians are distinctive dogs known for their spots. They are active, outgoing, and enjoy exercise and play."
+    },
+    {
+      "dog_id": 44,
+      "breed": "Pit Bull Terrier Americano",
+      "weight": "30-70 lbs",
+      "food": "Protein-rich diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "10-15 years",
+      "description": "American Pit Bull Terriers are strong, agile dogs known for their loyalty and intelligence. Proper training and socialization are essential."
+    },
+    {
+      "dog_id": 45,
+      "breed": "Pug Carlino",
+      "weight": "14-18 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "12-15 years",
+      "description": "Pugs are charming, mischievous, and loving dogs with a distinctive wrinkled face. They are great companions and get along well with children."
+    },
+    {
+      "dog_id": 46,
+      "breed": "Dobermann",
+      "weight": "60-100 lbs",
+      "food": "High-quality dog food, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "10-13 years",
+      "description": "Dobermans are alert, fearless, and loyal dogs known for their protective nature. They are intelligent and make excellent guard dogs."
+    },
+    {
+      "dog_id": 47,
+      "breed": "Bulldog Inglés",
+      "weight": "40-50 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "8-12 years",
+      "description": "English Bulldogs are known for their distinctive wrinkled face and calm demeanor. They are friendly, gentle, and make good family pets."
+    },
+    {
+      "dog_id": 48,
+      "breed": "Shetland Sheepdog",
+      "weight": "20-30 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "As needed",
+      "lifetime": "12-14 years",
+      "description": "Shetland Sheepdogs are intelligent, lively, and graceful dogs with a thick double coat. They are obedient and make great family pets."
+    },
+    {
+      "dog_id": 49,
+      "breed": "Boston Terrier",
+      "weight": "12-25 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "13-15 years",
+      "description": "Boston Terriers are friendly, intelligent, and lively dogs. They are known for their tuxedo-like coat pattern and make great companions."
+    },
+    {
+      "dog_id": 50,
+      "breed": "Cocker Spaniel Americano",
+      "weight": "25-30 lbs",
+      "food": "Balanced diet, portion control",
+      "vaccine": "Core vaccines, rabies",
+      "bath_routine": "Every 2-3 weeks",
+      "lifetime": "10-14 years",
+      "description": "American Cocker Spaniels are gentle, affectionate, and merry dogs known for their beautiful coat. They are excellent companions and good with children."
+    },
+    {
+        "dog_id": 51,
+        "breed": "Pugs",
+        "weight": "14-18 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-15 years",
+        "description": "Pugs are small and charming dogs known for their wrinkles and flat faces. They are very sociable and get along well with families."
+    },
+    {
+        "dog_id": 52,
+        "breed": "Border Collie",
+        "weight": "30-55 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-15 years",
+        "description": "Border Collies are highly intelligent and energetic. They are known for their herding ability and friendly disposition. They excel in training activities."
+    },
+    {
+        "dog_id": 53,
+        "breed": "Shar Pei",
+        "weight": "45-60 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-3 weeks",
+        "lifetime": "8-12 years",
+        "description": "Shar Peis are a unique breed known for their wrinkled skin. They are loyal and protective of their families. They can be independent but often form strong bonds with their owners."
+    },
+    {
+        "dog_id": 54,
+        "breed": "Pekingese",
+        "weight": "7-14 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-14 years",
+        "description": "Pekingese are small and brave dogs. They are known for their long coat and regal attitude. They are loyal to their families and often have a strong personality."
+    },
+    {
+        "dog_id": 55,
+        "breed": "Dalmatian",
+        "weight": "45-70 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-13 years",
+        "description": "Dalmatians are known for their white coat with black spots. They are energetic and active, so they need plenty of exercise. They are friendly and loyal dogs."
+    },
+    {
+        "dog_id": 56,
+        "breed": "Basset Hound",
+        "weight": "40-65 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-12 years",
+        "description": "Basset Hounds are calm and friendly dogs. They are known for their long ears and low body. They are affectionate dogs and get along well with families."
+    },
+    {
+        "dog_id": 57,
+        "breed": "Great Dane",
+        "weight": "140-175 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "7-10 years",
+        "description": "Great Danes are large and majestic dogs. They are friendly and affectionate despite their imposing size. They make good family dogs and can be very protective."
+    },
+    {
+        "dog_id": 58,
+        "breed": "Weimaraner",
+        "weight": "55-90 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-13 years",
+        "description": "Weimaraners are active and energetic dogs. They are known for their silvery coat and expressive eyes. They are loyal and often form strong bonds with their owners."
+    },
+    {
+        "dog_id": 59,
+        "breed": "Siberian Husky",
+        "weight": "35-60 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-15 years",
+        "description": "Siberian Huskies are energetic and friendly. They are known for their blue eyes and thick coat. They are very active and enjoy outdoor exercise."
+    },
+    {
+        "dog_id": 60,
+        "breed": "Cane Corso",
+        "weight": "88-110 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 6-8 weeks",
+        "lifetime": "10-12 years",
+        "description": "Cane Corsos are large and powerful dogs. They are loyal and protective of their families. With proper training, they can be reliable companion dogs."
+    },
+    {
+        "dog_id": 61,
+        "breed": "Cavalier King Charles Spaniel",
+        "weight": "13-18 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-3 weeks",
+        "lifetime": "10-14 years",
+        "description": "Cavalier King Charles Spaniels are small and friendly dogs. They are known for their cheerful disposition and affection for people. They make excellent companions."
+    },
+    {
+        "dog_id": 62,
+        "breed": "Papillon",
+        "weight": "4-9 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-16 years",
+        "description": "Papillons are small and elegant dogs known for their large, erect ears. They are intelligent and energetic, often excelling in training activities."
+    },
+    {
+        "dog_id": 63,
+        "breed": "Shiba Inu",
+        "weight": "17-23 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-15 years",
+        "description": "Shiba Inus are a Japanese breed known for their independent and energetic personality. They are loyal to their families and often display great self-assurance."
+    },
+    {
+        "dog_id": 64,
+        "breed": "Collie",
+        "weight": "50-70 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-14 years",
+        "description": "Collies are intelligent and friendly dogs. They are known for their long coat and gentle disposition. They are good family dogs and get along well with children."
+    },
+    {
+        "dog_id": 65,
+        "breed": "Havanese",
+        "weight": "7-13 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "14-16 years",
+        "description": "Havanese are cheerful and playful dogs. They are known for their silky coat and affectionate nature. They make excellent companions and get along well with families."
+    },
+    {
+        "dog_id": 66,
+        "breed": "English Springer Spaniel",
+        "weight": "40-50 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-14 years",
+        "description": "English Springer Spaniels are energetic and friendly. They are known for their loving disposition and love for water. They excel in outdoor activities."
+    },
+    {
+        "dog_id": 67,
+        "breed": "Staffordshire Bull Terrier",
+        "weight": "24-38 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-14 years",
+        "description": "Staffordshire Bull Terriers are brave and loyal. They are known for their strength and determination. With proper training, they can be loving and balanced dogs."
+    },
+    {
+        "dog_id": 68,
+        "breed": "Australian Shepherd",
+        "weight": "40-65 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-16 years",
+        "description": "Australian Shepherds are intelligent, energetic, and highly trainable herding dogs. They are known for their loyalty and friendly disposition. They are an excellent choice for active families."
+    },
+    {
+        "dog_id": 69,
+        "breed": "Malinois",
+        "weight": "40-80 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-14 years",
+        "description": "Malinois are energetic and focused dogs. They are known for their intelligence and working abilities. They excel as working dogs and are loyal companions."
+    },
+    {
+        "dog_id": 70,
+        "breed": "Akita",
+        "weight": "70-130 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-15 years",
+        "description": "Akitas are strong and brave dogs. They are known for their loyalty and protection towards their families. They can be independent but form strong bonds with their owners."
+    },
+    {
+        "dog_id": 71,
+        "breed": "Chihuahua",
+        "weight": "2-6 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "12-20 years",
+        "description": "Chihuahuas are one of the smallest dog breeds and are known for their loyalty and bravery. They are playful and can have different coat varieties."
+    },
+    {
+        "dog_id": 72,
+        "breed": "Shih Tzu",
+        "weight": "9-16 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-3 weeks",
+        "lifetime": "10-16 years",
+        "description": "Shih Tzus are companion dogs known for their long, soft coat. They are affectionate, friendly, and enjoy being close to their owners."
+    },
+    {
+        "dog_id": 73,
+        "breed": "Pit Bull Terrier",
+        "weight": "30-70 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-15 years",
+        "description": "Pit Bull Terriers are strong and energetic. With proper socialization and training, they can be loving and loyal dogs."
+    },
+    {
+        "dog_id": 74,
+        "breed": "Bulldog Francés",
+        "weight": "16-28 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-12 years",
+        "description": "French Bulldogs are small and charming with a playful personality. They are known for their large ears and flat nose."
+    },
+    {
+        "dog_id": 75,
+        "breed": "Chow Chow",
+        "weight": "45-70 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "9-15 years",
+        "description": "Chow Chows are an ancient breed from China known for their thick coat and distinctive blue/black tongue. They can be independent but are loyal to their families."
+    },
+    {
+        "dog_id": 76,
+        "breed": "Maltés",
+        "weight": "4-7 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-3 weeks",
+        "lifetime": "12-15 years",
+        "description": "Maltese are small dogs known for their white coat and affectionate personality. They are very social and enjoy being close to their owners."
+    },
+    {
+        "dog_id": 77,
+        "breed": "Dachshund",
+        "weight": "11-32 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "12-16 years",
+        "description": "Dachshunds, also known as Wiener Dogs, have a long body and short legs. They are brave, curious, and often have a lot of energy."
+    },
+    {
+        "dog_id": 78,
+        "breed": "Labrador Retriever",
+        "weight": "55-80 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-14 years",
+        "description": "Labrador Retrievers are a very popular and versatile breed. They are friendly, intelligent, and enjoy the company of people and other dogs."
+    },
+    {
+        "dog_id": 79,
+        "breed": "Golden Retriever",
+        "weight": "55-75 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-12 years",
+        "description": "Golden Retrievers are known for their kindness and grateful disposition. They are very intelligent and get along well with families and other animals."
+    },
+    {
+        "dog_id": 80,
+        "breed": "Schnauzer Miniatura",
+        "weight": "11-20 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-15 years",
+        "description": "Miniature Schnauzers are energetic and alert. They are known for their distinctive beard and eyebrows. They are loyal and make good companions."
+    },
+    {
+        "dog_id": 81,
+        "breed": "Yorkshire Terrier",
+        "weight": "4-7 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-16 years",
+        "description": "Yorkshire Terriers are small and brave with a long, silky coat. They are active, curious, and often show great self-confidence."
+    },
+    {
+        "dog_id": 82,
+        "breed": "Poodle",
+        "weight": "45-70 lbs (Standard), 15-45 lbs (Miniature), 6-9 lbs (Toy)",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-18 years",
+        "description": "Poodles are known for their intelligence and range of sizes. They are very adaptable and often excel in training and competitions."
+    },
+    {
+        "dog_id": 83,
+        "breed": "Bichon Frisé",
+        "weight": "12-18 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-15 years",
+        "description": "Bichon Frisés are cheerful and playful. They are known for their fluffy, white coat. They are affectionate dogs and socially active."
+    },
+    {
+        "dog_id": 84,
+        "breed": "Boxer",
+        "weight": "50-70 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-12 years",
+        "description": "Boxers are energetic and playful dogs. They are known for their loyalty and friendly disposition. They are an excellent choice for active families."
+    },
+    {
+        "dog_id": 85,
+        "breed": "Pomerania",
+        "weight": "3-7 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-16 years",
+        "description": "Pomeranians are small with abundant, fluffy coats. They are energetic, intelligent, and often display great self-confidence."
+    },
+    {
+        "dog_id": 86,
+        "breed": "Schnauzer Estándar",
+        "weight": "45-70 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 6-8 weeks",
+        "lifetime": "12-15 years",
+        "description": "Standard Schnauzers are brave and alert. They are known for their distinctive beard and eyebrows. They are loyal and make good guardians."
+    },
+    {
+        "dog_id": 87,
+        "breed": "Rottweiler",
+        "weight": "80-135 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "8-10 years",
+        "description": "Rottweilers are strong and brave dogs. They are known for their loyalty and protection skills. With proper training, they can be loving family dogs."
+    },
+    {
+        "dog_id": 88,
+        "breed": "Bulldog Inglés",
+        "weight": "40-50 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "8-10 years",
+        "description": "English Bulldogs are calm and affectionate. They are known for their wrinkles and distinctive appearance. They are excellent companions and get along well with families."
+    },
+    {
+        "dog_id": 89,
+        "breed": "Cocker Spaniel",
+        "weight": "20-30 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-14 years",
+        "description": "Cocker Spaniels are cheerful and energetic. They are known for their long, silky coat. They are very affectionate dogs and often get along well with children."
+    },
+    {
+        "dog_id": 90,
+        "breed": "Doberman Pinscher",
+        "weight": "60-100 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-13 years",
+        "description": "Doberman Pinschers are intelligent and energetic. They are known for their loyalty and protection skills. They are excellent family dogs with proper training."
+    },
+    {
+        "dog_id": 91,
+        "breed": "Alaskan Malamute",
+        "weight": "85-125 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-14 years",
+        "description": "Alaskan Malamutes are strong and independent dogs. They are known for their strength and endurance. They can be loyal family dogs with proper socialization."
+    },
+    {
+        "dog_id": 92,
+        "breed": "Corgi Galés de Pembroke",
+        "weight": "25-30 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-15 years",
+        "description": "Pembroke Welsh Corgis are small, sturdy dogs known for their short legs and long body. They are intelligent and make excellent companions."
+    },
+    {
+        "dog_id": 93,
+        "breed": "Whippet",
+        "weight": "25-40 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "12-15 years",
+        "description": "Whippets are slender and athletic dogs. They are known for their speed and agility. They are friendly and make good family pets."
+    },
+    {
+        "dog_id": 94,
+        "breed": "Bóxer",
+        "weight": "50-70 lbs",
+        "food": "Protein-rich diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-12 years",
+        "description": "Boxers are energetic and playful dogs. They are known for their loyalty and friendly disposition. They are an excellent choice for active families."
+    },
+    {
+        "dog_id": 95,
+        "breed": "Pug Carlino",
+        "weight": "14-18 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 2-4 weeks",
+        "lifetime": "12-15 years",
+        "description": "Pugs are small and charming dogs known for their wrinkles and flat faces. They are very social and get along well with families."
+    },
+    {
+        "dog_id": 96,
+        "breed": "Bearded Collie",
+        "weight": "45-65 lbs",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "12-15 years",
+        "description": "Bearded Collies are intelligent and friendly dogs. They are known for their long and soft coat. They make good family dogs and get along well with children."
+    },
+    {
+        "dog_id": 97,
+        "breed": "Poodle",
+        "weight": "45-70 lbs (Standard), 15-45 lbs (Miniature), 6-9 lbs (Toy)",
+        "food": "Balanced diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "Every 4-6 weeks",
+        "lifetime": "10-18 years",
+        "description": "Poodles are known for their intelligence and variety of sizes. They are very adaptable and often excel in training and competitions."
+    },
+    {
+        "dog_id": 98,
+        "breed": "Saint Bernard",
+        "weight": "140-180 lbs",
+        "food": "High-protein diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "8-10 years",
+        "description": "Saint Bernards are large and majestic dogs. They are friendly and affectionate despite their imposing size. They make good family dogs and can be very protective."
+    },
+    {
+        "dog_id": 99,
+        "breed": "American Pit Bull",
+        "weight": "30-85 lbs",
+        "food": "High-protein diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-15 years",
+        "description": "American Pit Bulls are strong and energetic. With proper socialization and training, they can be loving and loyal dogs."
+    },
+    {
+        "dog_id": 100,
+        "breed": "American Pit Bull Terrier",
+        "weight": "30-70 lbs",
+        "food": "High-protein diet, portion control",
+        "vaccine": "Core vaccines, rabies",
+        "bath_routine": "As needed",
+        "lifetime": "10-15 years",
+        "description": "American Pit Bull Terriers are strong and energetic. With proper socialization and training, they can be loving and loyal dogs."
+    },
+    {
+    "dog_id": 101,
+    "breed": "Sato",
+    "weight": "8-20 lbs",
+    "food": "They eat a little of everything",
+    "vaccine": "Core vaccines, rabies",
+    "bath_routine": "As needed",
+    "lifetime": "10-15 years",
+    "description": "Satos are all-terrain dogs. With proper socialization and training, they can be loving and loyal dogs."
+  }
+]
+}

@@ -1,0 +1,664 @@
+{
+  "cat_breeds": [
+    {
+      "cat_id": 1,
+      "breed": "Siamese",
+      "weight": "8-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Siamese is known for its short coat and distinctive coloring. They are active, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 2,
+      "breed": "Maine Coon",
+      "weight": "13-18 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Maine Coon is one of the largest cat breeds and is covered in long, dense fur. They are friendly, intelligent, and make good family companions."
+    },
+    {
+      "cat_id": 3,
+      "breed": "Persian",
+      "weight": "7-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Regular",
+      "lifetime": "12-15 years",
+      "description": "The Persian is known for its long coat and flat face. They are quiet, gentle cats that thrive in a calm and loving environment."
+    },
+    {
+      "cat_id": 4,
+      "breed": "Bengal",
+      "weight": "8-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "10-16 years",
+      "description": "The Bengal has exotic, leopard-like fur. They are energetic, curious cats that enjoy play and exploration."
+    },
+    {
+      "cat_id": 5,
+      "breed": "Ragdoll",
+      "weight": "10-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-17 years",
+      "description": "The Ragdoll is known for its large size and soft fur. They are docile, affectionate cats that often go limp when picked up."
+    },
+    {
+      "cat_id": 6,
+      "breed": "British Shorthair",
+      "weight": "9-18 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-20 years",
+      "description": "The British Shorthair has a dense, short coat and a sturdy body. They are calm, easygoing cats that get along well with children and other pets."
+    },
+    {
+      "cat_id": 7,
+      "breed": "Abyssinian",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Abyssinian has short, ticked fur. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 8,
+      "breed": "Sphynx",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Frequent",
+      "lifetime": "8-14 years",
+      "description": "The Sphynx is known for its lack of fur and wrinkled skin. They are energetic, affectionate cats that often seek the company of their owners."
+    },
+    {
+      "cat_id": 9,
+      "breed": "Russian Blue",
+      "weight": "7-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "15-20 years",
+      "description": "The Russian Blue has short, dense, silvery-blue fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 10,
+      "breed": "Abyssinian",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Abyssinian has short, textured, reddish-gold fur. They are active, curious cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 11,
+      "breed": "Scottish Fold",
+      "weight": "6-13 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "11-14 years",
+      "description": "The Scottish Fold is known for its ears folded forward. They are friendly, sweet cats that often get along well with children and other pets."
+    },
+    {
+      "cat_id": 12,
+      "breed": "Birman",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Birman has semi-long cream-colored fur. They are friendly, loyal cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 13,
+      "breed": "Tonkinese",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Tonkinese has short, soft fur in various colors. They are active, affectionate cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 14,
+      "breed": "Oriental Shorthair",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-18 years",
+      "description": "The Oriental Shorthair has short, silky fur in various colors. They are playful, curious cats that are often very communicative."
+    },
+    {
+      "cat_id": 15,
+      "breed": "Cornish Rex",
+      "weight": "6-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Cornish Rex has short, curly fur. They are energetic, playful cats that are often very affectionate with their owners."
+    },
+    {
+      "cat_id": 16,
+      "breed": "Birman",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Birman has semi-long cream-colored fur. They are friendly, loyal cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 17,
+      "breed": "Exotic Shorthair",
+      "weight": "7-14 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Regular",
+      "lifetime": "12-15 years",
+      "description": "The Exotic Shorthair has short, dense fur similar to the Persian. They are calm, gentle cats that often thrive in a calm and loving environment."
+    },
+    {
+      "cat_id": 18,
+      "breed": "Norwegian Forest Cat",
+      "weight": "10-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "14-16 years",
+      "description": "The Norwegian Forest Cat has semi-long, dense, tabby-patterned fur. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 19,
+      "breed": "Himalayan",
+      "weight": "7-14 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Regular",
+      "lifetime": "12-15 years",
+      "description": "The Himalayan has long, silky fur with a face mask similar to the Siamese. They are calm, gentle cats that often thrive in a calm and loving environment."
+    },
+    {
+      "cat_id": 20,
+      "breed": "Pixie-Bob",
+      "weight": "8-17 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "13-16 years",
+      "description": "The Pixie-Bob has short, spotted fur with a lynx-like appearance. They are active, intelligent cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 21,
+      "breed": "Korat",
+      "weight": "6-14 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "15-20 years",
+      "description": "The Korat has short, silver-blue fur. They are calm, loyal cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 22,
+      "breed": "Ocicat",
+      "weight": "6-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Ocicat has short, spotted fur with an ocelot-like appearance. They are active, playful cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 23,
+      "breed": "Toyger",
+      "weight": "7-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Toyger has short, striped fur, similar to a tiger. They are energetic, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 24,
+      "breed": "Devon Rex",
+      "weight": "5-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Devon Rex has short, curly fur. They are energetic, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 25,
+      "breed": "American Curl",
+      "weight": "5-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The American Curl is known for its ears curled backward. They are friendly, curious cats that often get along well with children and other pets."
+    },
+    {
+      "cat_id": 26,
+      "breed": "Selkirk Rex",
+      "weight": "11-16 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Selkirk Rex has curly, dense fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 27,
+      "breed": "Egyptian Mau",
+      "weight": "6-14 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "15-20 years",
+      "description": "The Egyptian Mau has short, spotted fur similar to a leopard. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 28,
+      "breed": "LaPerm",
+      "weight": "6-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The LaPerm has curly, long fur. They are active, affectionate cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 29,
+      "breed": "Highlander",
+      "weight": "12-25 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Highlander has semi-long fur and a lynx-like appearance. They are active, intelligent cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 30,
+      "breed": "Bambino",
+      "weight": "5-9 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Bambino is a hairless breed. They are active, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 31,
+      "breed": "Nebelung",
+      "weight": "7-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "15-20 years",
+      "description": "The Nebelung has semi-long, blue-gray fur. They are calm, loyal cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 32,
+      "breed": "Peterbald",
+      "weight": "6-13 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Peterbald is known for its lack of fur or very short coat. They are energetic, affectionate cats that often seek the company of their owners."
+    },
+    {
+      "cat_id": 33,
+      "breed": "Snowshoe",
+      "weight": "7-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Snowshoe has short, white fur with dark paws. They are active, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 34,
+      "breed": "Havana Brown",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Havana Brown has short, dark brown fur. They are active, intelligent cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 35,
+      "breed": "Munchkin",
+      "weight": "4-9 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Munchkin is known for its short legs. They are playful, curious cats that are often very affectionate with their owners."
+    },
+    {
+      "cat_id": 36,
+      "breed": "Bambu",
+      "weight": "8-16 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Bambu has short, striped fur, similar to a tiger. They are energetic, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 37,
+      "breed": "Sokoke",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Sokoke has short, spotted fur with a cheetah-like appearance. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 38,
+      "breed": "Ural Rex",
+      "weight": "8-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Ural Rex has curly, short fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 39,
+      "breed": "Cymric",
+      "weight": "8-13 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Cymric is a tailless variant of the Manx. They are active, curious cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 40,
+      "breed": "Japanese Bobtail",
+      "weight": "5-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Japanese Bobtail has a short, bobbed tail. They are friendly, curious cats that often get along well with children and other pets."
+    },
+    {
+      "cat_id": 41,
+      "breed": "Kurilian Bobtail",
+      "weight": "8-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Kurilian Bobtail has a short, bobbed tail. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 42,
+      "breed": "American Bobtail",
+      "weight": "7-16 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The American Bobtail has a short, bobbed tail. They are playful, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 43,
+      "breed": "Chartreux",
+      "weight": "10-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Chartreux has short, blue-gray fur. They are calm, loyal cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 44,
+      "breed": "European Shorthair",
+      "weight": "8-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-20 years",
+      "description": "The European Shorthair has short fur in various colors. They are adaptable, independent cats that are well-suited to family life."
+    },
+    {
+      "cat_id": 45,
+      "breed": "Singapura",
+      "weight": "4-8 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Singapura is one of the smallest cat breeds. They are active, curious cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 46,
+      "breed": "Manx",
+      "weight": "8-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Manx is known for its taillessness or short tail. They are playful, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 47,
+      "breed": "Russian White",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "15-20 years",
+      "description": "The Russian White has short, white fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 48,
+      "breed": "Siberian",
+      "weight": "10-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Siberian has long, dense fur. They are strong, intelligent cats that often get along well with children and other pets."
+    },
+    {
+      "cat_id": 49,
+      "breed": "Turkish Van",
+      "weight": "10-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-17 years",
+      "description": "The Turkish Van has a distinctive color pattern and often enjoys swimming. They are active, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 50,
+      "breed": "Turkish Angora",
+      "weight": "5-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "14-20 years",
+      "description": "The Turkish Angora has long, silky fur. They are intelligent, playful cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 51,
+      "breed": "Korat",
+      "weight": "6-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "15-20 years",
+      "description": "The Korat has short, silver-blue fur. They are calm, loyal cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 52,
+      "breed": "Burmilla Cat",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Burmilla Cat has short, shiny fur with a silvery tone. They are active, affectionate cats that often enjoy play and interaction with their owners."
+    },
+    {
+      "cat_id": 53,
+      "breed": "Golden Bengal",
+      "weight": "8-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "10-16 years",
+      "description": "The Golden Bengal has exotic fur similar to a leopard. They are energetic and curious cats that enjoy play and exploration."
+    },
+    {
+      "cat_id": 54,
+      "breed": "Toyger",
+      "weight": "7-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Toyger has short, striped fur, similar to a tiger. They are energetic, playful cats that are often very affectionate with their owners."
+    },
+    {
+      "cat_id": 55,
+      "breed": "Short-haired Selkirk Rex",
+      "weight": "6-16 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Short-haired Selkirk Rex has curly and dense fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 56,
+      "breed": "Javanese Cat",
+      "weight": "5-10 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Javanese Cat has short, smooth fur in various colors. They are active, playful cats that are often very communicative."
+    },
+    {
+      "cat_id": 57,
+      "breed": "Short-haired Pixiebob",
+      "weight": "8-17 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "13-16 years",
+      "description": "The Short-haired Pixiebob has short, mottled fur with an appearance similar to a lynx. They are active, intelligent cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 58,
+      "breed": "Sokoke",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Sokoke has short, mottled fur with an appearance similar to a cheetah. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 59,
+      "breed": "American Bobtail",
+      "weight": "7-16 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The American Bobtail has short fur."
+    },
+    {
+      "cat_id": 60,
+      "breed": "Turkish Van",
+      "weight": "7-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "13-16 years",
+      "description": "The Turkish Van has semi-long fur and distinctive color patches on the head and tail. They are active, intelligent cats that often enjoy being around water."
+    },
+    {
+      "cat_id": 61,
+      "breed": "Peterbald Cat",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-15 years",
+      "description": "The Peterbald Cat is known for its lack of fur or very short fur. They are energetic, affectionate cats that often seek the company of their owners."
+    },
+    {
+      "cat_id": 62,
+      "breed": "Ragamuffin Cat",
+      "weight": "10-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Ragamuffin Cat has long and soft fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 63,
+      "breed": "RagaMuffin Cat",
+      "weight": "10-20 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The RagaMuffin Cat has long and soft fur. They are calm, affectionate cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 64,
+      "breed": "European Burmese",
+      "weight": "6-12 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The European Burmese has short, shiny fur in dark brown color. They are affectionate, playful cats that often form strong bonds with their owners."
+    },
+    {
+      "cat_id": 65,
+      "breed": "Siberian Forest Cat",
+      "weight": "8-17 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Occasional",
+      "lifetime": "12-16 years",
+      "description": "The Siberian Forest Cat has semi-long and dense fur in a tabby pattern. They are active, intelligent cats that often enjoy play and exploration."
+    },
+    {
+      "cat_id": 66,
+      "breed": "Canadian Sphynx Cat",
+      "weight": "6-15 pounds",
+      "foot": "4",
+      "vaccine": "Routine vaccinations",
+      "bath_routine": "Frequent",
+      "lifetime": "8-14 years",
+      "description": "The Canadian Sphynx Cat is known for its lack of fur and wrinkled skin. They are energetic, affectionate cats that often seek the company of their owners."
+    }
+  ]
+}
