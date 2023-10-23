@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:pets_care/pages%20-%20enyel/PetApp.dart';
 import 'package:pets_care/pages/my_pets.dart';
 import 'package:pets_care/pages/pets_profile.dart';
 import 'package:pets_care/pages/pets_guidelines.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/my_pets': (context) => const MyPets(), /// My Pet's
         '/pet_profile': (context) => const PetsProfile(), /// Pet's Profile
         '/pet_guidelines': (context) => const PetsGuidelines(),  /// Pet's Search
+        '/pet,s recommendations': (context) => PetsRecommendations(dogs: [], cats: []),
       },
     );
   }

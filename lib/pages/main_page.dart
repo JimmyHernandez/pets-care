@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pets_care/pages/pets_guidelines.dart';
 import 'package:pets_care/pages/user_profile.dart';
+import '../pages - enyel/PetApp.dart';
 import '../welcome/login_page.dart';
 import 'my_pets.dart';
 User? userid = FirebaseAuth.instance.currentUser;
@@ -147,6 +148,37 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
                 },
               ),
               IconButton(
+                icon: const Icon(Icons.abc),
+                tooltip: ("Pet's Recommendations"),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return FutureBuilder<List<List<Pet>>>(
+                          future: Future.wait([getPets('dog'), getPets('cat')]),
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return CircularProgressIndicator();
+                            } else if (snapshot.hasError) {
+                              return Text('Error: ${snapshot.error}');
+                            } else {
+                              List<Pet> dogs = snapshot.data![0];
+                              List<Pet> cats = snapshot.data![1];
+                              return PetsRecommendations(
+                                dogs: dogs,
+                                cats: cats,
+                              );
+                            }
+                          },
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+              IconButton(
                 icon: const Icon(Icons.person),
                 tooltip: "Edit Profile",
                 onPressed: () {
@@ -157,7 +189,7 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
                   // Define the action when this icon is pressed
                 },
               ),
-            ],
+             ],
           ),
         ),
       ),

@@ -100,6 +100,7 @@ class _Details02BasicLayoutWidgetState
                     // Define the action when this icon is pressed
                   },
                 ),
+
                 IconButton(
                   icon: const Icon(Icons.person),
                   tooltip: "Edit Profile",

@@ -8,6 +8,7 @@ import 'package:pets_care/pages/pets_guidelines.dart';
 import 'package:pets_care/pages/user_profile.dart';
 import '../functions jimmy/delete_pet_profile.dart';
 import '../functions jimmy/flip_card.dart';
+import '../pages - enyel/PetApp.dart';
 import 'pets_profile_edit.dart';
 import 'main_page.dart';
 
@@ -110,6 +111,37 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
               IconButton(
+                icon: const Icon(Icons.abc),
+                tooltip: ("Pet's Recommendations"),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return FutureBuilder<List<List<Pet>>>(
+                          future: Future.wait([getPets('dog'), getPets('cat')]),
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return CircularProgressIndicator();
+                            } else if (snapshot.hasError) {
+                              return Text('Error: ${snapshot.error}');
+                            } else {
+                              List<Pet> dogs = snapshot.data![0];
+                              List<Pet> cats = snapshot.data![1];
+                              return PetsRecommendations(
+                                dogs: dogs,
+                                cats: cats,
+                              );
+                            }
+                          },
+                        );
+                      },
+                    ),
+                  );
+                },
+              ),
+              IconButton(
                 icon: const Icon(Icons.person),
                 tooltip: "Edit Profile",
                 onPressed: () {
@@ -125,20 +157,23 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
-      floatingActionButtonLocation:
-      FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // You can navigate to a new page or show a dialog to add a new profile
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const PetsProfile()),
-          );
-        },
-        tooltip: 'Add New Profile',
-        child: const Icon(Icons.add),
+      floatingActionButton: Container(
+        alignment: Alignment.bottomCenter, // Align the FloatingActionButton to the bottom center
+        child: Padding(
+          padding: const EdgeInsets.all(0), // Adjust the padding values as per your preference
+          child: FloatingActionButton(
+            onPressed: () {
+              // You can navigate to a new page or show a dialog to add a new profile
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PetsProfile()),
+              );
+            },
+            tooltip: 'Add New Profile',
+            child: const Icon(Icons.add),
+          ),
+        ),
       ),
-
 
       body: FutureBuilder(
           future: getData(),
@@ -577,41 +612,7 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            bottom: 16.0),
-                                        // Adjust the padding as needed
-                                        child: Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: IconButton(
-                                            tooltip: "Share",
-                                            icon: const Icon(Icons.share),
-                                            // You can change the icon as needed
-                                            onPressed: () {
-                                              // Add the onPressed logic for the button here
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            bottom: 16.0),
-                                        // Adjust the padding as needed
-                                        child: Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: IconButton(
-                                            tooltip: "More",
-                                            icon: const Icon(
-                                                Icons.data_exploration),
-                                            // You can change the icon as needed
-                                            onPressed: () {
-
-                                              // Add the onPressed logic for the button here
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
+                                     Padding(
                                         padding: const EdgeInsets.only(
                                             bottom: 16.0),
                                         // Adjust the padding as needed
