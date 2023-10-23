@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:logger/logger.dart';
-import 'package:pets_care/welcome/signup_page.dart';
-import '../pages/main_page.dart';
-import '../pages/forgot_password.dart';
+import 'package:pets_care/pages/welcome/signup_page.dart';
+import '../home_page/homepage.dart';
+import 'forgot_password_page.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({Key? key}) : super(key: key);

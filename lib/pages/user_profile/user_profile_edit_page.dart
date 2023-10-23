@@ -3,8 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/pages/user_profile.dart';
-import '../functions jimmy/userpicture_input.dart';
+import 'package:pets_care/pages/user_profile/user_profile_page.dart';
+
+import '../../functions - jimmy/userpicture_input.dart';
+
 User? userid = FirebaseAuth.instance.currentUser;
 
 class UserProfileEdit extends StatefulWidget {
@@ -56,61 +58,53 @@ class _UserProfileEditState extends State<UserProfileEdit> {
       ),
       bottomNavigationBar: const BottomAppBar(
         shape: CircularNotchedRectangle(),
-        child: SizedBox(
-          height: 80.0, // Adjust the height as needed
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              // Your bottom navigation items here
-              // ...
-            ],
-          ),
-        ),
       ),
+
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(675, 25, 675, 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
 
-            ImagePickerWidget(),
+            const ImagePickerWidget(),
+            const SizedBox(height: 30),
 
-
-            TextFormField(
-              controller: nameController,
-              decoration: const InputDecoration(
-                labelText: 'Name',
-                filled: true,
-                fillColor: Colors.white,
-                labelStyle: TextStyle(
-                  color: Color(0xff0849ea),
-                ),
-              ),
-              keyboardType: TextInputType.name,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your name';
-                }
-                return null;
-              },
+            ListTile(
+              title: Text("Email: ${userid?.email} "),
+              // Replace with the user's email
             ),
             const SizedBox(height: 30),
 
-            Center(
-              child: ListTile(
-                title: Text("Email: ${userid?.email} "),
-                // Replace with the user's email
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,  // You can change the border color here
+                  width: 0,           // You can adjust the border width
+                ),
+                borderRadius: BorderRadius.circular(0),  // You can set the border radius
+              ),
+              child: TextFormField(
+                controller: nameController,
+                decoration: const InputDecoration(
+                  labelText: 'Name',
+                  filled: true,
+                  fillColor: Colors.white,
+                  labelStyle: TextStyle(
+                    color: Color(0xff0849ea),
+                  ),
+                ),
+                keyboardType: TextInputType.name,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter your name';
+                  }
+                  return null;
+                },
               ),
             ),
-
             // You can also include buttons to edit or follow the user, or any other actions
             const SizedBox(height: 16),
-
-
-
             // Include your widgets here, such as ImagePickerWidget, TextFormField, and others
-            // ...
-
             ElevatedButton(
               onPressed: () async {
                 // Save the edited profile data
@@ -133,6 +127,7 @@ class _UserProfileEditState extends State<UserProfileEdit> {
               },
               child: const Text("Save"),
             ),
+
           ],
         ),
       ),
@@ -140,11 +135,3 @@ class _UserProfileEditState extends State<UserProfileEdit> {
   }
 }
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
-  runApp(MaterialApp(
-    home: UserProfileEdit(),
-  ));
-}

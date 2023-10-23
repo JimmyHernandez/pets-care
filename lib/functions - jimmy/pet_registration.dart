@@ -28,8 +28,6 @@ class PetInformationStorage {
       );
 
   Future<void> storePetInformation() async {
-    final FirebaseFirestore myPetsDb = FirebaseFirestore.instance;
-
     // Get the current user's UID
     User? user = FirebaseAuth.instance.currentUser;
     String? uid = user?.uid;
@@ -54,7 +52,7 @@ class PetInformationStorage {
     final ownerPhone = _phoneController.text;
 
 
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    FirebaseFirestore fireStore = FirebaseFirestore.instance;
 
     Map<String, dynamic> petData = {
       'pet_name': petName,
@@ -70,11 +68,11 @@ class PetInformationStorage {
     };
 
     // Reference to the user's document
-    DocumentReference userDocRef = firestore.collection('users').doc(uid);
+    DocumentReference userDocRef = fireStore.collection('users').doc(uid);
     try {
       await userDocRef.collection('pets_profile').doc(petId).set(petData);
       if (kDebugMode) {
-        print('Pet information added to Firestore successfully!');
+        print('Pet information added to Fire-store successfully!');
       }
     } catch (e) {
       if (kDebugMode) {

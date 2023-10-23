@@ -1,26 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../pages - enyel/PetApp.dart';
-import '../pages/main_page.dart';
+import '../pages/pet_recommendation/pets_recommendations_page.dart';
 import 'buildPetList.dart';
-
 
 Widget buildPetsRecommendations(
     BuildContext context, List<Pet> dogs, List<Pet> cats) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text("Pet Recommendations"),
-      leading: IconButton(
-        icon: Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => MainScreen()),
-          );
-        },
-      ),
-    ),
-    body: ListView(
+      body: ListView(
       children: [
         InkWell(
           onTap: () {
@@ -32,7 +17,7 @@ Widget buildPetsRecommendations(
             );
           },
           child: Card(
-            color: Color.fromARGB(255, 80, 49, 219),
+            color: const Color.fromARGB(255, 80, 49, 219),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -47,8 +32,8 @@ Widget buildPetsRecommendations(
                     height: 100,
                     width: 100,
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'View Dogs',
                     style: TextStyle(
                       fontSize: 24,
@@ -70,7 +55,7 @@ Widget buildPetsRecommendations(
             );
           },
           child: Card(
-            color: Color.fromARGB(255, 15, 136, 143),
+            color: const Color.fromARGB(255, 15, 136, 143),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -85,8 +70,8 @@ Widget buildPetsRecommendations(
                     height: 100,
                     width: 100,
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     'View Cats',
                     style: TextStyle(
                       fontSize: 24,

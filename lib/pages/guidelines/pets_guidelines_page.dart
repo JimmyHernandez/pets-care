@@ -1,25 +1,25 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/guidelines/excercises_pet.dart';
-import 'package:pets_care/guidelines/vaccine_pets.dart';
-import 'package:pets_care/pages/user_profile.dart';
-import '../guidelines/bath_pet.dart';
-import '../guidelines/feed_pet.dart';
-import '../welcome/login_page.dart';
-import 'main_page.dart';
-import 'my_pets.dart';
+import 'package:pets_care/pages/guidelines/vaccine_pets.dart';
+import 'package:pets_care/pages/user_profile/user_profile_page.dart';
+import 'package:pets_care/pages/welcome/login_page.dart';
+import '../pet_recommendation/pets_recommendations_page.dart';
+import '../home_page/homepage.dart';
+import '../my_pet_card/my_pets_page.dart';
+import 'bath_pet.dart';
+import 'excercises_pet.dart';
+import 'feed_pet.dart';
 
 class PetsGuidelines extends StatefulWidget {
   const PetsGuidelines({Key? key}) : super(key: key);
 
   @override
-  _Details02BasicLayoutWidgetState createState() =>
-      _Details02BasicLayoutWidgetState();
+  GuidelinesLayoutWidgetState createState() =>
+      GuidelinesLayoutWidgetState();
 }
 
-class _Details02BasicLayoutWidgetState
+class GuidelinesLayoutWidgetState
     extends State<PetsGuidelines> {
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -33,12 +33,10 @@ class _Details02BasicLayoutWidgetState
               color: Colors.black, // Change the title color to black
             ),
           ),
-
           centerTitle: true,
           backgroundColor: Colors.white, // Chan
           // Change this color to the one you prefer
           actions: [const SizedBox(width: 1),
-
             // logout button
             IconButton(
               icon: const Icon(Icons.logout, color: Colors.black), // Set the icon color to blue
@@ -55,15 +53,10 @@ class _Details02BasicLayoutWidgetState
           ],
         ),
         bottomNavigationBar:
-
         BottomAppBar(
-
           shape: const CircularNotchedRectangle(),
-
           child: SizedBox(
-
             height: 80.0, // Adjust the height as needed
-
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -100,7 +93,37 @@ class _Details02BasicLayoutWidgetState
                     // Define the action when this icon is pressed
                   },
                 ),
-
+                IconButton(
+                  icon: const Icon(Icons.abc),
+                  tooltip: ("Pet's Recommendations"),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FutureBuilder<List<List<Pet>>>(
+                            future: Future.wait([getPets('dog'), getPets('cat')]),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const CircularProgressIndicator();
+                              } else if (snapshot.hasError) {
+                                return Text('Error: ${snapshot.error}');
+                              } else {
+                                List<Pet> dogs = snapshot.data![0];
+                                List<Pet> cats = snapshot.data![1];
+                                return PetsRecommendations(
+                                  dogs: dogs,
+                                  cats: cats,
+                                );
+                              }
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
                 IconButton(
                   icon: const Icon(Icons.person),
                   tooltip: "Edit Profile",
@@ -116,7 +139,6 @@ class _Details02BasicLayoutWidgetState
             ),
           ),
         ),
-
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: SafeArea(
@@ -135,7 +157,6 @@ class _Details02BasicLayoutWidgetState
                 ),
                 // Image
                 // Replace the Image widget with your desired image widget.
-
                 // Guidelines
                 const Padding(
                   padding: EdgeInsets.all(12),
@@ -158,7 +179,6 @@ class _Details02BasicLayoutWidgetState
                     ),
                   ),
                 ),
-
                 // Care Tips
                 const Padding(
                   padding: EdgeInsets.fromLTRB(16, 5, 16, 16),
@@ -170,7 +190,6 @@ class _Details02BasicLayoutWidgetState
                     ),
                   ),
                 ),
-
                 // Care Tips List (Replace with your items)
                 // Example item
                 buildListItem('The correct way to feed my pet'),
@@ -184,7 +203,6 @@ class _Details02BasicLayoutWidgetState
       ),
     );
   }
-
   Widget buildListItem(String text) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),

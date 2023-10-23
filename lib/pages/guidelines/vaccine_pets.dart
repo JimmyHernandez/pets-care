@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-
 import 'feed_pet.dart';
 
 class VaccinePet extends StatefulWidget {
   const VaccinePet({Key? key}) : super(key: key);
-
   @override
-  _Details02BasicLayoutWidgetState createState() =>
-      _Details02BasicLayoutWidgetState();
+  GuidelinesLayoutWidgetState createState() =>
+      GuidelinesLayoutWidgetState();
 }
 
-class _Details02BasicLayoutWidgetState
+class GuidelinesLayoutWidgetState
     extends State<VaccinePet> {
-
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

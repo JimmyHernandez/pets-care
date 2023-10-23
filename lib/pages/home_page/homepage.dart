@@ -1,28 +1,27 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/pages/pets_guidelines.dart';
-import 'package:pets_care/pages/user_profile.dart';
-import '../pages - enyel/PetApp.dart';
-import '../welcome/login_page.dart';
-import 'my_pets.dart';
+import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
+import 'package:pets_care/pages/user_profile/user_profile_page.dart';
+import 'package:pets_care/pages/welcome/login_page.dart';
+import '../pet_recommendation/pets_recommendations_page.dart';
+import '../my_pet_card/my_pets_page.dart';
 User? userid = FirebaseAuth.instance.currentUser;
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   @override
-  _Profile14OtherUserWidgetState createState() =>
-      _Profile14OtherUserWidgetState();
+  Profile14OtherUserWidgetState createState() =>
+      Profile14OtherUserWidgetState();
 }
 
-class _Profile14OtherUserWidgetState extends State<MainScreen>
+class Profile14OtherUserWidgetState extends State<MainScreen>
     with TickerProviderStateMixin {
   late TabController tabController;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   Future<String?> getSpecificFieldForCurrentUser() async {
     final User? currentUser = _auth.currentUser;
@@ -32,7 +31,7 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
     }
     String? userId = currentUser.uid;
     DocumentSnapshot userDoc =
-    await _firestore.collection('users').doc(userId).get();
+    await _db.collection('users').doc(userId).get();
 
     if (userDoc.exists) {
       var name = userDoc.get('name'); // Assuming 'name' is the field you want
@@ -44,8 +43,6 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
     return null; // If the user's document doesn't exist or 'name' is not present
   }
 
-
-
   @override
   void initState() {
     super.initState();
@@ -56,10 +53,8 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
     )..addListener(() => setState(() {}));
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -103,10 +98,7 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
           )
         ],
       ),
-
-
       bottomNavigationBar:
-
       BottomAppBar(
         shape: const CircularNotchedRectangle(),
         child: SizedBox(
@@ -160,7 +152,7 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             } else if (snapshot.hasError) {
                               return Text('Error: ${snapshot.error}');
                             } else {
@@ -263,16 +255,11 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
                                           ),
                                         ),
                                         Expanded(
-
                                           child: TabBarView(
-
                                             controller: tabController,
                                             children: [
-
                                               //tab "Welcome"
-
                                               Container(
-
                                                   width: 300, // Set the width of the container
                                                   padding: const EdgeInsets.all(20), // Add padding for spacing
                                                   decoration: BoxDecoration(
@@ -297,12 +284,8 @@ class _Profile14OtherUserWidgetState extends State<MainScreen>
                                                       ),
                                                     ],
                                                   )
-
-
                                               ),
-
                                               // Add your content here
-
                                               // tab "Our Mission"
                                            Container(
                                                   width: 300, // Set the width of the container

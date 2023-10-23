@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/welcome/login_page.dart';
-import '../functions jimmy/email_confirmation.dart';
-import '../functions jimmy/user_registration.dart';
-import '../pages/main_page.dart';
+import '../../functions - jimmy/email_confirmation.dart';
+import '../../functions - jimmy/user_registration.dart';
+import '../home_page/homepage.dart';
+import 'login_page.dart';
+
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -172,7 +173,7 @@ class SignUpScreenState extends State<SignUpPage> {
                                           //Navigation to MainScreen after successful login
 
                                           Navigator.of(context).push(MaterialPageRoute(
-                                            builder: (context) =>  const LogInPage(),
+                                            builder: (context) =>  const MainScreen(),
                                           ));
                                         },
                                         child: const Text('Sign Up'),
@@ -240,7 +241,7 @@ class SignUpScreenState extends State<SignUpPage> {
                                     // Your existing sign-up code...
 
                                     Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => MainScreen(),
+                                      builder: (context) => const MainScreen(),
                                     ));
                                   } catch (e) {
                                     // Handle registration errors here.

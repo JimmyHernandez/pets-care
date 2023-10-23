@@ -9,11 +9,11 @@ void deleteProfile(String profileId) async {
   DocumentSnapshot<Map<String, dynamic>> collectionSnapshot =
   await collectionRef.doc(user?.uid).get();
 
-  CollectionReference<Map<String, dynamic>> subcollectionRef =
+  CollectionReference<Map<String, dynamic>> subCollectionref =
   collectionSnapshot.reference.collection('pets_profile');
 
   // Delete the profile document with the given ID
-  await subcollectionRef.doc(profileId).delete();
+  await subCollectionref.doc(profileId).delete();
 
 }
 

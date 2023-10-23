@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import '../pages - enyel/PetApp.dart';
+import '../pages/pet_recommendation/pets_recommendations_page.dart';
 import 'buildPetDetails.dart';
-
 
 Widget buildPetCard(BuildContext context, Pet pet) {
   return Card(
-    margin: EdgeInsets.all(10),
+    margin: const EdgeInsets.all(10),
     child: ListTile(
       title: Text(pet.name),
       subtitle: Text('Breed: ${pet.breed}, Type: ${pet.type}'),
@@ -18,7 +17,7 @@ Widget buildPetCard(BuildContext context, Pet pet) {
             ),
           );
         },
-        child: Text('View Details'),
+        child: const Text('View Details'),
       ),
     ),
   );

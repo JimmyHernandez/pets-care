@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class FlipcardWidget extends StatefulWidget {
+class FlipCardWidget extends StatefulWidget {
   final Widget frontWidget;
   final Widget backWidget;
 
-  FlipcardWidget({
+  const FlipCardWidget({super.key,
     required this.frontWidget,
     required this.backWidget,
   });
 
   @override
-  _FlipcardWidgetState createState() => _FlipcardWidgetState();
+  FlipCardWidgetState createState() => FlipCardWidgetState();
 }
 
-class _FlipcardWidgetState extends State<FlipcardWidget> {
+class FlipCardWidgetState extends State<FlipCardWidget> {
   bool _isFlipped = false;
 
   void _toggleFlip() {

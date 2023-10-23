@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-
 import 'feed_pet.dart';
 
-class ExercisePet extends StatefulWidget {
-  const ExercisePet({Key? key}) : super(key: key);
-
+class BathPet extends StatefulWidget {
+  const BathPet({Key? key}) : super(key: key);
   @override
-  _Details02BasicLayoutWidgetState createState() =>
-      _Details02BasicLayoutWidgetState();
+  GuidelinesLayoutWidgetState createState() =>
+      GuidelinesLayoutWidgetState();
 }
 
-class _Details02BasicLayoutWidgetState
-    extends State<ExercisePet> {
-
+class GuidelinesLayoutWidgetState
+    extends State<BathPet> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -20,8 +17,9 @@ class _Details02BasicLayoutWidgetState
     return GestureDetector(
       onTap: () {},
       child: Scaffold(
+
         appBar: AppBar(
-          title: const Text("Exercise Guidelines",
+          title: const Text("Bath Guidelines",
             style: TextStyle(
               color: Colors.black, // Change the title color to black
             ),
@@ -46,7 +44,7 @@ class _Details02BasicLayoutWidgetState
                 Align(
                   alignment: const AlignmentDirectional(0.00, -1.00),
                   child: Image.asset(
-                    'assets/images/playing.png',
+                    'assets/images/bath.png',
                     // Replace with the actual path to your asset image.
                     height: 340,
                     fit: BoxFit.fitHeight,
@@ -56,6 +54,7 @@ class _Details02BasicLayoutWidgetState
                 // Replace the Image widget with your desired image widget.
 
                 // Guidelines
+
                 const Padding(
                   padding: EdgeInsets.all(12),
                   child: Text(
@@ -70,7 +69,7 @@ class _Details02BasicLayoutWidgetState
                 const Padding(
                   padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
                   child: Text(
-                    "When it comes to pets and exercise, it's important to keep them healthy and happy. Here are some general guidelines for exercising your pets:",
+                    "Bathing your pet can be an important part of their overall grooming routine. Here are some steps to help you give your pet a proper bath:",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -89,39 +88,36 @@ class _Details02BasicLayoutWidgetState
                     ),
                   ),
                 ),
-
                 // List of Care Tips
                 const Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(95, 12, 12, 12),
                   child: Column(
                     children: <Widget>[
-                      CareListItem("Know Your Pet's Needs: Different pets have different exercise requirements. For example, dogs need more physical activity than cats. Consider your pet's age, breed, and health when planning their exercise routine."),
+                      CareListItem("Gather Supplies: Before you begin, make sure you have all the necessary supplies on hand. This includes pet-specific shampoo, towels, a brush, a leash, and a non-slip mat to place in the tub or sink."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Regular Playtime: Spend quality time playing with your pet. Use toys like balls, frisbees, or laser pointers for cats. This interactive playtime not only provides exercise but also strengthens your bond."),
+                      CareListItem("Brush Your Pet: Start by brushing your pet's fur to remove any tangles and loose hair. This will make the bathing process easier and more effective."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Walking Your Dog: If you have a dog, daily walks are essential. The duration and intensity of the walk will depend on your dog's size and energy level. Smaller breeds might need shorter, more frequent walks, while larger dogs require longer walks."),
+                      CareListItem("Prepare the Bathing Area: Whether you're using a tub, sink, or an outdoor space, ensure it's clean and free from any hazards. Place the non-slip mat in the bottom to prevent your pet from slipping."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Off-Leash Play: If you have access to a safe, enclosed area, let your dog off the leash to run and play. This is especially important for breeds with high energy levels."),
+                      CareListItem("Use Lukewarm Water: Fill the tub or sink with lukewarm water. Make sure it's not too hot or too cold, as extreme temperatures can be uncomfortable for your pet."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Cats and Indoor Play: Cats can benefit from indoor play sessions. Use toys like feather wands or treat-dispensing puzzles to engage them physically and mentally."),
+                      CareListItem("Wet Your Pet: Gently wet your pet's fur, starting at the neck and working your way down. Be careful around the face and ears, as you don't want water getting into their eyes or ears."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Consider Obstacles: For dogs, agility courses or obstacle courses can be a fun way to combine exercise with mental stimulation. It's also a great bonding activity."),
+                      CareListItem("Apply Pet Shampoo: Use a pet-specific shampoo and lather it into your pet's fur. Be sure to follow the instructions on the shampoo bottle. Avoid using human shampoo, as it can be too harsh for your pet's skin."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Swimming: If you have a water-loving dog, swimming is an excellent low-impact exercise. Just ensure their safety and use appropriate gear if needed."),
+                      CareListItem("Rinse Thoroughly: Rinse your pet's fur thoroughly, making sure to remove all the shampoo. Any leftover residue can irritate their skin."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Hiking and Outdoor Adventures: For active dog owners, hiking and other outdoor activities can be a fantastic way to exercise together. Just make sure the terrain is suitable for your pet"),
+                      CareListItem("Towel Dry: Gently towel dry your pet, being careful not to rub too vigorously. Some pets may tolerate a hairdryer on a low, cool setting, but be cautious as it can be loud and frightening for some animals."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Avoid Overexertion: While exercise is crucial, be mindful not to overexert your pet, especially in extreme weather conditions. Dogs can overheat quickly, and cats can become exhausted."),
+                      CareListItem("Brush Again: After your pet is dry, give them a good brushing to prevent matting and to distribute natural oils through their coat."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Consult Your Vet: If you have concerns about your pet's exercise needs or any health issues, consult your veterinarian. They can provide tailored advice."),
+                      CareListItem("Reward and Praise: Once the bath is over, give your pet a treat and lots of praise. This will help them associate bath time with positive experiences."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Routine Matters: Pets thrive on routine. Try to establish a regular exercise schedule to keep them happy and reduce behavioral issues."),
+                      CareListItem("Regularity: The frequency of baths depends on your pet's breed and activity level. Dogs that spend a lot of time outdoors may need more frequent baths, while some cats are excellent self-groomers and require fewer baths."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Mental Stimulation: In addition to physical exercise, mental stimulation is important for pets. Puzzle toys and training sessions can engage their minds."),
+                      CareListItem("Consult a Vet: If your pet has specific skin conditions or you're unsure about their grooming needs, consult your veterinarian for advice."),
                       SizedBox(height: 12), // Add space here
-                      CareListItem("Remember that your pet's happiness and well-being are paramount. If your pet enjoys the exercise and it strengthens your bond, then you're on the right track. Make sure to adjust the exercise routine as your pet's needs change with age, and always prioritize their safety and health."),
-                      SizedBox(height: 12), // Add space here
-                    ],
+                   ],
                   ),
                 )
               ],

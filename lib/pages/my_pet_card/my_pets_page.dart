@@ -3,14 +3,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pets_care/pages/pets_profile.dart';
-import 'package:pets_care/pages/pets_guidelines.dart';
-import 'package:pets_care/pages/user_profile.dart';
-import '../functions jimmy/delete_pet_profile.dart';
-import '../functions jimmy/flip_card.dart';
-import '../pages - enyel/PetApp.dart';
-import 'pets_profile_edit.dart';
-import 'main_page.dart';
+import 'package:pets_care/pages/pets_profile/pets_profile_page.dart';
+import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
+import 'package:pets_care/pages/user_profile/user_profile_page.dart';
+import '../../functions - jimmy/delete_pet_profile.dart';
+import '../../functions - jimmy/flip_card.dart';
+import '../pet_recommendation/pets_recommendations_page.dart';
+import '../pets_profile/pets_profile_edit_page.dart';
+import '../home_page/homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -123,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             } else if (snapshot.hasError) {
                               return Text('Error: ${snapshot.error}');
                             } else {
@@ -199,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         // Adjust the padding as per your preference
-                        child: FlipcardWidget(
+                        child: FlipCardWidget(
 
                           frontWidget:
 

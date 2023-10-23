@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/pages/pets_guidelines.dart';
-import 'package:pets_care/pages/user_profile_edit.dart';
-import '../pages - enyel/PetApp.dart';
-import 'main_page.dart';
-import 'my_pets.dart';
+import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
+import 'package:pets_care/pages/user_profile/user_profile_edit_page.dart';
+import '../pet_recommendation/pets_recommendations_page.dart';
+import '../home_page/homepage.dart';
+import '../my_pet_card/my_pets_page.dart';
 User? userid = FirebaseAuth.instance.currentUser;
 
 class UserProfile extends StatelessWidget {
@@ -101,7 +101,7 @@ class UserProfile extends StatelessWidget {
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return CircularProgressIndicator();
+                              return const CircularProgressIndicator();
                             } else if (snapshot.hasError) {
                               return Text('Error: ${snapshot.error}');
                             } else {
@@ -167,7 +167,9 @@ class UserProfile extends StatelessWidget {
                         fontSize: 24, // Font size
                         fontWeight: FontWeight.bold,
                         // Change the title color to black
-                      ),);
+                      ),
+                        textAlign: TextAlign.center,
+                      );
                     } else {
                       return const Text('User is not logged in or name is not available.');
                     }
@@ -181,7 +183,7 @@ class UserProfile extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => UserProfileEdit()),
+                    MaterialPageRoute(builder: (context) => const UserProfileEdit()),
                   );
                   // Add an action here, like editing the profile
 

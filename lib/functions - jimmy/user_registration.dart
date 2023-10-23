@@ -31,7 +31,7 @@ class UserRegistration {
       );
 
       if (userCredential.user != null) {
-        // User registration was successful, save user data to Firestore.
+        // User registration was successful, save user data to Fire store.
         await FirebaseFirestore.instance
             .collection('users')
             .doc(userCredential.user!.uid)

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import '../pages - enyel/PetApp.dart';
+import '../pages/pet_recommendation/pets_recommendations_page.dart';
 
 List<Widget> buildSections(String title, List<Pet> pets) {
   return [
     Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Text(
         title,
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
     ),
     ListView.builder(

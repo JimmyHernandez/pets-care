@@ -4,11 +4,11 @@ class FeedPet extends StatefulWidget {
   const FeedPet({Key? key}) : super(key: key);
 
   @override
-  _Details02BasicLayoutWidgetState createState() =>
-      _Details02BasicLayoutWidgetState();
+  GuidelinesLayoutWidgetState createState() =>
+      GuidelinesLayoutWidgetState();
 }
 
-class _Details02BasicLayoutWidgetState
+class GuidelinesLayoutWidgetState
     extends State<FeedPet> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();

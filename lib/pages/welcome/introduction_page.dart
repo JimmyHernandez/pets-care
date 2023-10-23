@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pets_care/welcome/login_page.dart';
+import 'login_page.dart';
 import 'signup_page.dart';
 
 class WelcomeScreen extends StatelessWidget {

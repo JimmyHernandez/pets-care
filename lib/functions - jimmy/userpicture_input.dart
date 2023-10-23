@@ -7,10 +7,10 @@ class ImagePickerWidget extends StatefulWidget {
   const ImagePickerWidget({super.key});
 
   @override
-  _ImagePickerWidgetState createState() => _ImagePickerWidgetState();
+  ImagePickerWidgetState createState() => ImagePickerWidgetState();
 }
 
-class _ImagePickerWidgetState extends State<ImagePickerWidget> {
+class ImagePickerWidgetState extends State<ImagePickerWidget> {
   File? _image;
 
   Future<void> _getImage() async {
@@ -36,10 +36,10 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
               : Image.file(_image!), // Use Image.file for mobile
         if (_image == null)
           Image.asset('assets/images/PetsCareLogo.png', width: 250, height: 250),
-        ElevatedButton(
-          onPressed: _getImage,
-          child: const Text('Select Image'),
-        ),
+        //ElevatedButton(
+        //  onPressed: _getImage,
+        //  child: const Text('Select Image'),
+     //   ),
       ],
     );
   }

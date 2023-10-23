@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pets_care/pages/my_pets.dart';
-import '../functions jimmy/pet_registration.dart';
+import 'package:pets_care/pages/my_pet_card/my_pets_page.dart';
+import '../../functions - jimmy/pet_registration.dart';
+import '../../functions - jimmy/petspicture_input.dart';
 
 class PetsProfile extends StatefulWidget {
   const PetsProfile({super.key});
-
   @override
-  _PetsProfile createState() => _PetsProfile();
+  PetsProfileState createState() => PetsProfileState();
 }
 
-class _PetsProfile extends State<PetsProfile> {
+class PetsProfileState extends State<PetsProfile> {
   final TextEditingController _petNameController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
   final TextEditingController _breedController = TextEditingController();
@@ -43,7 +43,8 @@ class _PetsProfile extends State<PetsProfile> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 1),
+            const PetImagePickerWidget(),
+            const SizedBox(height: 25),
             Expanded(
               child: Center(
                 child: LayoutBuilder(
@@ -61,13 +62,7 @@ class _PetsProfile extends State<PetsProfile> {
                                   alignment: Alignment.center,
                                   child: Column(
                                     children: [
-                                      const CircleAvatar(
-                                        radius: 50,
-                                        // You can load the user's profile picture here
-                                        backgroundImage: NetworkImage("https://example.com/profile_image.jpg"),
-                                      ),
-
-                                      TextFormField(
+                                        TextFormField(
                                         controller: _petNameController,
                                         decoration: const InputDecoration(
                                           labelText: 'Pet name',
@@ -208,7 +203,7 @@ class _PetsProfile extends State<PetsProfile> {
                                         ),
                                       ),
 
-                                      const SizedBox(height: 1),
+                                      const SizedBox(height: 25),
                                       // ... Other TextFormField widgets ...
                                       ElevatedButton(
                                         onPressed: () async {
@@ -234,7 +229,7 @@ class _PetsProfile extends State<PetsProfile> {
                                         },
                                         child: const Text('Save Profile'),
                                       ),
-                                      const SizedBox(height: 3),
+                                      const SizedBox(height: 25),
                                     ],
                                   ),
                                 ),
