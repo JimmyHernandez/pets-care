@@ -6,6 +6,8 @@ import '../my_pet_card/my_pets_page.dart';
 import '../guidelines/pets_guidelines_page.dart';
 import '../user_profile/user_profile_page.dart';
 import '../../functions - enyel/buildPetListSelection.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class Pet {
   final String name;
@@ -61,6 +63,18 @@ Future<List<Pet>> getPets(String type) async {
   }
 }
 
+Future<String> getImageUrl(String imagePath) async {
+  try {
+    final ref =
+        firebase_storage.FirebaseStorage.instance.ref().child(imagePath);
+    final url = await ref.getDownloadURL();
+    return url;
+  } catch (e) {
+    print('Error getting image URL: $e');
+    return ''; // Devuelve una URL de imagen por defecto o maneja el error según sea necesario
+  }
+}
+
 class PetDetails extends StatelessWidget {
   final Pet pet;
 
@@ -70,52 +84,62 @@ class PetDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pet Detail", style: TextStyle(
-          color: Colors.black, // Change the title color to black
-        ),
+        title: const Text(
+          "Pet Detail",
+          style: TextStyle(
+            color: Colors.black, // Change the title color to black
+          ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
           color: Colors.black, // Change this color to the one you prefer
         ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
+        backgroundColor:
+            Colors.white, // Change this color to the one you prefer
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Name: ${pet.name}',
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            Text('Breed: ${pet.breed}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Type: ${pet.type}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Weight: ${pet.weight}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Food: ${pet.food}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Vaccine: ${pet.vaccine}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
+            Text(
+              'Name: ${pet.name}',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text('Breed: ${pet.breed}', style: TextStyle(fontSize: 16)),
+            Text('Type: ${pet.type}', style: TextStyle(fontSize: 16)),
+            Text('Weight: ${pet.weight}', style: TextStyle(fontSize: 16)),
+            Text('Food: ${pet.food}', style: TextStyle(fontSize: 16)),
+            Text('Vaccine: ${pet.vaccine}', style: TextStyle(fontSize: 16)),
             Text('Bath Routine: ${pet.bathRoutine}',
-                style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Lifetime: ${pet.lifetime}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
+                style: TextStyle(fontSize: 16)),
+            Text('Lifetime: ${pet.lifetime}', style: TextStyle(fontSize: 16)),
             Text('Description: ${pet.description}',
-                style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Image.network(pet.imageUrl, height: 200, width: 200),
+                style: TextStyle(fontSize: 16)),
+            SizedBox(height: 10),
+            FutureBuilder<String>(
+              future: getImageUrl(pet.imageUrl),
+              builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return CircularProgressIndicator();
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  return Image.network(
+                    snapshot.data!,
+                    height: 200,
+                    width: 200,
+                  );
+                }
+              },
+            ),
           ],
         ),
       ),
     );
   }
 }
-
 
 class PetCard extends StatelessWidget {
   final Pet pet;
@@ -148,23 +172,25 @@ class PetCard extends StatelessWidget {
 class PetsRecommendations extends StatelessWidget {
   final List<Pet> dogs;
   final List<Pet> cats;
-  const PetsRecommendations({super.key, required this.dogs, required this.cats});
+  const PetsRecommendations(
+      {super.key, required this.dogs, required this.cats});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pet's Recommendations", style: TextStyle(
-          color: Colors.black, // Change the title color to black
-        ),
+        title: const Text(
+          "Pet's Recommendations",
+          style: TextStyle(
+            color: Colors.black, // Change the title color to black
+          ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
           color: Colors.black, // Change this color to the one you prefer
         ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
+        backgroundColor:
+            Colors.white, // Change this color to the one you prefer
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -253,23 +279,56 @@ class PetsRecommendations extends StatelessWidget {
           ),
         ),
       ),
-
-
-
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    body: Column(
         children: [
-          _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
-              'assets/images/dog_icon.png', 'Dogs'),
-          _buildInkWell(context, 'View Cats', cats, Colors.green,
-              'assets/images/cat_icon.png', 'Cats'),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Welcome to the Pets Recommendations Section!',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
+                      'assets/images/dog_icon.png', 'Dogs'),
+                  Text(
+                    'Explore our curated list of dog breeds.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+              Column(
+                children: [
+                  _buildInkWell(context, 'View Cats', cats, Colors.green,
+                      'assets/images/cat_icon.png', 'Cats'),
+                  Text(
+                    'Discover various cat breeds and their characteristics.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ],
+          ),
+
+          // You can add more information or text here if you wish
         ],
       ),
     );
   }
 
-
-  Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
+  // ... (rest of the code for the PetsRecommendations class remains unchanged)
+} 
+      Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
       Color color, String imagePath, String pageTitle) {
     return InkWell(
       onTap: () {
@@ -311,7 +370,7 @@ class PetsRecommendations extends StatelessWidget {
       ),
     );
   }
-}
+
 
 class PetList extends StatelessWidget {
   final List<Pet> pets;
@@ -322,16 +381,18 @@ class PetList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pet's List", style: TextStyle(
-          color: Colors.black, // Change the title color to black
-        ),
+        title: const Text(
+          "Pet's List",
+          style: TextStyle(
+            color: Colors.black, // Change the title color to black
+          ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
           color: Colors.black, // Change this color to the one you prefer
         ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
+        backgroundColor:
+            Colors.white, // Change this color to the one you prefer
       ),
       body: ListView.builder(
         itemCount: pets.length,
