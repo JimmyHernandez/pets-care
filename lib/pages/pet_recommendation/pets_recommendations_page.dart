@@ -279,7 +279,7 @@ class PetsRecommendations extends StatelessWidget {
           ),
         ),
       ),
-    body: Column(
+      body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -292,6 +292,16 @@ class PetsRecommendations extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
+          const Text(
+            'Here you can choose your favorite pet to see specific recommendations by breed and get more important information about your pet.',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(
+              height:
+                  20), // Adjust the space between the text and the images if necessary
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -327,50 +337,49 @@ class PetsRecommendations extends StatelessWidget {
   }
 
   // ... (rest of the code for the PetsRecommendations class remains unchanged)
-} 
-      Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
-      Color color, String imagePath, String pageTitle) {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                PetListSelection(pets: pets, title: pageTitle),
-          ),
-        );
-      },
-      child: Card(
-        color: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+}
+
+Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
+    Color color, String imagePath, String pageTitle) {
+  return InkWell(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PetListSelection(pets: pets, title: pageTitle),
         ),
-        child: SizedBox(
-          height: 250,
-          width: 250,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                imagePath,
-                height: 100,
-                width: 100,
+      );
+    },
+    child: Card(
+      color: color,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: SizedBox(
+        height: 250,
+        width: 250,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imagePath,
+              height: 100,
+              width: 100,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 24,
+                color: Colors.white,
               ),
-              const SizedBox(height: 10),
-              Text(
-                label,
-                style: const TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-    );
-  }
-
+    ),
+  );
+}
 
 class PetList extends StatelessWidget {
   final List<Pet> pets;
