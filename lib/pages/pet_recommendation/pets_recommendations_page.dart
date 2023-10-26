@@ -301,7 +301,7 @@ class PetsRecommendations extends StatelessWidget {
           ),
           SizedBox(
               height:
-                  20), // Adjust the space between the text and the images if necessary
+                  150), // Adjust the space between the text and the images if necessary
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
