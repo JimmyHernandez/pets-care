@@ -172,171 +172,170 @@ class PetCard extends StatelessWidget {
 class PetsRecommendations extends StatelessWidget {
   final List<Pet> dogs;
   final List<Pet> cats;
-  const PetsRecommendations(
-      {super.key, required this.dogs, required this.cats});
+  const PetsRecommendations({Key? key, required this.dogs, required this.cats});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Pet's Recommendations",
-          style: TextStyle(
-            color: Colors.black, // Change the title color to black
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const MainScreen()),
+        );
+        return false;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Pet's Recommendations",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          centerTitle: true,
+          iconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+          backgroundColor: Colors.white,
+        ),
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          child: SizedBox(
+            height: 80.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.home),
+                  tooltip: "Home",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.pets),
+                  tooltip: "My Pet's",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyPets()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.recommend),
+                  tooltip: "Pet's Guidelines",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PetsGuidelines()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.abc),
+                  tooltip: ("Pet's Recommendations"),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FutureBuilder<List<List<Pet>>>(
+                            future:
+                                Future.wait([getPets('dog'), getPets('cat')]),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const CircularProgressIndicator();
+                              } else if (snapshot.hasError) {
+                                return Text('Error: ${snapshot.error}');
+                              } else {
+                                List<Pet> dogs = snapshot.data![0];
+                                List<Pet> cats = snapshot.data![1];
+                                return PetsRecommendations(
+                                  dogs: dogs,
+                                  cats: cats,
+                                );
+                              }
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.person),
+                  tooltip: "Edit Profile",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => UserProfile()),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
-        centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Colors.black, // Change this color to the one you prefer
-        ),
-        backgroundColor:
-            Colors.white, // Change this color to the one you prefer
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: SizedBox(
-          height: 80.0, // Adjust the height as needed
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.home),
-                tooltip: "Home", // You can change this to any icon you prefer
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MainScreen()),
-                  );
-                  // Define the action when this icon is pressed
-                },
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'Welcome to the Pets Recommendations Section!',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
-              IconButton(
-                icon: const Icon(Icons.pets),
-                tooltip: "My Pet's",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyPets()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.recommend),
-                tooltip: "Pet's Guidelines",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PetsGuidelines()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.abc),
-                tooltip: ("Pet's Recommendations"),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return FutureBuilder<List<List<Pet>>>(
-                          future: Future.wait([getPets('dog'), getPets('cat')]),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return const CircularProgressIndicator();
-                            } else if (snapshot.hasError) {
-                              return Text('Error: ${snapshot.error}');
-                            } else {
-                              List<Pet> dogs = snapshot.data![0];
-                              List<Pet> cats = snapshot.data![1];
-                              return PetsRecommendations(
-                                dogs: dogs,
-                                cats: cats,
-                              );
-                            }
-                          },
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.person),
-                tooltip: "Edit Profile",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => UserProfile()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Welcome to the Pets Recommendations Section!',
+            ),
+            const Text(
+              'Here you can choose your favorite pet to see specific recommendations by breed and get more important information about your pet.',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          const Text(
-            'Here you can choose your favorite pet to see specific recommendations by breed and get more important information about your pet.',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+            SizedBox(height: 150),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
+                        'assets/images/dog_icon.png', 'Dogs'),
+                    Text(
+                      'Explore our curated list of dog breeds.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    _buildInkWell(context, 'View Cats', cats, Colors.green,
+                        'assets/images/cat_icon.png', 'Cats'),
+                    Text(
+                      'Discover various cat breeds and their characteristics.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ),
-          SizedBox(
-              height:
-                  150), // Adjust the space between the text and the images if necessary
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                children: [
-                  _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
-                      'assets/images/dog_icon.png', 'Dogs'),
-                  Text(
-                    'Explore our curated list of dog breeds.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  _buildInkWell(context, 'View Cats', cats, Colors.green,
-                      'assets/images/cat_icon.png', 'Cats'),
-                  Text(
-                    'Discover various cat breeds and their characteristics.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
-            ],
-          ),
-
-          // You can add more information or text here if you wish
-        ],
+          ],
+        ),
       ),
     );
   }
-
-  // ... (rest of the code for the PetsRecommendations class remains unchanged)
 }
 
 Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
