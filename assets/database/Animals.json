@@ -9,7 +9,7 @@
       "bath_routine": "Weekly",
       "lifetime": "12-20 years",
       "description": "Chihuahuas are small-sized dogs known for their loyalty and big personalities.",
-      "image_path": "gs://demo2-8fd85.appspot.com/pic_dog/Chihuahua-standing-in-three-quarter-view.jpeg"
+      "image_path": "gs://demo2-8fd85.appspot.com/pic_dog/Chihuahua.jpeg"
       
     },
     {
@@ -400,7 +400,7 @@
     },
     {
       "dog_id": 42,
-      "breed": "Poodle Miniatura",
+      "breed": "Poodle",
       "weight": "10-15 lbs",
       "food": "Balanced diet, portion control",
       "vaccine": "Core vaccines, rabies",
@@ -411,7 +411,7 @@
     },
     {
       "dog_id": 43,
-      "breed": "Dálmata",
+      "breed": "Dálmatain",
       "weight": "50-70 lbs",
       "food": "Balanced diet, portion control",
       "vaccine": "Core vaccines, rabies",
@@ -422,7 +422,7 @@
     },
     {
       "dog_id": 44,
-      "breed": "Pit Bull Terrier Americano",
+      "breed": "Pit Bull Terrier",
       "weight": "30-70 lbs",
       "food": "Protein-rich diet, portion control",
       "vaccine": "Core vaccines, rabies",
@@ -432,19 +432,8 @@
       "image_url": "gs://demo2-8fd85.appspot.com/fotos_dog/Pit Bull Terrier.jpg"
     },
     {
-      "dog_id": 45,
-      "breed": "Pug Carlino",
-      "weight": "14-18 lbs",
-      "food": "Balanced diet, portion control",
-      "vaccine": "Core vaccines, rabies",
-      "bath_routine": "As needed",
-      "lifetime": "12-15 years",
-      "description": "Pugs are charming, mischievous, and loving dogs with a distinctive wrinkled face. They are great companions and get along well with children.",
-      "image_url": "gs://demo2-8fd85.appspot.com/fotos_dog/Pit Bull Terrier.jpg"
-    },
-    {
       "dog_id": 46,
-      "breed": "Dobermann",
+      "breed": "Doberman Pinscher",
       "weight": "60-100 lbs",
       "food": "High-quality dog food, portion control",
       "vaccine": "Core vaccines, rabies",
@@ -631,7 +620,7 @@
     },
     {
         "dog_id": 75,
-        "breed": "Chow Chow",
+        "breed": "Chow-Chow",
         "weight": "45-70 lbs",
         "food": "Balanced diet, portion control",
         "vaccine": "Core vaccines, rabies",
