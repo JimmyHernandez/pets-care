@@ -53,11 +53,11 @@ class _UserProfileEditState extends State<UserProfileEdit> {
             color: Colors.black, // Change the title color to black
           ),
         ),
+        iconTheme: const IconThemeData(
+          color: Colors.black, // Change this color to the one you prefer
+        ),
         centerTitle: true,
         backgroundColor: Colors.white, // Change this color to the one you prefer
-      ),
-      bottomNavigationBar: const BottomAppBar(
-        shape: CircularNotchedRectangle(),
       ),
 
       body: Padding(
@@ -75,32 +75,23 @@ class _UserProfileEditState extends State<UserProfileEdit> {
             ),
             const SizedBox(height: 30),
 
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.black,  // You can change the border color here
-                  width: 0,           // You can adjust the border width
+            TextFormField(
+              controller: nameController,
+              decoration: const InputDecoration(
+                labelText: 'Name',
+                filled: true,
+                fillColor: Colors.white,
+                labelStyle: TextStyle(
+                  color: Color(0xff0849ea),
                 ),
-                borderRadius: BorderRadius.circular(0),  // You can set the border radius
               ),
-              child: TextFormField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  labelText: 'Name',
-                  filled: true,
-                  fillColor: Colors.white,
-                  labelStyle: TextStyle(
-                    color: Color(0xff0849ea),
-                  ),
-                ),
-                keyboardType: TextInputType.name,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter your name';
-                  }
-                  return null;
-                },
-              ),
+              keyboardType: TextInputType.name,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your name';
+                }
+                return null;
+              },
             ),
             // You can also include buttons to edit or follow the user, or any other actions
             const SizedBox(height: 16),

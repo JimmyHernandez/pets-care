@@ -334,7 +334,7 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                     border: Border.all(color: Colors.black), // Add a border
                                                     borderRadius: BorderRadius.circular(10), // Add rounded corners
                                                   ),
-                                                  child: const Center(
+                                                  child:  const Center(
 
                                                     child: Row(
                                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -346,9 +346,10 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                             child: Column(
                                                               children: <Widget>[
                                                                 CircleAvatar(
-                                                                  backgroundImage: AssetImage('images/jimmy.png'), // Replace with the path to your image
+                                                                  backgroundImage: AssetImage('assets/images/jimmy.png'), // Replace with the path to your image
                                                                   radius: 100, // Adjust the size of the profile picture
                                                                 ),
+                                                                SizedBox(height: 25),
                                                                 Text(
                                                                   'Jimmy Hernandez Rivera',
                                                                   style: TextStyle(
@@ -356,17 +357,37 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                                 ),
-                                                                SizedBox(height: 10),
-
+                                                                SizedBox(height: 15),
                                                                 Text(
                                                                   "Full-Stack Software Engineer | Bilingual: Spanish & English",
-
                                                                   style: TextStyle(
                                                                     fontSize: 16,
                                                                   ),
                                                                 ),
+                                                                SizedBox(height: 15),
+                                                                Text(
+                                                                      "I am a dynamic person, eager to learn. I have had the opportunity to  \n"
+                                                                      "develop my programming skills thanks to Holberton's intensive course, \n"
+                                                                      "definitely a decision that marked a significant change in my life and \n"
+                                                                      "can be reflected in this project that we carry out with a lot of love \n"
+                                                                      "and respect for our pets. I dedicate this project to my family, specif\n"
+                                                                      "ically to my twin sister, who inspired me to make this web application\n"
+                                                                      "after graduating as a Veterinary Assistant. I love animals, my pet is a\n"
+                                                                      "Gold Retriever named Max and he was my grandfather's companion. \n"
+                                                                      "After my grandfather left this world, I stayed with Max and he has filled\n"
+                                                                      "me with a lot of happiness in difficult times, enough inspiration to continue dev\n"
+                                                                      "eloping this website for the benefit of all our pets and, in turn, ourselves.",
+                                                                  style: TextStyle(
+                                                                    fontSize: 16,
+                                                                  ),
+                                                                ),
+                                                                SizedBox(height: 2),
+
+
                                                               ],
+
                                                             ),
+
                                                           ),
                                                         ),
                                                         Padding(
@@ -375,9 +396,10 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                             child: Column(
                                                               children: <Widget>[
                                                                 CircleAvatar(
-                                                                  backgroundImage: AssetImage('images/enyel.png'), // Replace with the path to your image
+                                                                  backgroundImage: AssetImage('assets/images/enyel.png'), // Replace with the path to your image
                                                                   radius: 100, // Adjust the size of the profile picture
                                                                 ),
+                                                                SizedBox(height: 25),
                                                                 Text(
                                                                   'Enyel Feliz Mercado',
                                                                   style: TextStyle(
@@ -385,15 +407,30 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                                 ),
-                                                                SizedBox(height: 10),
+                                                                SizedBox(height: 15),
                                                                 Text(
                                                                   "Full-Stack Software Engineer | Bilingual: Spanish & English",
+                                                                    style: TextStyle(
+                                                                    fontSize: 16,
+                                                                  ),
+                                                                ),
+                                                                SizedBox(height: 15),
+                                                                Text( "A passionate Full-Stack Software Engineer with experience in developing\n"
+                                                                      "both client-side and server-side applications. He is committed to technical\n"
+                                                                      "excellence and possesses a creative mindset to address complex challenges.\n"
+                                                                      "His dedication and passion for technology make him an exceptional professional\n"
+                                                                      "in the field of software engineering.",
                                                                   style: TextStyle(
                                                                     fontSize: 16,
                                                                   ),
                                                                 ),
+                                                                SizedBox(height: 2),
+
+
                                                               ],
+
                                                             ),
+
                                                           ),
                                                         ),
                                                       ],

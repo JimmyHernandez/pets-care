@@ -25,20 +25,11 @@ class MyApp extends StatelessWidget {
       title: "Pet's Care",
       initialRoute: '/',
       routes: {
-        '/home': (context) => const MainScreen(),
-
-        /// Home
-        '/my_pets': (context) => const MyPets(),
-
-        /// My Pet's
-        '/pet_profile': (context) => const PetsProfile(),
-
-        /// Pet's Profile
-        '/pet_guidelines': (context) => const PetsGuidelines(),
-
-        /// Pet's Search
-        '/pet,s recommendations': (context) =>
-            PetsRecommendations(dogs: [], cats: []),
+        '/home': (context) => const MainScreen(), /// Home
+        '/my_pets': (context) => const MyPets(), /// My Pet's
+        '/pet_profile': (context) => const PetsProfile(), /// Pet's Profile
+        '/pet_guidelines': (context) => const PetsGuidelines(),  /// Pet's Search
+        '/pet,s recommendations': (context) => PetsRecommendations(dogs: [], cats: []),
       },
     );
   }
