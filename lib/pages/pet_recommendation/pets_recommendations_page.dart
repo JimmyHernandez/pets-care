@@ -97,49 +97,66 @@ class PetDetails extends StatelessWidget {
         backgroundColor:
             Colors.white, // Change this color to the one you prefer
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Name: ${pet.name}',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-            Text('Breed: ${pet.breed}', style: TextStyle(fontSize: 16)),
-            Text('Type: ${pet.type}', style: TextStyle(fontSize: 16)),
-            Text('Weight: ${pet.weight}', style: TextStyle(fontSize: 16)),
-            Text('Food: ${pet.food}', style: TextStyle(fontSize: 16)),
-            Text('Vaccine: ${pet.vaccine}', style: TextStyle(fontSize: 16)),
-            Text('Bath Routine: ${pet.bathRoutine}',
-                style: TextStyle(fontSize: 16)),
-            Text('Lifetime: ${pet.lifetime}', style: TextStyle(fontSize: 16)),
-            Text('Description: ${pet.description}',
-                style: TextStyle(fontSize: 16)),
-            SizedBox(height: 10),
-            FutureBuilder<String>(
-              future: getImageUrl(pet.imageUrl),
-              builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
-                } else {
-                  return Image.network(
-                    snapshot.data!,
-                    height: 200,
-                    width: 200,
-                  );
-                }
-              },
-            ),
-          ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Name: ${pet.name}',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text('Breed: ${pet.breed}', style: TextStyle(fontSize: 16)),
+                    Text('Type: ${pet.type}', style: TextStyle(fontSize: 16)),
+                    Text('Weight: ${pet.weight}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Food: ${pet.food}', style: TextStyle(fontSize: 16)),
+                    Text('Vaccine: ${pet.vaccine}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Bath Routine: ${pet.bathRoutine}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Lifetime: ${pet.lifetime}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Description: ${pet.description}',
+                        style: TextStyle(fontSize: 16)),
+                    SizedBox(height: 10),
+                    FutureBuilder<String>(
+                      future: getImageUrl(pet.imageUrl),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<String> snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        } else if (snapshot.hasError) {
+                          return Text('Error: ${snapshot.error}');
+                        } else {
+                          return Image.network(
+                            snapshot.data!,
+                            height: 200,
+                            width: 200,
+                          );
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 
 class PetCard extends StatelessWidget {
   final Pet pet;

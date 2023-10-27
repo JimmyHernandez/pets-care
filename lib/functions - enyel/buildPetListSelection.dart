@@ -5,28 +5,44 @@ class PetListSelection extends StatelessWidget {
   final List<Pet> pets;
   final String title;
 
-  const PetListSelection({super.key, required this.pets, required this.title});
+  const PetListSelection({
+    super.key,
+    required this.pets,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title, style: const TextStyle(
-        color: Colors.black, // Change the title color to black
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: Colors.black, // Change the title color to black
+          ),
         ),
+        centerTitle: true,
+        iconTheme: const IconThemeData(
+          color: Colors.black, // Change this color to the one you prefer
+        ),
+        backgroundColor:
+            Colors.white, // Change this color to the one you prefer
       ),
-      centerTitle: true,
-      iconTheme: const IconThemeData(
-        color: Colors.black, // Change this color to the one you prefer
-      ),
-      backgroundColor: Colors
-          .white, // Change this color to the one you prefer
-      ),
-
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              'Select a breed to explore recommendations.', // Reemplaza con tu propio texto
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors
+                    .black, // Cambia el color del texto según tus preferencias
+              ),
+            ),
+            SizedBox(height: 20), // Espacio entre el texto y el DropdownButton
+
             DropdownButton<Pet>(
               value: pets.isNotEmpty
                   ? pets[0]
@@ -51,7 +67,8 @@ class PetListSelection extends StatelessWidget {
                   ? const Text("Select a Pet")
                   : const Text("No Pets Available"),
               style: const TextStyle(
-                  color: Color.fromARGB(255, 2, 21, 37)), // Personaliza el color del texto
+                  color: Color.fromARGB(
+                      255, 2, 21, 37)), // Personaliza el color del texto
               icon: const Icon(
                   Icons.arrow_downward), // Personaliza el icono de desplegar
               underline: Container(
