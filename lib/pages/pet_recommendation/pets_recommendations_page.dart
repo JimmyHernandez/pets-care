@@ -6,6 +6,8 @@ import '../my_pet_card/my_pets_page.dart';
 import '../guidelines/pets_guidelines_page.dart';
 import '../user_profile/user_profile_page.dart';
 import '../../functions - enyel/buildPetListSelection.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class Pet {
   final String name;
@@ -61,6 +63,18 @@ Future<List<Pet>> getPets(String type) async {
   }
 }
 
+Future<String> getImageUrl(String imagePath) async {
+  try {
+    final ref =
+        firebase_storage.FirebaseStorage.instance.ref().child(imagePath);
+    final url = await ref.getDownloadURL();
+    return url;
+  } catch (e) {
+    print('Error getting image URL: $e');
+    return ''; // Devuelve una URL de imagen por defecto o maneja el error según sea necesario
+  }
+}
+
 class PetDetails extends StatelessWidget {
   final Pet pet;
 
@@ -70,46 +84,73 @@ class PetDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pet Detail", style: TextStyle(
-          color: Colors.black, // Change the title color to black
-        ),
+        title: const Text(
+          "Pet Detail",
+          style: TextStyle(
+            color: Colors.black, // Change the title color to black
+          ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
           color: Colors.black, // Change this color to the one you prefer
         ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
+        backgroundColor:
+            Colors.white, // Change this color to the one you prefer
       ),
-
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Name: ${pet.name}',
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 10),
-            Text('Breed: ${pet.breed}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Type: ${pet.type}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Weight: ${pet.weight}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Food: ${pet.food}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Vaccine: ${pet.vaccine}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Bath Routine: ${pet.bathRoutine}',
-                style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Lifetime: ${pet.lifetime}', style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Text('Description: ${pet.description}',
-                style: const TextStyle(fontSize: 16)),
-            const SizedBox(height: 10),
-            Image.network(pet.imageUrl, height: 200, width: 200),
-          ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Name: ${pet.name}',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text('Breed: ${pet.breed}', style: TextStyle(fontSize: 16)),
+                    Text('Type: ${pet.type}', style: TextStyle(fontSize: 16)),
+                    Text('Weight: ${pet.weight}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Food: ${pet.food}', style: TextStyle(fontSize: 16)),
+                    Text('Vaccine: ${pet.vaccine}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Bath Routine: ${pet.bathRoutine}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Lifetime: ${pet.lifetime}',
+                        style: TextStyle(fontSize: 16)),
+                    Text('Description: ${pet.description}',
+                        style: TextStyle(fontSize: 16)),
+                    SizedBox(height: 10),
+                    FutureBuilder<String>(
+                      future: getImageUrl(pet.imageUrl),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<String> snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        } else if (snapshot.hasError) {
+                          return Text('Error: ${snapshot.error}');
+                        } else {
+                          return Image.network(
+                            snapshot.data!,
+                            height: 200,
+                            width: 200,
+                          );
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -148,169 +189,212 @@ class PetCard extends StatelessWidget {
 class PetsRecommendations extends StatelessWidget {
   final List<Pet> dogs;
   final List<Pet> cats;
-  const PetsRecommendations({super.key, required this.dogs, required this.cats});
+  const PetsRecommendations({Key? key, required this.dogs, required this.cats});
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Pet's Recommendations", style: TextStyle(
-          color: Colors.black, // Change the title color to black
-        ),
-        ),
-        centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Colors.black, // Change this color to the one you prefer
-        ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: SizedBox(
-          height: 80.0, // Adjust the height as needed
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.home),
-                tooltip: "Home", // You can change this to any icon you prefer
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MainScreen()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.pets),
-                tooltip: "My Pet's",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyPets()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.recommend),
-                tooltip: "Pet's Guidelines",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PetsGuidelines()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.abc),
-                tooltip: ("Pet's Recommendations"),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return FutureBuilder<List<List<Pet>>>(
-                          future: Future.wait([getPets('dog'), getPets('cat')]),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return const CircularProgressIndicator();
-                            } else if (snapshot.hasError) {
-                              return Text('Error: ${snapshot.error}');
-                            } else {
-                              List<Pet> dogs = snapshot.data![0];
-                              List<Pet> cats = snapshot.data![1];
-                              return PetsRecommendations(
-                                dogs: dogs,
-                                cats: cats,
-                              );
-                            }
-                          },
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
-              IconButton(
-                icon: const Icon(Icons.person),
-                tooltip: "Edit Profile",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => UserProfile()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-
-
-
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
-              'assets/images/dog_icon.png', 'Dogs'),
-          _buildInkWell(context, 'View Cats', cats, Colors.green,
-              'assets/images/cat_icon.png', 'Cats'),
-        ],
-      ),
-    );
-  }
-
-
-  Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
-      Color color, String imagePath, String pageTitle) {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder: (context) =>
-                PetListSelection(pets: pets, title: pageTitle),
-          ),
+          MaterialPageRoute(builder: (context) => const MainScreen()),
         );
+        return false;
       },
-      child: Card(
-        color: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: SizedBox(
-          height: 250,
-          width: 250,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                imagePath,
-                height: 100,
-                width: 100,
-              ),
-              const SizedBox(height: 10),
-              Text(
-                label,
-                style: const TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                ),
-              ),
-            ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Pet's Recommendations",
+            style: TextStyle(
+              color: Colors.black,
+            ),
           ),
+          centerTitle: true,
+          iconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+          backgroundColor: Colors.white,
+        ),
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          child: SizedBox(
+            height: 80.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.home),
+                  tooltip: "Home",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.pets),
+                  tooltip: "My Pet's",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyPets()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.recommend),
+                  tooltip: "Pet's Guidelines",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PetsGuidelines()),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.abc),
+                  tooltip: ("Pet's Recommendations"),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FutureBuilder<List<List<Pet>>>(
+                            future:
+                                Future.wait([getPets('dog'), getPets('cat')]),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const CircularProgressIndicator();
+                              } else if (snapshot.hasError) {
+                                return Text('Error: ${snapshot.error}');
+                              } else {
+                                List<Pet> dogs = snapshot.data![0];
+                                List<Pet> cats = snapshot.data![1];
+                                return PetsRecommendations(
+                                  dogs: dogs,
+                                  cats: cats,
+                                );
+                              }
+                            },
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.person),
+                  tooltip: "Edit Profile",
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => UserProfile()),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'Welcome to the Pets Recommendations Section!',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const Text(
+              'Here you can choose your favorite pet to see specific recommendations by breed and get more important information about your pet.',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 150),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
+                        'assets/images/dog_icon.png', 'Dogs'),
+                    Text(
+                      'Explore our curated list of dog breeds.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    _buildInkWell(context, 'View Cats', cats, Colors.green,
+                        'assets/images/cat_icon.png', 'Cats'),
+                    Text(
+                      'Discover various cat breeds and their characteristics.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+Widget _buildInkWell(BuildContext context, String label, List<Pet> pets,
+    Color color, String imagePath, String pageTitle) {
+  return InkWell(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PetListSelection(pets: pets, title: pageTitle),
+        ),
+      );
+    },
+    child: Card(
+      color: color,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: SizedBox(
+        height: 250,
+        width: 250,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imagePath,
+              height: 100,
+              width: 100,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
 
 class PetList extends StatelessWidget {
@@ -322,16 +406,18 @@ class PetList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pet's List", style: TextStyle(
-          color: Colors.black, // Change the title color to black
-        ),
+        title: const Text(
+          "Pet's List",
+          style: TextStyle(
+            color: Colors.black, // Change the title color to black
+          ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
           color: Colors.black, // Change this color to the one you prefer
         ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
+        backgroundColor:
+            Colors.white, // Change this color to the one you prefer
       ),
       body: ListView.builder(
         itemCount: pets.length,
