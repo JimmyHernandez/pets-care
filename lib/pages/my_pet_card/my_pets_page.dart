@@ -273,7 +273,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -290,7 +290,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -307,7 +307,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -324,7 +324,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -352,7 +352,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -368,7 +368,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -385,7 +385,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -402,7 +402,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -430,7 +430,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -447,7 +447,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -464,7 +464,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -481,7 +481,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -508,7 +508,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -525,7 +525,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -542,7 +542,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -559,7 +559,7 @@ class HomeScreen extends StatelessWidget {
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.blue,
+                                          color: Colors.white,
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here

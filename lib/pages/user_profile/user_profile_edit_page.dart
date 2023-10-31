@@ -61,21 +61,16 @@ class _UserProfileEditState extends State<UserProfileEdit> {
       ),
 
       body: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(675, 25, 675, 25),
+        padding: const EdgeInsetsDirectional.fromSTEB(250, 25, 250, 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-
             const ImagePickerWidget(),
             const SizedBox(height: 30),
 
-            ListTile(
-              title: Text("Email: ${userid?.email} "),
-              // Replace with the user's email
-            ),
-            const SizedBox(height: 30),
-
-            TextFormField(
+        SizedBox(
+          width: 400,
+              child: TextFormField(
               controller: nameController,
               decoration: const InputDecoration(
                 labelText: 'Name',
@@ -94,10 +89,11 @@ class _UserProfileEditState extends State<UserProfileEdit> {
               },
             ),
             // You can also include buttons to edit or follow the user, or any other actions
-            const SizedBox(height: 16),
+           ),const SizedBox(height: 10),
             // Include your widgets here, such as ImagePickerWidget, TextFormField, and others
+
             ElevatedButton(
-              onPressed: () async {
+               onPressed: () async {
                 // Save the edited profile data
                 String editedName = nameController.text;
 
@@ -117,12 +113,48 @@ class _UserProfileEditState extends State<UserProfileEdit> {
                 );
               },
               child: const Text("Save"),
-            ),
+              ),
+            const SizedBox(height: 25),
 
+            AlertDialog(
+              title: Text('Delete Account from ${userid?.email}'),
+              content: Text('Are you sure you want to delete your account? This action cannot be undone, and all your data will be lost.'),
+              actions: [
+                 TextButton(
+                  onPressed: () {
+                    _deleteAccount(); // Call the delete account function
+                    Navigator.of(context).pop(); // Close the dialog
+                  },
+                  child: Text('Delete'),
+                ),
+              ],
+            ),
+               const SizedBox(height: 16),
           ],
         ),
       ),
     );
+  }
+}
+
+Future<void> _deleteAccount() async {
+  try {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      await user.delete();
+      if (kDebugMode) {
+        print('Account deleted successfully.');
+      }
+
+    } else {
+      if (kDebugMode) {
+        print('No user signed in.');
+      }
+    }
+  } catch (e) {
+    if (kDebugMode) {
+      print('Error deleting account: $e');
+    }
   }
 }
 
