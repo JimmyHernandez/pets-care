@@ -5,9 +5,7 @@ class PetListSelection extends StatelessWidget {
   final List<Pet> pets;
   final String title;
 
-  const PetListSelection({
-    Key? key,
-    required this.pets,
+  const PetListSelection({super.key, required this.pets,
     required this.title,
   });
 
@@ -36,7 +34,7 @@ class PetListSelection extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 340,
             width: double.infinity,
             child: Image.asset(
@@ -44,8 +42,8 @@ class PetListSelection extends StatelessWidget {
               fit: BoxFit.contain, // Cambia la propiedad de ajuste aquí
             ),
           ),
-          SizedBox(height: 20),
-          Text(
+          const SizedBox(height: 20),
+          const Text(
             'Select a breed to explore recommendations.',
             style: TextStyle(
               fontSize: 20,
@@ -54,15 +52,15 @@ class PetListSelection extends StatelessWidget {
                   .black, // Cambia el color del texto según tus preferencias
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             sectionText, // Reemplaza '.' con 'sectionText'
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           DropdownButton<Pet>(
             value: pets.isNotEmpty ? pets[0] : null,
             items: pets.map((Pet pet) {

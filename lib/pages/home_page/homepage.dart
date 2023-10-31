@@ -247,6 +247,7 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                             labelColor: const Color(0xFF0F1113),
                                             unselectedLabelColor: const Color(0xFF57636C),
                                             tabs: const [
+
                                               Tab(text: 'Welcome'),
                                               Tab(text: 'Our Mission'),
                                               Tab(text: 'Our Team'),
@@ -258,35 +259,8 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                           child: TabBarView(
                                             controller: tabController,
                                             children: [
-                                              //tab "Welcome"
-                                              Container(
-                                                  width: 300, // Set the width of the container
-                                                  padding: const EdgeInsets.all(20), // Add padding for spacing
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(color: Colors.black), // Add a border
-                                                    borderRadius: BorderRadius.circular(10), // Add rounded corners
-                                                  ),
-                                                  child: const Column(
-                                                    children: <Widget>[
-                                                      Text(
-                                                        'Welcome', // Your title text
-                                                        style: TextStyle(
-                                                          fontSize: 24, // Font size
-                                                          fontWeight: FontWeight.bold, // Bold style
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 10), // Add some space between title and description
-                                                      Text(
-                                                        "This web application", // Your description text
-                                                        style: TextStyle(
-                                                          fontSize: 16, // Font size
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  )
-                                              ),
-                                              // Add your content here
-                                              // tab "Our Mission"
+
+                                           // tab "Welcome"
                                            Container(
                                                   width: 300, // Set the width of the container
                                                   padding: const EdgeInsets.all(20), // Add padding for spacing
@@ -294,34 +268,80 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                     border: Border.all(color: Colors.black), // Add a border
                                                     borderRadius: BorderRadius.circular(10), // Add rounded corners
                                                   ),
+
                                                   child: const Column(
                                                     children: <Widget>[
-                                                      Text(
-                                                        'Our Mission', // Your title text
+                                                      Text('Welcome', // Your title text
                                                         style: TextStyle(
-                                                          fontSize: 24, // Font size
+                                                          fontSize: 27, // Font size
                                                           fontWeight: FontWeight.bold, // Bold style
                                                         ),
                                                       ),
                                                       SizedBox(height: 10),
 
                                                       Padding(
-                                                        padding: EdgeInsetsDirectional.fromSTEB(75, 25, 75, 25),
-                                                        child: Text( "This web application was created with the idea of helping anyone who has a pet or wants to have one to have access to useful information to maintain a healthy pet for the well-being of all of us."
-                                                            " Having healthy pets helps us, their owners, have better health and quality of life. If it is true that our pets help us a lot as emotional support and that it is a significant relief in our lives,"
-                                                            " it is also true that without proper care, our pet could suffer from different diseases that are transmitted to us humans.""\n\nDiseases such as Rabies, Toxoplasmosis, Leptospirosis, Scabies and "
-                                                            " respiratory diseases can significantly affect our health. This is why here you can find information for your pet, this information is designed to be short and precise and easy to understand."
-                                                            " You will find specific information for a particular breed such as the recommended food, its ideal weight, life expectancy, among others. We also have general help guides for pets classified as mixed."
-                                                            " This space is for everyone, as part of the development process at the moment we only have two species of pets: dogs and cats. Thank you for being part of the change to have a better quality of life"
-                                                            " with our pet.", // Your description text
+                                                        padding: EdgeInsetsDirectional.fromSTEB(200, 25, 200, 25),
+                                                        child: Text(
+                                                          "It's a pleasure to have you here and welcome you to our exciting web app for pet lovers. As a software engineering student with a passion for development,\n"
+                                                          "you are sure to appreciate the perfect combination of technology and love for animals that we offer. On this platform, you can create a personalized profile\n"
+                                                          "for your pet, where you can store all the important information, from its name and breed to its dietary preferences, among others.\n\nAdditionally, our app will\n"
+                                                          "provide you with valuable care tips, training tips, and informative articles to ensure your furry companion is happy and healthy. Technology is at the heart of\n"
+                                                          "this experience, and we're sure you'll find opportunities to apply and improve your programming skills as you explore all the exciting features we have in store\n"
+                                                          "for you.",
                                                           style: TextStyle(
-                                                            fontSize: 16,
+                                                            fontSize: 18,
                                                             fontWeight: FontWeight.w500,
                                                           ),
+                                                          textAlign: TextAlign.center,
                                                         ),
                                                       ),
                                                       SizedBox(height: 10),
-                                                      // Add some space between title and description
+
+                                                  ],
+                                                  )
+                                              ),
+
+                                              // tab "Our Mission"
+                                              Container(
+                                                  width: 300, // Set the width of the container
+                                                  padding: const EdgeInsets.all(20), // Add padding for spacing
+                                                  decoration: BoxDecoration(
+                                                    border: Border.all(color: Colors.black), // Add a border
+                                                    borderRadius: BorderRadius.circular(10), // Add rounded corners
+                                                  ),
+
+                                                  child: const Column(
+                                                    children: <Widget>[
+                                                      Text('Our Mission', // Your title text
+                                                        style: TextStyle(
+                                                          fontSize: 27, // Font size
+                                                          fontWeight: FontWeight.bold, // Bold style
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 10),
+
+                                                      Padding(
+                                                        padding: EdgeInsetsDirectional.fromSTEB(200, 25, 200, 25),
+                                                        child: Text(
+                                                          "This web application was created with the idea of helping anyone who has a pet or wants to have one to have access to useful information to maintain a\n"
+                                                              "healthy pet for the well-being of all of us. Having healthy pets helps us, their owners, have better health and quality of life. If it is true that our\n"
+                                                              "pets help us a lot as emotional support and that it is a significant relief in our lives, it is also true that without proper care, our pet could suffer\n"
+                                                              "from different diseases that are transmitted to us humans.\n\n"
+
+                                                              "Diseases such as Rabies, Parvo virus, Leptospirosis, Scabies and several instestinal parasites that affect their health and ours too. This is why here you can find\n"
+                                                              "information for your pet, this information is designed to be short and precise and easy to understand. You will find specific information for a particular\n"
+                                                              "breed such as the recommended food, its ideal weight, life expectancy, among others. We also have general help guides for pets classified as mixed. This space\n"
+                                                              "is for everyone, as part of the development process at the moment we only have two species of pets: dogs and cats. Thank you for being part of the change\n"
+                                                              "to have a better quality of life with our pet.",
+                                                          style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontWeight: FontWeight.w500,
+                                                          ),
+                                                          textAlign: TextAlign.center,
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 10),
+
                                                     ],
                                                   )
                                               ),
@@ -337,7 +357,7 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                   child:  const Center(
 
                                                     child: Row(
-                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                      mainAxisAlignment: MainAxisAlignment.center,
                                                       children: <Widget>[
 
                                                         Padding(
@@ -347,13 +367,13 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                               children: <Widget>[
                                                                 CircleAvatar(
                                                                   backgroundImage: AssetImage('assets/images/jimmy.png'), // Replace with the path to your image
-                                                                  radius: 100, // Adjust the size of the profile picture
+                                                                  radius: 75, // Adjust the size of the profile picture
                                                                 ),
                                                                 SizedBox(height: 25),
                                                                 Text(
                                                                   'Jimmy Hernandez Rivera',
                                                                   style: TextStyle(
-                                                                    fontSize: 24,
+                                                                    fontSize: 20,
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                                 ),
@@ -366,28 +386,25 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                                 ),
                                                                 SizedBox(height: 15),
                                                                 Text(
-                                                                      "I am a dynamic person, eager to learn. I have had the opportunity to  \n"
-                                                                      "develop my programming skills thanks to Holberton's intensive course, \n"
-                                                                      "definitely a decision that marked a significant change in my life and \n"
-                                                                      "can be reflected in this project that we carry out with a lot of love \n"
+                                                                      "I am a dynamic person, eager to learn. I have had the opportunity to\n"
+                                                                      "develop my programming skills thanks to Holberton's intensive course,\n"
+                                                                      "definitely a decision that marked a significant change in my life and\n"
+                                                                      "can be reflected in this project that we carry out with a lot of love\n"
                                                                       "and respect for our pets. I dedicate this project to my family, specif\n"
-                                                                      "ically to my twin sister, who inspired me to make this web application\n"
+                                                                      "ically to my twin sister, who inspired me to make this web application\n "
                                                                       "after graduating as a Veterinary Assistant. I love animals, my pet is a\n"
-                                                                      "Gold Retriever named Max and he was my grandfather's companion. \n"
-                                                                      "After my grandfather left this world, I stayed with Max and he has filled\n"
-                                                                      "me with a lot of happiness in difficult times, enough inspiration to continue dev\n"
+                                                                      "Gold Retriever named Max and he was my grandfather's companion. After my\n"
+                                                                      "grandfather left this world, I stayed with Max and he has filled me with a\n"
+                                                                      "lot of happiness in difficult times, enough inspiration to continue dev\n"
                                                                       "eloping this website for the benefit of all our pets and, in turn, ourselves.",
                                                                   style: TextStyle(
                                                                     fontSize: 16,
                                                                   ),
+                                                                  textAlign: TextAlign.center,
                                                                 ),
                                                                 SizedBox(height: 2),
-
-
                                                               ],
-
                                                             ),
-
                                                           ),
                                                         ),
                                                         Padding(
@@ -397,13 +414,13 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                               children: <Widget>[
                                                                 CircleAvatar(
                                                                   backgroundImage: AssetImage('assets/images/enyel.png'), // Replace with the path to your image
-                                                                  radius: 100, // Adjust the size of the profile picture
+                                                                  radius: 75, // Adjust the size of the profile picture
                                                                 ),
                                                                 SizedBox(height: 25),
                                                                 Text(
                                                                   'Enyel Feliz Mercado',
                                                                   style: TextStyle(
-                                                                    fontSize: 24,
+                                                                    fontSize: 20,
                                                                     fontWeight: FontWeight.bold,
                                                                   ),
                                                                 ),
@@ -423,14 +440,11 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                                   style: TextStyle(
                                                                     fontSize: 16,
                                                                   ),
+                                                                  textAlign: TextAlign.center,
                                                                 ),
                                                                 SizedBox(height: 2),
-
-
                                                               ],
-
                                                             ),
-
                                                           ),
                                                         ),
                                                       ],

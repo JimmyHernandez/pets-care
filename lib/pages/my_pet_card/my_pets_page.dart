@@ -217,21 +217,21 @@ class HomeScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               children: [
                                 Positioned(
-                                  bottom: 35,
-                                  child: Container(
-                                    width: 450,
-                                    // Set the image container width as per your preference
-                                    height: 250,
-                                    // Set the image container height as per your preference
-                                    color: Colors.transparent,
-                                    // Make the container transparent
-                                    child: Image.network(
-                                      'https://static.vecteezy.com/system/resources/thumbnails/025/390/071/small/a-cute-dog-cartoon-vector-icon-illustration-generated-by-ai-photo.jpg',
-                                      // Replace with your image URL
-                                      width: 225,
-                                      // Set the image width as per your preference
-                                      height: 225, // Set the image height as per your preference
+                                  bottom:125,
+                                  child: Text(data[index]['pet_name'],
+                                    style: const TextStyle(
+                                      fontSize: 55,
+                                      // You can adjust the font size as needed
+                                      fontWeight: FontWeight.bold,
+                                      // You can change the font weight if desired
+                                      color: Colors.white,
+                                      // You can set the text color to your preference
+                                      fontFamily: 'Arial', // You can specify the font family
+                                      // Other text style properties can be added here
                                     ),
+                                    textAlign: TextAlign
+                                        .left, // Set the text alignment to center
+                                    // Set the text direction (ltr or rtl)
                                   ),
                                 ),
                               ],

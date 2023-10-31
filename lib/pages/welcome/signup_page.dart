@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import '../../functions - jimmy/email_confirmation.dart';
 import '../../functions - jimmy/user_registration.dart';
 import '../home_page/homepage.dart';
-import 'login_page.dart';
-
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

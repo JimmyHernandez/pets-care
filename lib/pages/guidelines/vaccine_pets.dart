@@ -52,60 +52,58 @@ class GuidelinesLayoutWidgetState
                 // Replace the Image widget with your desired image widget.
 
                 // Guidelines
-                const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Guidelines',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-                // Guidelines Text
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: Text(
-                    "Vaccinating your pets is an important part of responsible pet ownership, ensuring their health and preventing the spread of certain diseases. ",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-
-                // Care Tips
-                const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Care tips:',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.normal,
-                    ),
+                const Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16, 35, 16, 16),
+                        child: Text(
+                          'Guidelines',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                      // Guidelines Text
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16, 0, 16, 35),
+                        child: Text(
+                          "Vaccinating your pets is an important part of responsible pet ownership, ensuring their health and preventing the spread of certain diseases.",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 // List of Care Tips
                 const Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(95, 12, 12, 12),
+                  padding: EdgeInsetsDirectional.fromSTEB(200, 12, 200, 12),
                   child: Column(
                     children: <Widget>[
                       CareListItem("Core Vaccines: These are essential for most pets and protect against common and potentially deadly diseases. For dogs, core vaccines often include rabies, distemper, parvovirus, and adenovirus. Cats typically receive core vaccines for rabies, feline viral rhinotracheitis, calicivirus, and panleukopenia."),
-                      SizedBox(height: 12), // Add space here
-                      CareListItem("Core Vaccines: These are essential for most pets and protect against common and potentially deadly diseases. For dogs, core vaccines often include rabies, distemper, parvovirus, and adenovirus. Cats typically receive core vaccines for rabies, feline viral rhinotracheitis, calicivirus, and panleukopenia."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25),
+                      // Add space here
                       CareListItem("Vaccination Schedule: Puppies and kittens usually receive a series of vaccinations over several months to build immunity. Afterward, adult pets typically receive booster shots to maintain protection. Your vet will provide a specific schedule."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25),
+                      // Add space here
                       CareListItem("Lifestyle Considerations: Your pet's lifestyle and environment also play a role. For example, if your dog frequently interacts with other dogs in a dog park, certain vaccines like Bordetella might be advisable. If your cat is strictly indoors, some vaccines may be unnecessary."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25),
+                      // Add space here
                       CareListItem("Local Regulations: Be aware of local regulations regarding pet vaccinations. Some areas require specific vaccines, like rabies, by law."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25),
+                      // Add space here
                       CareListItem("Side Effects: While vaccines are generally safe, there can be side effects. Monitor your pet for any unusual reactions and report them to your veterinarian."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25),
+                      // Add space here
                       CareListItem("Regular Check-ups: Regular vet check-ups are essential for keeping your pet's vaccinations up to date and monitoring their overall health."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25), // Add space here
+
                       CareListItem("Remember that vaccination is just one aspect of pet care. Proper nutrition, exercise, and a loving environment are equally important. Always consult with your veterinarian to create a vaccination plan tailored to your pet's individual needs."),
-                      SizedBox(height: 12), // Add space here
+                      SizedBox(height: 25), // Add space here
                     ],
                   ),
                 )

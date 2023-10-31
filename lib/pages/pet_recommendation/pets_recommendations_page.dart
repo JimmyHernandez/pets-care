@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -6,7 +7,6 @@ import '../my_pet_card/my_pets_page.dart';
 import '../guidelines/pets_guidelines_page.dart';
 import '../user_profile/user_profile_page.dart';
 import '../../functions - enyel/buildPetListSelection.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class Pet {
@@ -37,7 +37,7 @@ class Pet {
 
 Future<List<Pet>> getPets(String type) async {
   final response = await http.get(Uri.parse(
-      'https://demo2-8fd85-default-rtdb.firebaseio.com/${type}_breeds.json'));
+      'https://petsweb-390e8-default-rtdb.firebaseio.com/${type}_breeds.json'));
 
   if (response.statusCode == 200) {
     final List<dynamic> data = json.decode(response.body);
@@ -52,10 +52,9 @@ Future<List<Pet>> getPets(String type) async {
         bathRoutine: item['bath_routine'] ?? '',
         lifetime: item['lifetime'] ?? '',
         description: item['description'] ?? '',
-        imageUrl: item['image_url'] ?? '',
-      );
+        imageUrl: item['image_path'] ?? '',
+              );
     }).toList();
-
     pets.sort((a, b) => a.name.compareTo(b.name));
     return pets;
   } else {
@@ -65,12 +64,19 @@ Future<List<Pet>> getPets(String type) async {
 
 Future<String> getImageUrl(String imagePath) async {
   try {
-    final ref =
-        firebase_storage.FirebaseStorage.instance.ref().child(imagePath);
+    final ref = firebase_storage.FirebaseStorage.instance.ref().child(imagePath);
     final url = await ref.getDownloadURL();
+
+    if (kDebugMode) {
+      print(url);
+    }
     return url;
+
   } catch (e) {
-    print('Error getting image URL: $e');
+
+    if (kDebugMode) {
+      print('Error getting image URL: $e');
+    }
     return ''; // Devuelve una URL de imagen por defecto o maneja el error según sea necesario
   }
 }
@@ -103,49 +109,63 @@ class PetDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.network(
+                      pet.imageUrl,
+                      height: 400,
+                      width: 400,
+                      loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) {
+                          return child;
+                        }
+                        return Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                                : null,
+                          ),
+                        );
+                      },
+                      errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                        return const Text('Failed to load image');
+                      },
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      pet.name,
+                      style:
+                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                )
+              ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Name: ${pet.name}',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 10),
-                    Text('Breed: ${pet.breed}', style: TextStyle(fontSize: 16)),
-                    Text('Type: ${pet.type}', style: TextStyle(fontSize: 16)),
+                    const SizedBox(height: 10),
+                    Text('Breed: ${pet.breed}', style: const TextStyle(fontSize: 16)),
+                    Text('Type: ${pet.type}', style: const TextStyle(fontSize: 16)),
                     Text('Weight: ${pet.weight}',
-                        style: TextStyle(fontSize: 16)),
-                    Text('Food: ${pet.food}', style: TextStyle(fontSize: 16)),
+                        style: const TextStyle(fontSize: 16)),
+                    Text('Food: ${pet.food}', style: const TextStyle(fontSize: 16)),
                     Text('Vaccine: ${pet.vaccine}',
-                        style: TextStyle(fontSize: 16)),
+                        style: const TextStyle(fontSize: 16)),
                     Text('Bath Routine: ${pet.bathRoutine}',
-                        style: TextStyle(fontSize: 16)),
+                        style: const TextStyle(fontSize: 16)),
                     Text('Lifetime: ${pet.lifetime}',
-                        style: TextStyle(fontSize: 16)),
+                        style: const TextStyle(fontSize: 16)),
                     Text('Description: ${pet.description}',
-                        style: TextStyle(fontSize: 16)),
-                    SizedBox(height: 10),
-                    FutureBuilder<String>(
-                      future: getImageUrl(pet.imageUrl),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<String> snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return CircularProgressIndicator();
-                        } else if (snapshot.hasError) {
-                          return Text('Error: ${snapshot.error}');
-                        } else {
-                          return Image.network(
-                            snapshot.data!,
-                            height: 200,
-                            width: 200,
-                          );
-                        }
-                      },
-                    ),
+                        style: const TextStyle(fontSize: 16)),
+                    Text('image_path: ${pet.imageUrl}',
+                        style: const TextStyle(fontSize: 16)),
+                    const SizedBox(height: 10),
                   ],
                 ),
               ),
@@ -156,7 +176,6 @@ class PetDetails extends StatelessWidget {
     );
   }
 }
-
 
 class PetCard extends StatelessWidget {
   final Pet pet;
@@ -189,7 +208,8 @@ class PetCard extends StatelessWidget {
 class PetsRecommendations extends StatelessWidget {
   final List<Pet> dogs;
   final List<Pet> cats;
-  const PetsRecommendations({Key? key, required this.dogs, required this.cats});
+
+  const PetsRecommendations({super.key, required this.dogs, required this.cats});
 
   @override
   Widget build(BuildContext context) {
@@ -302,25 +322,34 @@ class PetsRecommendations extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'Welcome to the Pets Recommendations Section!',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center, // Vertically center the content
+                  children: [
+                    SizedBox(height: 140),
+                    Text(
+                      "Welcome to Pet's Recommendations Section!",
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'Here you can choose your favorite pet to see specific recommendations by breed and get more important information about your pet.',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
-            const Text(
-              'Here you can choose your favorite pet to see specific recommendations by breed and get more important information about your pet.',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 150),
+
+            const SizedBox(height: 105),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -328,10 +357,11 @@ class PetsRecommendations extends StatelessWidget {
                   children: [
                     _buildInkWell(context, 'View Dogs', dogs, Colors.blue,
                         'assets/images/dog_icon.png', 'Dogs'),
-                    Text(
+                    const SizedBox(height: 10),
+                    const Text(
                       'Explore our curated list of dog breeds.',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 22),
                     ),
                   ],
                 ),
@@ -339,10 +369,11 @@ class PetsRecommendations extends StatelessWidget {
                   children: [
                     _buildInkWell(context, 'View Cats', cats, Colors.green,
                         'assets/images/cat_icon.png', 'Cats'),
-                    Text(
+                    const SizedBox(height: 10),
+                    const Text(
                       'Discover various cat breeds and their characteristics.',
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 22),
                     ),
                   ],
                 ),
@@ -483,8 +514,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-}
-
-void main() {
-  runApp(MyApp());
 }

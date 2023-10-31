@@ -88,7 +88,6 @@ class LogInPageState extends State<LogInPage> {
     return Scaffold(
       body:
       Container(
-        padding: const EdgeInsets.only(top: 20, bottom: 20),
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
@@ -96,11 +95,13 @@ class LogInPageState extends State<LogInPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
             Image.asset(
               'assets/images/PetsCareLogo.png',
-              width: 300,
-              height: 300,
+              width: 450,
+              height: 450,
             ),
+
             Expanded(
               child: Center(
                 child: _isLoading
@@ -125,7 +126,7 @@ class LogInPageState extends State<LogInPage> {
                                       TextFormField(
                                         controller: _emailController,
                                         decoration: const InputDecoration(
-                                          labelText: 'Email',
+                                          labelText: 'E-mail',
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
@@ -140,7 +141,7 @@ class LogInPageState extends State<LogInPage> {
                                           return null;
                                         },
                                       ),
-                                      const SizedBox(height: 30),
+                                      const SizedBox(height: 10),
 
                                       TextFormField(
                                         controller: _passwordController,
@@ -201,7 +202,6 @@ class LogInPageState extends State<LogInPage> {
                                   ),
                                 ),
                               ),
-
                               Column(
                                 children: [
                                   const SizedBox(height: 10),
@@ -213,7 +213,6 @@ class LogInPageState extends State<LogInPage> {
                                         _logInWithEmailAndPassword();
                                       },
                                       child: Container(
-
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 35, horizontal: 60),
                                         child: const Text(
@@ -283,7 +282,7 @@ class LogInPageState extends State<LogInPage> {
                               const SizedBox(height: 32.0, width: 32.0),
                               Column(
                                 children: [
-                                  const SizedBox(height: 80),
+                                  const SizedBox(height: 40),
                                   Material(
                                     color: const Color(0xff0849ea),
                                     borderRadius: BorderRadius.circular(10),

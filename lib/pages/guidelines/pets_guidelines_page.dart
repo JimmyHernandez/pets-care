@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pets_care/pages/guidelines/vaccine_guide.dart';
 import 'package:pets_care/pages/guidelines/vaccine_pets.dart';
 import 'package:pets_care/pages/user_profile/user_profile_page.dart';
 import 'package:pets_care/pages/welcome/login_page.dart';
@@ -158,44 +159,40 @@ class GuidelinesLayoutWidgetState
                 // Image
                 // Replace the Image widget with your desired image widget.
                 // Guidelines
-                const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Guidelines',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                    ),
+                const Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16, 35, 16, 16),
+                        child: Text(
+                          'Guidelines',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ),
+                      // Guidelines Text
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(16, 0, 16, 35),
+                        child: Text(
+                          "Here you'll find general guidelines for pets care, general information for good care of our friend.",
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                // Guidelines Text
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                  child: Text(
-                    "Here you'll find general guidelines for pets care, general information for a good care of our friend.",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-                // Care Tips
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(16, 5, 16, 16),
-                  child: Text(
-                    'Care tips:',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-                // Care Tips List (Replace with your items)
+
                 // Example item
                 buildListItem('The correct way to feed my pet'),
                 buildListItem('Bath routine'),
                 buildListItem('Recommended vaccines'),
                 buildListItem('Exercise'),
+                buildListItem('Vaccine guide'),
               ],
             ),
           ),
@@ -204,8 +201,8 @@ class GuidelinesLayoutWidgetState
     );
   }
   Widget buildListItem(String text) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+    return Padding(                  //left/top/right/bottom
+      padding: const EdgeInsets.fromLTRB(200, 5, 200, 15),
       child: InkWell(
         onTap: () {
           // Perform actions based on the tapped item
@@ -235,6 +232,15 @@ class GuidelinesLayoutWidgetState
             );
             // Handle the fourth item
           }
+
+          else if (text == 'Vaccine guide') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const VaccineGuide()),
+            );
+            // Handle the fourth item
+          }
+
          // Handle item click
         },
         child: Container(
