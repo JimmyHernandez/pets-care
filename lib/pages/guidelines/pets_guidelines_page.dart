@@ -29,29 +29,17 @@ class GuidelinesLayoutWidgetState
        onTap: () {},
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Pet's Guidelines",
-            style: TextStyle(
-              color: Colors.black, // Change the title color to black
-            ),
+          title: const Text("Pet's Guidelines", style: TextStyle(
+            color: Colors.black, // Change the title color to black
+            // fontFamily: 'YourFontFamily', // Set the desired font family
+            fontSize: 35, // Set the desired font size
+            fontWeight: FontWeight.bold, // Set the desired font weight
+            // You can also use other text style properties like letterSpacing, wordSpacing, etc.
+          ),
           ),
           centerTitle: true,
-          backgroundColor: Colors.white, // Chan
-          // Change this color to the one you prefer
-          actions: [const SizedBox(width: 1),
-            // logout button
-            IconButton(
-              icon: const Icon(Icons.logout, color: Colors.black), // Set the icon color to blue
-              tooltip: 'Logout',
-              color: Colors.black, // Set the button's text color to white
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LogInPage()),
-                );
-              },
-            )
-          ],
+          backgroundColor: Colors
+              .white, // Change this color to the one you prefer
         ),
         bottomNavigationBar:
         BottomAppBar(

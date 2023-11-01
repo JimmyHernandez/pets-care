@@ -8,6 +8,7 @@ import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
 import 'package:pets_care/pages/user_profile/user_profile_page.dart';
 import '../../functions - jimmy/delete_pet_profile.dart';
 import '../../functions - jimmy/flip_card.dart';
+import '../health_records/health_record.dart';
 import '../pet_recommendation/pets_recommendations_page.dart';
 import '../pets_profile/pets_profile_edit_page.dart';
 import '../home_page/homepage.dart';
@@ -59,6 +60,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My Pet's", style: TextStyle(
           color: Colors.black, // Change the title color to black
+         // fontFamily: 'YourFontFamily', // Set the desired font family
+          fontSize: 35, // Set the desired font size
+          fontWeight: FontWeight.bold, // Set the desired font weight
+          // You can also use other text style properties like letterSpacing, wordSpacing, etc.
         ),
         ),
         centerTitle: true,
@@ -175,9 +180,11 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
-      body: FutureBuilder(
+      body:
+      FutureBuilder(
           future: getData(),
           builder: (context, AsyncSnapshot<List<DocumentSnapshot>> snapshot) {
+
             if (snapshot.connectionState == ConnectionState.waiting) {
               // Display a loading indicator while fetching data
               return const Center(child: CircularProgressIndicator());
@@ -239,7 +246,6 @@ class HomeScreen extends StatelessWidget {
                           ),
 
                           backWidget: Container(
-
                             // Your front content goes here
                             color: Colors.lightBlueAccent,
                             width: 650,
@@ -248,25 +254,17 @@ class HomeScreen extends StatelessWidget {
                             // Set the height as per your preference
                             alignment: Alignment.center,
                             // Center align the content
-
-                            child:
-                            ListTile(
-
+                            child: ListTile(
                               title: Row(
-                                mainAxisAlignment: MainAxisAlignment
-                                    .spaceAround,
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-
                                 children: [
                                   const SizedBox(width: 2),
-
                                   // Left Column with labels
                                   const Column(
-
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-
                                       Text("Pet Name:",
                                         style: TextStyle(
                                           fontSize: 15,
@@ -283,7 +281,7 @@ class HomeScreen extends StatelessWidget {
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
-
+                                      const SizedBox(height: 8),
                                       Text("Age:",
                                         style: TextStyle(
                                           fontSize: 15,
@@ -300,7 +298,7 @@ class HomeScreen extends StatelessWidget {
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
-
+                                      const SizedBox(height: 8),
                                       Text("Breed:",
                                         style: TextStyle(
                                           fontSize: 15,
@@ -317,7 +315,7 @@ class HomeScreen extends StatelessWidget {
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
-
+                                      const SizedBox(height: 8),
                                       Text("Weight:",
                                         style: TextStyle(
                                           fontSize: 15,
@@ -336,14 +334,11 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-
+                                  const SizedBox(height: 8),
                                   // Right Column with data
                                   Column(
-
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment
-                                        .start,
-
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
 
                                       Text(data[index]['pet_name'],
@@ -360,7 +355,7 @@ class HomeScreen extends StatelessWidget {
                                         textAlign: TextAlign
                                             .left, // Set the text alignment to center
                                         // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text(data[index]['age'],
                                         style: const TextStyle(
@@ -377,7 +372,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text(data[index]['breed'],
                                         style: const TextStyle(
@@ -394,7 +389,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text(data[index]['weight'],
                                         style: const TextStyle(
@@ -413,7 +408,7 @@ class HomeScreen extends StatelessWidget {
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
                                     ],
-                                  ),
+                                  ), const SizedBox(height: 8),
 
                                   const SizedBox(width: 2),
 
@@ -439,7 +434,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text("Treats:",
                                         style: TextStyle(
@@ -456,7 +451,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text("Pet Owner:",
                                         style: TextStyle(
@@ -473,7 +468,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text("Owner Phone:",
                                         style: TextStyle(
@@ -490,7 +485,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
                                     ],
                                   ),
 
@@ -517,7 +512,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text(data[index]['treats'],
                                         style: const TextStyle(
@@ -534,7 +529,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text(data[index]['pet_owner'],
                                         style: const TextStyle(
@@ -551,7 +546,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
 
                                       Text(data[index]['owner_phone'],
                                         style: const TextStyle(
@@ -568,7 +563,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ),
+                                      ), const SizedBox(height: 8),
                                     ],
                                   ),
                                   Column(
@@ -590,17 +585,13 @@ class HomeScreen extends StatelessWidget {
                                                 Icons.edit_document),
                                             // You can change the icon as needed
                                             onPressed: () {
-
                                               if (kDebugMode) {
                                                 print(data[index]['pet_id']);
                                               }
-
                                               String petid = data[index]['pet_id'];
-
                                               if (kDebugMode) {
                                                 print(petid);
                                               }
-
                                               Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
@@ -612,6 +603,32 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
+
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            bottom: 16.0),
+                                        // Adjust the padding as needed
+                                        child: Align(
+                                          alignment: Alignment.bottomLeft,
+                                          child: IconButton(
+                                            tooltip: "Health Records",
+                                            icon: const Icon(
+                                                Icons.safety_check), onPressed: () {
+
+
+                                            Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(builder: (context) =>  MyPetHealthApp()),
+                                            );
+
+                                          },
+                                           // You can change the icon as needed
+
+                                          ),
+                                        ),
+                                      ),
+
+
                                      Padding(
                                         padding: const EdgeInsets.only(
                                             bottom: 16.0),

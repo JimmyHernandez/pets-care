@@ -223,17 +223,17 @@ class PetsRecommendations extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Pet's Recommendations",
-            style: TextStyle(
-              color: Colors.black,
-            ),
+          title: const Text("Pet's Recommendations", style: TextStyle(
+            color: Colors.black, // Change the title color to black
+            // fontFamily: 'YourFontFamily', // Set the desired font family
+            fontSize: 35, // Set the desired font size
+            fontWeight: FontWeight.bold, // Set the desired font weight
+            // You can also use other text style properties like letterSpacing, wordSpacing, etc.
+          ),
           ),
           centerTitle: true,
-          iconTheme: const IconThemeData(
-            color: Colors.black,
-          ),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors
+              .white, // Change this color to the one you prefer
         ),
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
@@ -324,13 +324,13 @@ class PetsRecommendations extends StatelessWidget {
           children: [
             const Center(
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center, // Vertically center the content
                   children: [
-                    SizedBox(height: 140),
+                    SizedBox(height: 55),
                     Text(
-                      "Welcome to Pet's Recommendations Section!",
+                      "Recommendations by breed.",
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,

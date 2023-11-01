@@ -120,7 +120,6 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                         },
                                       ),
                                       const SizedBox(height: 1),
-
                                       TextFormField(
                                         controller: _ageController,
                                         decoration: const InputDecoration(
@@ -140,7 +139,6 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                         },
                                       ),
                                       const SizedBox(height: 1),
-
                                       TextFormField(
                                         controller: _weightController,
                                         decoration: const InputDecoration(
@@ -160,7 +158,6 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                         },
                                       ),
                                       const SizedBox(height: 1),
-
                                       TextFormField(
                                         controller: _foodController,
                                         decoration: const InputDecoration(
@@ -182,7 +179,6 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                         },
                                       ),
                                       const SizedBox(height: 1),
-
                                       TextFormField(
                                         controller: _treatsController,
                                         decoration: const InputDecoration(
@@ -196,7 +192,6 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                       ),
 
                                       const SizedBox(height: 1),
-
                                       TextFormField(
                                         controller: _ownerController,
                                         decoration: const InputDecoration(
@@ -210,7 +205,6 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                       ),
 
                                       const SizedBox(height: 1),
-
                                       TextFormField(
                                         controller: _phoneController,
                                         decoration: const InputDecoration(
@@ -227,6 +221,7 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                       // ... Other TextFormField widgets ...
                                       ElevatedButton(
                                         onPressed: () async {
+
                                           // Save the edited profile data
                                           String editedPetName = _petNameController.text;
                                           String editedAge = _ageController.text;
@@ -238,21 +233,39 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           String editedPhone = _phoneController.text;
 
                                           // Create a map with the data to update in the subcollection document
-                                          Map<String, dynamic> profileUpdates = {
-                                            'pet_name': editedPetName,
-                                            'age': editedAge,
-                                            'breed': editedBreed,
-                                            'weight': editedWeight,
-                                            'food': editedFood,
-                                            'treats': editedTreats,
-                                            'pet_owner': editedOwner,
-                                            'owner_phone': editedPhone,
-                                            // Add other fields to update here
-                                          };
+                                          Map<String, dynamic> profileUpdates = {};
+
+                                          if (editedPetName.isNotEmpty) {
+                                            profileUpdates['pet_name'] = editedPetName;
+                                          }
+                                          if (editedAge.isNotEmpty) {
+                                            profileUpdates['age'] = editedAge;
+                                          }
+                                          if (editedBreed.isNotEmpty) {
+                                            profileUpdates['breed'] = editedBreed;
+                                          }
+                                          if (editedWeight.isNotEmpty) {
+                                            profileUpdates['weight'] = editedWeight;
+                                          }
+                                          if (editedFood.isNotEmpty) {
+                                            profileUpdates['food'] = editedFood;
+                                          }
+                                          if (editedTreats.isNotEmpty) {
+                                            profileUpdates['treats'] = editedTreats;
+                                          }
+                                          if (editedOwner.isNotEmpty) {
+                                            profileUpdates['pet_owner'] = editedOwner;
+                                          }
+                                          if (editedPhone.isNotEmpty) {
+                                            profileUpdates['owner_phone'] = editedPhone;
+                                          }
+
                                           // Specify the sub collection document ID that you want to update
-                                          String collectionDocId =petId;
+                                          String collectionDocId = petId;
+
                                           // Call the updated updateProfile method to update the sub collection document
                                           await updateProfile(userid!.uid, collectionDocId, profileUpdates);
+
                                           // After updating the sub collection document, navigate back to the user profile page
                                           Navigator.pushReplacement(
                                             context,

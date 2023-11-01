@@ -37,11 +37,13 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "User Profile",
-          style: TextStyle(
-            color: Colors.black, // Change the title color to black
-          ),
+        title: const Text("User Profile", style: TextStyle(
+          color: Colors.black, // Change the title color to black
+          // fontFamily: 'YourFontFamily', // Set the desired font family
+          fontSize: 35, // Set the desired font size
+          fontWeight: FontWeight.bold, // Set the desired font weight
+          // You can also use other text style properties like letterSpacing, wordSpacing, etc.
+        ),
         ),
         centerTitle: true,
         backgroundColor: Colors

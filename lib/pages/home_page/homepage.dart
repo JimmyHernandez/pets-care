@@ -244,13 +244,29 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                         Align(
                                           alignment: const Alignment(0, 0),
                                           child: TabBar(
-                                            labelColor: const Color(0xFF0F1113),
-                                            unselectedLabelColor: const Color(0xFF57636C),
+                                            labelColor: const Color(0xFF30E5B5),
+                                            unselectedLabelColor: const Color(
+                                                0xFF2E6E5D),
                                             tabs: const [
+                                              Tab(
+                                                child: Text(
+                                                  "Pet's Care",
+                                                  style: TextStyle(fontSize: 25), // Adjust the font size as needed
+                                                ),
+                                              ),
+                                              Tab(
+                                                child: Text(
+                                                  'Our Mission',
+                                                  style: TextStyle(fontSize: 25), // Adjust the font size as needed
+                                                ),
+                                              ),
+                                              Tab(
+                                                child: Text(
+                                                  'Our Team',
+                                                  style: TextStyle(fontSize: 25), // Adjust the font size as needed
+                                                ),
+                                              ),
 
-                                              Tab(text: 'Welcome'),
-                                              Tab(text: 'Our Mission'),
-                                              Tab(text: 'Our Team'),
                                             ],
                                             controller: tabController,
                                           ),
@@ -284,10 +300,8 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                                                         child: Text(
                                                           "It's a pleasure to have you here and welcome you to our exciting web app for pet lovers. As a software engineering student with a passion for development,\n"
                                                           "you are sure to appreciate the perfect combination of technology and love for animals that we offer. On this platform, you can create a personalized profile\n"
-                                                          "for your pet, where you can store all the important information, from its name and breed to its dietary preferences, among others.\n\nAdditionally, our app will\n"
-                                                          "provide you with valuable care tips, training tips, and informative articles to ensure your furry companion is happy and healthy. Technology is at the heart of\n"
-                                                          "this experience, and we're sure you'll find opportunities to apply and improve your programming skills as you explore all the exciting features we have in store\n"
-                                                          "for you.",
+                                                          "for your pet, where you can store all the important information, from its name and breed to its dietary preferences, among others. Additionally, our app will\n"
+                                                          "provide you with valuable care tips, training tips, and informative articles to ensure your furry companion is happy and healthy.",
                                                           style: TextStyle(
                                                             fontSize: 18,
                                                             fontWeight: FontWeight.w500,
