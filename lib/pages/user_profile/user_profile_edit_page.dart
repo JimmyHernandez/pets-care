@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/pages/user_profile/user_profile_page.dart';
 import 'package:pets_care/pages/welcome/introduction_page.dart';
 
 import '../../functions - jimmy/userpicture_input.dart';
@@ -81,8 +79,7 @@ class _UserProfileEditState extends State<UserProfileEdit> {
         iconTheme: const IconThemeData(
           color: Colors.black, // Change this color to the one you prefer
         ),
-        backgroundColor:
-        Colors.white, // Change this color to the one you prefer
+        backgroundColor: Colors.white, // Change this color to the one you prefer
       ),
 
       body: Padding(

@@ -8,7 +8,6 @@ import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
 import 'package:pets_care/pages/user_profile/user_profile_page.dart';
 import '../../functions - jimmy/delete_pet_profile.dart';
 import '../../functions - jimmy/flip_card.dart';
-import '../health_records/health_record.dart';
 import '../pet_recommendation/pets_recommendations_page.dart';
 import '../pets_profile/pets_profile_edit_page.dart';
 import '../home_page/homepage.dart';
@@ -603,33 +602,7 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            bottom: 16.0),
-                                        // Adjust the padding as needed
-                                        child: Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: IconButton(
-                                            tooltip: "Health Records",
-                                            icon: const Icon(
-                                                Icons.safety_check), onPressed: () {
-
-
-                                            Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(builder: (context) =>  MyPetHealthApp()),
-                                            );
-
-                                          },
-                                           // You can change the icon as needed
-
-                                          ),
-                                        ),
-                                      ),
-
-
-                                     Padding(
+                                    Padding(
                                         padding: const EdgeInsets.only(
                                             bottom: 16.0),
                                         // Adjust the padding as needed
