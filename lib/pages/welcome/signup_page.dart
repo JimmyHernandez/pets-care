@@ -172,7 +172,7 @@ class SignUpScreenState extends State<SignUpPage> {
                                           //Navigation to MainScreen after successful login
 
                                           Navigator.of(context).push(MaterialPageRoute(
-                                            builder: (context) =>  const MainScreen(),
+                                            builder: (context) =>  const LogInPage(),
                                           ));
                                         },
                                         child: const Text('Sign Up'),
