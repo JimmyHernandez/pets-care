@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:pets_care/pages/welcome/login_page.dart';
 import '../../functions - jimmy/email_confirmation.dart';
 import '../../functions - jimmy/user_registration.dart';
 import '../home_page/homepage.dart';
@@ -239,7 +240,7 @@ class SignUpScreenState extends State<SignUpPage> {
                                     // Your existing sign-up code...
 
                                     Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const MainScreen(),
+                                      builder: (context) => const LogInPage(),
                                     ));
                                   } catch (e) {
                                     // Handle registration errors here.
