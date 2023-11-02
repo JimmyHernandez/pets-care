@@ -69,23 +69,24 @@ class _UserProfileEditState extends State<UserProfileEdit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Edit profile",
+        title: const Text("Edit Profile",
           style: TextStyle(
             color: Colors.black, // Change the title color to black
           ),
         ),
         centerTitle: true,
+        backgroundColor: Colors.white, // Chan
+        // Change this color to the one you prefer
         iconTheme: const IconThemeData(
-          color: Colors.black, // Change this color to the one you prefer
+          color: Colors.black, // Change the back button color to blue
         ),
-        backgroundColor: Colors.white, // Change this color to the one you prefer
+        actions: const [SizedBox(width: 1),
+        ],
       ),
 
       body: Padding(
 
         padding: const EdgeInsetsDirectional.fromSTEB(250, 25, 250, 25),
-
         child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
