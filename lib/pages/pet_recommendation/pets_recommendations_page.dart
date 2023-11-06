@@ -163,8 +163,6 @@ class PetDetails extends StatelessWidget {
                         style: const TextStyle(fontSize: 16)),
                     Text('Description: ${pet.description}\n',
                         style: const TextStyle(fontSize: 16)),
-                    Text('Image reference: ${pet.imageUrl}\n',
-                        style: const TextStyle(fontSize: 16)),
                     const SizedBox(height: 10),
                   ],
                 ),
