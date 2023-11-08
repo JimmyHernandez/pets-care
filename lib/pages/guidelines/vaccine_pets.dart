@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'feed_pet.dart';
+import '../../functions - jimmy/care_list_item.dart';
 
 class VaccinePet extends StatefulWidget {
   const VaccinePet({Key? key}) : super(key: key);
@@ -17,16 +17,19 @@ class GuidelinesLayoutWidgetState
       onTap: () {},
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFFF1E6FF),
           title: const Text("Health Guidelines",
             style: TextStyle(
-              color: Colors.black, // Change the title color to black
+              color: Color(0xFF6F35A5), // Change the title color to black
+              // fontFamily: 'YourFontFamily', // Set the desired font family
+              fontSize: 35, // Set the desired font size
+              fontWeight: FontWeight.bold, // Set the desired font weight
+              // You can also use other text style properties like letterSpacing, wordSpacing, etc. // Change the title color to black
             ),
           ),
           centerTitle: true,
-          backgroundColor: Colors.white, // Chan
-          // Change this color to the one you prefer
-          iconTheme: const IconThemeData(
-            color: Colors.black, // Change the back button color to blue
+            iconTheme: const IconThemeData(
+              color: Color(0xFF6F35A5),  // Change the back button color to blue
           ),
           actions: const [SizedBox(width: 1),
           ],
@@ -62,6 +65,7 @@ class GuidelinesLayoutWidgetState
                           style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.normal,
+                            color: Color(0xFF6F35A5),
                           ),
                         ),
                       ),
@@ -73,6 +77,7 @@ class GuidelinesLayoutWidgetState
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w500,
+                            color: Color(0xFF6F35A5),
                           ),
                         ),
                       ),
@@ -81,7 +86,7 @@ class GuidelinesLayoutWidgetState
                 ),
                 // List of Care Tips
                 const Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(200, 12, 200, 12),
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 35),
                   child: Column(
                     children: <Widget>[
                       CareListItem("Core Vaccines: These are essential for most pets and protect against common and potentially deadly diseases. For dogs, core vaccines often include rabies, distemper, parvovirus, and adenovirus. Cats typically receive core vaccines for rabies, feline viral rhinotracheitis, calicivirus, and panleukopenia."),

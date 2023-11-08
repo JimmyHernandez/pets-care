@@ -7,7 +7,7 @@ List<Widget> buildSections(String title, List<Pet> pets) {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 5, fontWeight: FontWeight.bold),
       ),
     ),
     ListView.builder(

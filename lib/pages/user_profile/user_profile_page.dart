@@ -37,8 +37,10 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFF1E6FF),
+        automaticallyImplyLeading: false,
         title: const Text("User Profile", style: TextStyle(
-          color: Colors.black, // Change the title color to black
+          color: Color(0xFF6F35A5), // Change the title color to black
           // fontFamily: 'YourFontFamily', // Set the desired font family
           fontSize: 35, // Set the desired font size
           fontWeight: FontWeight.bold, // Set the desired font weight
@@ -46,9 +48,7 @@ class UserProfile extends StatelessWidget {
         ),
         ),
         centerTitle: true,
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
-      ),
+       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         child: SizedBox(
@@ -165,7 +165,7 @@ class UserProfile extends StatelessWidget {
                       return Text('Error: ${snapshot.error}');
                     } else if (snapshot.hasData) {
                       return Text('${snapshot.data}\n\n  ${userid?.email}', style: const TextStyle(
-                        color: Colors.black,
+                        color: Color(0xFF6F35A5),
                         fontSize: 24, // Font size
                         fontWeight: FontWeight.bold,
                         // Change the title color to black

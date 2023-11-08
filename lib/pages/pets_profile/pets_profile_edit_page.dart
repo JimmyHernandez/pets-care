@@ -43,17 +43,20 @@ class UserProfileEditState extends State<PetProfileEdit> {
     String petId = widget.petId;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFFF1E6FF),
         title: const Text("Edit Pet's Profile",
 
           style: TextStyle(
-            color: Colors.black, // Change the title color to black
+            color: Color(0xFF6F35A5),
+            fontSize: 35, // Set the desired font size
+            fontWeight: FontWeight.bold, // Set the desired font weight// Change the title color to black
           ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
-          color: Colors.black, // Change this color to the one you prefer
+            color: Color(0xFF6F35A5),
+          // Change this color to the one you prefer
         ),
-        backgroundColor: Colors.white, // Change this color to the one you prefer
       ),
       body: Container(
         padding: const EdgeInsets.only(top: 50, bottom: 50),
@@ -63,9 +66,7 @@ class UserProfileEditState extends State<PetProfileEdit> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const PetImagePickerWidget(),
-            const SizedBox(height: 25),
-            Expanded(
+              Expanded(
               child: Center(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -73,6 +74,9 @@ class UserProfileEditState extends State<PetProfileEdit> {
                       return Container(
                         width: 600,
                         height: 600,
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                        ),
                         padding: const EdgeInsets.all(8),
                         child: Form(
                           child: Column(
@@ -82,6 +86,7 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                   alignment: Alignment.center,
                                   child: Column(
                                     children: [
+
                                       TextFormField(
                                         controller: _petNameController,
                                         decoration: const InputDecoration(
@@ -89,7 +94,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.name,
@@ -108,7 +114,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.name,
@@ -127,7 +134,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.emailAddress,
@@ -146,7 +154,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.emailAddress,
@@ -166,8 +175,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
-
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.visiblePassword,
@@ -186,8 +195,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
-                                          ),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold),
                                         ),
                                       ),
 
@@ -199,7 +208,8 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                       ),
@@ -212,14 +222,16 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                       ),
 
                                       const SizedBox(height: 25),
                                       // ... Other TextFormField widgets ...
-                                      ElevatedButton(
+
+                                  ElevatedButton(
                                         onPressed: () async {
 
                                           // Save the edited profile data
@@ -271,7 +283,9 @@ class UserProfileEditState extends State<PetProfileEdit> {
                                             context,
                                             MaterialPageRoute(builder: (context) => const MyPets()),
                                           );
-                                        },
+                                        },   style: ElevatedButton.styleFrom(
+                                             backgroundColor: const Color(0xFF6F35A5), // Change this color to your preferred one
+                                       ),
                                         child: const Text("Save"),
                                       ),
                                       const SizedBox(height: 25),

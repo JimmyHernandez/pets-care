@@ -1,9 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pets_care/pages/guidelines/vaccine_guide.dart';
 import 'package:pets_care/pages/guidelines/vaccine_pets.dart';
 import 'package:pets_care/pages/user_profile/user_profile_page.dart';
-import 'package:pets_care/pages/welcome/login_page.dart';
 import '../pet_recommendation/pets_recommendations_page.dart';
 import '../home_page/homepage.dart';
 import '../my_pet_card/my_pets_page.dart';
@@ -29,8 +27,10 @@ class GuidelinesLayoutWidgetState
        onTap: () {},
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: const Color(0xFFF1E6FF),
           title: const Text("Pet's Guidelines", style: TextStyle(
-            color: Colors.black, // Change the title color to black
+            color: Color(0xFF6F35A5), // Change the title color to black
             // fontFamily: 'YourFontFamily', // Set the desired font family
             fontSize: 35, // Set the desired font size
             fontWeight: FontWeight.bold, // Set the desired font weight
@@ -38,9 +38,7 @@ class GuidelinesLayoutWidgetState
           ),
           ),
           centerTitle: true,
-          backgroundColor: Colors
-              .white, // Change this color to the one you prefer
-        ),
+               ),
         bottomNavigationBar:
         BottomAppBar(
           shape: const CircularNotchedRectangle(),
@@ -157,6 +155,7 @@ class GuidelinesLayoutWidgetState
                           style: TextStyle(
                             fontSize: 35,
                             fontWeight: FontWeight.normal,
+                            color: Color(0xFF6F35A5),
                           ),
                         ),
                       ),
@@ -168,6 +167,7 @@ class GuidelinesLayoutWidgetState
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w500,
+                            color: Color(0xFF6F35A5),
                           ),
                         ),
                       ),
@@ -190,7 +190,7 @@ class GuidelinesLayoutWidgetState
   }
   Widget buildListItem(String text) {
     return Padding(                  //left/top/right/bottom
-      padding: const EdgeInsets.fromLTRB(200, 5, 200, 15),
+      padding: EdgeInsets.fromLTRB(16, 0, 16, 35),
       child: InkWell(
         onTap: () {
           // Perform actions based on the tapped item
@@ -252,7 +252,8 @@ class GuidelinesLayoutWidgetState
                   text,
                   style: const TextStyle(
                     fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF6F35A5),
                   ),
                 ),
                 const Icon(

@@ -8,20 +8,16 @@ class UserRegistration {
   final TextEditingController _nameController;
   final TextEditingController _emailController;
   final TextEditingController _passwordController;
-  final TextEditingController _passwordConfirmationController;
+
 
   UserRegistration(
       this._nameController,
       this._emailController,
       this._passwordController,
-      this._passwordConfirmationController,
+
       );
 
   Future<void> registerUser() async {
-    if (_passwordController.text != _passwordConfirmationController.text) {
-      // Passwords don't match, do not proceed.
-      return;
-    }
 
     try {
       final userCredential = await FirebaseAuth.instance
@@ -39,7 +35,6 @@ class UserRegistration {
           'name': _nameController.text,
           'email': _emailController.text,
           'password': _passwordController.text,
-          'passwordConfirmation': _passwordConfirmationController.text,
 
           // Add other user data fields as needed
         });

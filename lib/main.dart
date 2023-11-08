@@ -1,12 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:pets_care/pages/pet_recommendation/pets_recommendations_page.dart';
-import 'package:pets_care/pages/my_pet_card/my_pets_page.dart';
-import 'package:pets_care/pages/pets_profile/pets_profile_page.dart';
-import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
-import 'package:pets_care/pages/welcome/introduction_page.dart';
+import 'pages/welcome/welcome_screen.dart';
+import 'constants.dart';
 import 'firebase/firebase_options.dart';
-import 'pages/home_page/homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,16 +17,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
       title: "Pet's Care",
-      initialRoute: '/',
-      routes: {
-        '/home': (context) => const MainScreen(), /// Home
-        '/my_pets': (context) => const MyPets(), /// My Pet's
-        '/pet_profile': (context) => const PetsProfile(), /// Pet's Profile
-        '/pet_guidelines': (context) => const PetsGuidelines(),  /// Pet's Search
-        '/pet,s recommendations': (context) => const PetsRecommendations(dogs: [], cats: []),
-      },
+      theme: ThemeData(
+          primaryColor: kPrimaryColor,
+          scaffoldBackgroundColor: Colors.white,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              elevation: 0,
+              primary: kPrimaryColor,
+              shape: const StadiumBorder(),
+              maximumSize: const Size(double.infinity, 56),
+              minimumSize: const Size(double.infinity, 56),
+            ),
+          ),
+          inputDecorationTheme: const InputDecorationTheme(
+            filled: true,
+            fillColor: kPrimaryLightColor,
+            iconColor: kPrimaryColor,
+            prefixIconColor: kPrimaryColor,
+            contentPadding: EdgeInsets.symmetric(
+                horizontal: defaultPadding, vertical: defaultPadding),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderSide: BorderSide.none,
+            ),
+          )),
+      home: const WelcomeScreen(),
     );
   }
 }

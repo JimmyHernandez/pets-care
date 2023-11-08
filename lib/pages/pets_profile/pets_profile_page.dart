@@ -23,17 +23,19 @@ class PetsProfileState extends State<PetsProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFF1E6FF),
         title: const Text("Pet's Profile",
 
-          style: TextStyle(
-            color: Colors.black, // Change the title color to black
+          style: TextStyle( color: Color(0xFF6F35A5), // Change the title color to black
+            // fontFamily: 'YourFontFamily', // Set the desired font family
+            fontSize: 35, // Set the desired font size
+            fontWeight: FontWeight.bold, // Set the desired font weight Change the title color to black
           ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
-          color: Colors.black, // Change this color to the one you prefer
+          color: Color(0xFF6F35A5), // Change this color to the one you prefer
         ),
-        backgroundColor: Colors.white, // Change this color to the one you prefer
       ),
       body: Container(
         padding: const EdgeInsets.only(top: 50, bottom: 50),
@@ -43,9 +45,7 @@ class PetsProfileState extends State<PetsProfile> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const PetImagePickerWidget(),
-            const SizedBox(height: 25),
-            Expanded(
+              Expanded(
               child: Center(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -69,7 +69,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                            color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.name,
@@ -88,7 +89,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.name,
@@ -108,7 +110,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.emailAddress,
@@ -128,7 +131,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                         keyboardType: TextInputType.emailAddress,
@@ -149,7 +153,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
 
                                           ),
                                         ),
@@ -170,7 +175,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                       ),
@@ -184,7 +190,8 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                       ),
@@ -198,13 +205,15 @@ class PetsProfileState extends State<PetsProfile> {
                                           filled: true,
                                           fillColor: Colors.white,
                                           labelStyle: TextStyle(
-                                            color: Color(0xff0849ea),
+                                              color: Color(0xFF6F35A5),
+                                              fontWeight: FontWeight.bold
                                           ),
                                         ),
                                       ),
 
                                       const SizedBox(height: 25),
                                       // ... Other TextFormField widgets ...
+
                                       ElevatedButton(
                                         onPressed: () async {
                                           // Call the function to store pet information
@@ -226,7 +235,10 @@ class PetsProfileState extends State<PetsProfile> {
                                               const MyPets(),
                                             ),
                                           );
-                                        },
+                                          },
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Color(0xFF6F35A5), // Change this color to your preferred one
+                                        ),
                                         child: const Text('Save Profile'),
                                       ),
                                       const SizedBox(height: 25),

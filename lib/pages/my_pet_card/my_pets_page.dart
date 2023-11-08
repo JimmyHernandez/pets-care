@@ -57,8 +57,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFF1E6FF),
         title: const Text("My Pet's", style: TextStyle(
-          color: Colors.black, // Change the title color to black
+          color: Color(0xFF6F35A5),  // Change the title color to black
          // fontFamily: 'YourFontFamily', // Set the desired font family
           fontSize: 35, // Set the desired font size
           fontWeight: FontWeight.bold, // Set the desired font weight
@@ -67,11 +68,9 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
-          color: Colors.black, // Change this color to the one you prefer
+          color: Color(0xFF6F35A5),  // Change this color to the one you prefer
         ),
-        backgroundColor: Colors
-            .white, // Change this color to the one you prefer
-      ),
+        ),
 
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -166,6 +165,7 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(0), // Adjust the padding values as per your preference
           child: FloatingActionButton(
+            backgroundColor: const Color(0xFF6F35A5),
             onPressed: () {
               // You can navigate to a new page or show a dialog to add a new profile
               Navigator.push(
@@ -181,6 +181,7 @@ class HomeScreen extends StatelessWidget {
 
       body:
       FutureBuilder(
+
           future: getData(),
           builder: (context, AsyncSnapshot<List<DocumentSnapshot>> snapshot) {
 
@@ -211,7 +212,7 @@ class HomeScreen extends StatelessWidget {
 
                           Container(
                             // Your front content goes here
-                            color: Colors.lightBlueAccent,
+                            color: const Color(0xFFF1E6FF),
                             width: 600,
                             // Set the width as per your preference
                             height: 350,
@@ -230,7 +231,7 @@ class HomeScreen extends StatelessWidget {
                                       // You can adjust the font size as needed
                                       fontWeight: FontWeight.bold,
                                       // You can change the font weight if desired
-                                      color: Colors.white,
+                                      color: Color(0xFF6F35A5),
                                       // You can set the text color to your preference
                                       fontFamily: 'Arial', // You can specify the font family
                                       // Other text style properties can be added here
@@ -246,31 +247,31 @@ class HomeScreen extends StatelessWidget {
 
                           backWidget: Container(
                             // Your front content goes here
-                            color: Colors.lightBlueAccent,
-                            width: 650,
+                            color: const Color(0xFFF1E6FF),
+                            width: 600,
                             // Set the width as per your preference
-                            height: 350,
+                            height: 400,
                             // Set the height as per your preference
                             alignment: Alignment.center,
                             // Center align the content
                             child: ListTile(
                               title: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const SizedBox(width: 2),
+                                  SizedBox(width: 2),
                                   // Left Column with labels
-                                  const Column(
+                                  Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("Pet Name:",
-                                        style: TextStyle(
+                                      Text("Name: " + data[index]['pet_name'],
+                                        style: const TextStyle(
                                           fontSize: 15,
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.white,
+                                          color: Color(0xFF6F35A5),
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -281,13 +282,14 @@ class HomeScreen extends StatelessWidget {
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
                                       const SizedBox(height: 8),
-                                      Text("Age:",
-                                        style: TextStyle(
+
+                                      Text("Age: "+ data[index]['age'],
+                                        style: const TextStyle(
                                           fontSize: 15,
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.white,
+                                          color: Color(0xFF6F35A5),
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -298,13 +300,14 @@ class HomeScreen extends StatelessWidget {
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
                                       const SizedBox(height: 8),
-                                      Text("Breed:",
-                                        style: TextStyle(
+
+                                      Text("Breed: "+ data[index]['breed'],
+                                        style: const TextStyle(
                                           fontSize: 15,
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.white,
+                                          color: Color(0xFF6F35A5),
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -315,13 +318,13 @@ class HomeScreen extends StatelessWidget {
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ),
                                       const SizedBox(height: 8),
-                                      Text("Weight:",
-                                        style: TextStyle(
+                                      Text("Weight: " + data[index]['weight'],
+                                        style: const TextStyle(
                                           fontSize: 15,
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.white,
+                                          color: Color(0xFF6F35A5),
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -335,34 +338,68 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 8),
                                   // Right Column with data
-                                  Column(
+                                Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-
-                                      Text(data[index]['pet_name'],
+                                      Text("Food: " + data[index]['food'],
                                         style: const TextStyle(
                                           fontSize: 15,
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.white,
+                                          color: Color(0xFF6F35A5),
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
                                         ),
-                                        textAlign: TextAlign
-                                            .left, // Set the text alignment to center
-                                        // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
+                                        textAlign: TextAlign.center,
+                                        // Set the text alignment to center
+                                        textDirection: TextDirection
+                                            .ltr, // Set the text direction (ltr or rtl)
+                                      ), SizedBox(height: 8),
 
-                                      Text(data[index]['age'],
+                                      Text("Treats: " + data[index]['treats'],
                                         style: const TextStyle(
                                           fontSize: 15,
                                           // You can adjust the font size as needed
                                           fontWeight: FontWeight.bold,
                                           // You can change the font weight if desired
-                                          color: Colors.white,
+                                          color: Color(0xFF6F35A5),
+                                          // You can set the text color to your preference
+                                          fontFamily: 'Arial', // You can specify the font family
+                                          // Other text style properties can be added here
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        // Set the text alignment to center
+                                        textDirection: TextDirection
+                                            .ltr, // Set the text direction (ltr or rtl)
+                                      ), SizedBox(height: 8),
+
+                                      Text("Owner: " + data[index]['pet_owner'],
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          // You can adjust the font size as needed
+                                          fontWeight: FontWeight.bold,
+                                          // You can change the font weight if desired
+                                          color: Color(0xFF6F35A5),
+                                          // You can set the text color to your preference
+                                          fontFamily: 'Arial', // You can specify the font family
+                                          // Other text style properties can be added here
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        // Set the text alignment to center
+                                        textDirection: TextDirection
+                                            .ltr, // Set the text direction (ltr or rtl)
+                                      ), SizedBox(height: 8),
+
+                                      Text("Phone: " + data[index]['owner_phone'],
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          // You can adjust the font size as needed
+                                          fontWeight: FontWeight.bold,
+                                          // You can change the font weight if desired
+                                          color: Color(0xFF6F35A5),
                                           // You can set the text color to your preference
                                           fontFamily: 'Arial', // You can specify the font family
                                           // Other text style properties can be added here
@@ -372,217 +409,19 @@ class HomeScreen extends StatelessWidget {
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
                                       ), const SizedBox(height: 8),
-
-                                      Text(data[index]['breed'],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text(data[index]['weight'],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ),
                                     ],
-                                  ), const SizedBox(height: 8),
+                                  ),
 
-                                  const SizedBox(width: 2),
-
-                                  // Labels Column
-                                  const Column(
-
+                                  Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
-
-                                      Text("Food:",
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text("Treats:",
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text("Pet Owner:",
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text("Owner Phone:",
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-                                    ],
-                                  ),
-
-                                  // Data Column
-                                  Column(
-
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment
-                                        .center,
-                                    children: [
-
-                                      Text(data[index]['food'],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text(data[index]['treats'],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text(data[index]['pet_owner'],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-
-                                      Text(data[index]['owner_phone'],
-                                        style: const TextStyle(
-                                          fontSize: 15,
-                                          // You can adjust the font size as needed
-                                          fontWeight: FontWeight.bold,
-                                          // You can change the font weight if desired
-                                          color: Colors.white,
-                                          // You can set the text color to your preference
-                                          fontFamily: 'Arial', // You can specify the font family
-                                          // Other text style properties can be added here
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        // Set the text alignment to center
-                                        textDirection: TextDirection
-                                            .ltr, // Set the text direction (ltr or rtl)
-                                      ), const SizedBox(height: 8),
-                                    ],
-                                  ),
-                                  Column(
-
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment
-                                        .center,
-                                    children: [
-
+                                      // Your existing widgets above
                                       Padding(
-                                        padding: const EdgeInsets.only(
-                                            bottom: 16.0),
-                                        // Adjust the padding as needed
-                                        child: Align(
-                                          alignment: Alignment.bottomLeft,
+                                        padding: const EdgeInsets.only(top: 8.0),
                                           child: IconButton(
                                             tooltip: "Edit profile",
-                                            icon: const Icon(
-                                                Icons.edit_document),
-                                            // You can change the icon as needed
+                                            icon: const Icon(Icons.edit_document),
                                             onPressed: () {
                                               if (kDebugMode) {
                                                 print(data[index]['pet_id']);
@@ -594,74 +433,54 @@ class HomeScreen extends StatelessWidget {
                                               Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                  builder: (context) =>  PetProfileEdit(petid, key: GlobalKey(),),
+                                                  builder: (context) => PetProfileEdit(petid, key: GlobalKey()),
                                                 ),
                                               );
                                               // Add the onPressed logic for the button here
                                             },
                                           ),
                                         ),
-                                      ),
-                                    Padding(
-                                        padding: const EdgeInsets.only(
-                                            bottom: 16.0),
-                                        // Adjust the padding as needed
-                                        child: Align(
-                                          alignment: Alignment.bottomCenter,
+
+                                     Padding(
+                                        padding: const EdgeInsets.only(top: 8.0),
                                           child: IconButton(
                                             icon: const Icon(Icons.delete),
                                             tooltip: 'Delete Profile',
                                             onPressed: () async {
                                               bool deleteConfirmed = await showDialog(
                                                 context: context,
-                                                builder: (
-                                                    BuildContext context) {
+                                                builder: (BuildContext context) {
                                                   return AlertDialog(
-                                                    title: const Text(
-                                                        'Confirm Deletion'),
-                                                    content:
-                                                    const Text(
-                                                        'Are you sure you want to delete this profile?'),
+                                                    title: const Text('Confirm Deletion'),
+                                                    content: const Text('Are you sure you want to delete this profile?'),
                                                     actions: [
                                                       TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.of(
-                                                                context).pop(
-                                                                false),
-                                                        child: const Text(
-                                                            'Cancel'),
+                                                        onPressed: () => Navigator.of(context).pop(false),
+                                                        child: const Text('Cancel'),
                                                       ),
                                                       TextButton(
                                                         onPressed: () {
-                                                          deleteProfile(
-                                                              data[index].id);
-                                                          Navigator.of(context)
-                                                              .pop(true);
+                                                          deleteProfile(data[index].id);
+                                                          Navigator.of(context).pop(true);
                                                           Navigator.push(
                                                             context,
-                                                            MaterialPageRoute(
-                                                                builder: (
-                                                                    context) => const MyPets()),
+                                                            MaterialPageRoute(builder: (context) => const MyPets()),
                                                           );
                                                         },
-                                                        child: const Text(
-                                                            'Delete'),
+                                                        child: const Text('Delete'),
                                                       ),
                                                     ],
                                                   );
                                                 },
                                               );
-
                                               if (deleteConfirmed) {
                                                 // Profile deleted, you can update the UI or show a message
                                               }
                                             },
                                           ),
                                         ),
-                                      ),
-
-                                    ],
-                                  ),
+                                      ],
+                                  )
                                 ],
                               ),
                             ),

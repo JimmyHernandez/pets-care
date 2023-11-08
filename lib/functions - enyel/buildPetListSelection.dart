@@ -15,25 +15,31 @@ class PetListSelection extends StatelessWidget {
         ? 'assets/images/group_dog.png'
         : 'assets/images/group_cat.jpeg';
     String sectionText = title == 'Dogs'
-        ? 'Explore a variety of dog breeds and discover the perfect furry companion for your lifestyle. From energetic and playful to calm and affectionate, find the breed that matches your preferences.'
-        : "If you're a cat lover, dive into a world of feline friends. Discover different cat breeds, each with its own unique personality and characteristics. Whether you're looking for an independent companion or a social snuggler, you're sure to find the perfect match.";
+        ? 'Explore a variety of dog breeds and discover the perfect furry companion for your lifestyle. From energetic and playful to calm and affectionate, find the breed that matches your preferences.\n\nSelect a breed to see usefully information about your dog.'
+        : "Discover different cat breeds, each with its own unique personality and characteristics. Select a breed to see usefully information about your cat.";
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFF1E6FF),
         title: Text(
           title,
           style: const TextStyle(
-            color: Colors.black, // Cambia el color del título a negro
+            color: Color(0xFF6F35A5),
+            fontSize: 35, // Set the desired font size
+            fontWeight: FontWeight.bold,// Cambia el color del título a negro
           ),
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(
-          color: Colors.black, // Cambia este color a tu preferencia
+            color: Color(0xFF6F35A5) // Cambia este color a tu preferencia
         ),
-        backgroundColor: Colors.white, // Cambia este color a tu preferencia
       ),
-      body: Column(
+
+      body:
+
+      Column(
         children: [
+
           SizedBox(
             height: 340,
             width: double.infinity,
@@ -43,54 +49,64 @@ class PetListSelection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          const Text(
-            'Select a breed to explore recommendations.',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors
-                  .black, // Cambia el color del texto según tus preferencias
-            ),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            sectionText, // Reemplaza '.' con 'sectionText'
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.black,
-            ),
-          ),
-          const SizedBox(height: 20),
-          DropdownButton<Pet>(
-            value: pets.isNotEmpty ? pets[0] : null,
-            items: pets.map((Pet pet) {
-              return DropdownMenuItem<Pet>(
-                value: pet,
-                child: Text(pet.name),
-              );
-            }).toList(),
-            onChanged: (Pet? pet) {
-              if (pet != null) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PetDetails(pet: pet),
+
+         Container(
+                    width: 450.0,
+                    height: 200.0,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: Text(
+                        sectionText,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Color(0xFF6F35A5),
+                        ),
+                      ),
+                    ),
+                  ),
+          const SizedBox(height: 0),
+
+          Center(
+            child: DropdownButton<Pet>(
+              value: pets.isNotEmpty ? pets[0] : null,
+              items: pets.map((Pet pet) {
+
+                return DropdownMenuItem<Pet>(
+                  value: pet,
+                  child: Center(
+                    child: Text(
+                      pet.name,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 );
-              }
-            },
-            hint: pets.isNotEmpty
-                ? const Text("Select a Pet")
-                : const Text("No Pets Available"),
-            style: const TextStyle(
-              color: Color.fromARGB(255, 2, 21, 37),
+              }).toList(),
+              onChanged: (Pet? pet) {
+                if (pet != null) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PetDetails(pet: pet),
+                    ),
+                  );
+                }
+              },
+              hint: pets.isNotEmpty
+                  ? const Text("Select a Pet")
+                  : const Text("No Pets Available"),
+              style: const TextStyle(
+                color: Color(0xFF6F35A5),
+              ),
+              icon: const Icon(Icons.search),
+              underline: Container(
+                height: 2,
+                color: const Color(0xFF6F35A5),
+              ),
             ),
-            icon: const Icon(Icons.arrow_downward),
-            underline: Container(
-              height: 2,
-              color: Colors.blue,
-            ),
-          ),
+          )
         ],
       ),
     );

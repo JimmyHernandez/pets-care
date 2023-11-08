@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../pages/pet_recommendation/pets_recommendations_page.dart';
-import 'buildPetList.dart';
 
 Widget buildPetsRecommendations(
     BuildContext context, List<Pet> dogs, List<Pet> cats) {
@@ -8,14 +7,6 @@ Widget buildPetsRecommendations(
       body: ListView(
       children: [
         InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => buildPetList(context, dogs),
-              ),
-            );
-          },
           child: Card(
             color: const Color.fromARGB(255, 80, 49, 219),
             shape: RoundedRectangleBorder(
@@ -46,14 +37,7 @@ Widget buildPetsRecommendations(
           ),
         ),
         InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => buildPetList(context, cats),
-              ),
-            );
-          },
+
           child: Card(
             color: const Color.fromARGB(255, 15, 136, 143),
             shape: RoundedRectangleBorder(
