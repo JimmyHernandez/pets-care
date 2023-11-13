@@ -38,7 +38,7 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFF1E6FF),
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         title: const Text("User Profile", style: TextStyle(
           color: Color(0xFF6F35A5), // Change the title color to black
           // fontFamily: 'YourFontFamily', // Set the desired font family
@@ -48,6 +48,9 @@ class UserProfile extends StatelessWidget {
         ),
         ),
         centerTitle: true,
+        iconTheme: const IconThemeData(
+          color: Color(0xFF6F35A5), // Change the back button color to blue
+        ),
        ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),

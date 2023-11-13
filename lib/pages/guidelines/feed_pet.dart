@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../functions - jimmy/care_list_item.dart';
+
+import '../../functions/care_list_item.dart';
+
 
 class FeedPet extends StatefulWidget {
   const FeedPet({Key? key}) : super(key: key);

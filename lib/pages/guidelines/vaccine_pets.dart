@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../functions - jimmy/care_list_item.dart';
+
+import '../../functions/care_list_item.dart';
 
 class VaccinePet extends StatefulWidget {
   const VaccinePet({Key? key}) : super(key: key);

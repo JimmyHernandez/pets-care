@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pets_care/pages/pets_profile/pets_profile_page.dart';
-import 'package:pets_care/pages/guidelines/pets_guidelines_page.dart';
-import 'package:pets_care/pages/user_profile/user_profile_page.dart';
-import '../../functions - jimmy/delete_pet_profile.dart';
-import '../../functions - jimmy/flip_card.dart';
+import '../../functions/delete_pet_profile.dart';
+import '../../functions/flip_card.dart';
+import '../guidelines/pets_guidelines_page.dart';
+import '../home_page/homepage.dart';
 import '../pet_recommendation/pets_recommendations_page.dart';
 import '../pets_profile/pets_profile_edit_page.dart';
-import '../home_page/homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,10 +29,8 @@ class MyPets extends StatelessWidget {
 }
 
 // class for authenticate and retrieve data from firebase
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
 
   Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>> getData() async {
     User? user = FirebaseAuth.instance.currentUser;
@@ -58,9 +55,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFF1E6FF),
-        title: const Text("My Pet's", style: TextStyle(
+        title: const Text("My Pets", style: TextStyle(
           color: Color(0xFF6F35A5),  // Change the title color to black
-         // fontFamily: 'YourFontFamily', // Set the desired font family
+          // fontFamily: 'YourFontFamily', // Set the desired font family
           fontSize: 35, // Set the desired font size
           fontWeight: FontWeight.bold, // Set the desired font weight
           // You can also use other text style properties like letterSpacing, wordSpacing, etc.
@@ -70,7 +67,7 @@ class HomeScreen extends StatelessWidget {
         iconTheme: const IconThemeData(
           color: Color(0xFF6F35A5),  // Change this color to the one you prefer
         ),
-        ),
+      ),
 
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
@@ -92,7 +89,7 @@ class HomeScreen extends StatelessWidget {
               ),
               IconButton(
                 icon: const Icon(Icons.pets),
-                tooltip: "My Pet's",
+                tooltip: "My Pets",
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
@@ -144,22 +141,10 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
-              IconButton(
-                icon: const Icon(Icons.person),
-                tooltip: "Edit Profile",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => UserProfile()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-            ],
+              ],
           ),
         ),
       ),
-
       floatingActionButton: Container(
         alignment: Alignment.bottomCenter, // Align the FloatingActionButton to the bottom center
         child: Padding(
@@ -259,7 +244,7 @@ class HomeScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  SizedBox(width: 2),
+                                  const SizedBox(width: 2),
                                   // Left Column with labels
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -357,7 +342,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ), SizedBox(height: 8),
+                                      ), const SizedBox(height: 8),
 
                                       Text("Treats: " + data[index]['treats'],
                                         style: const TextStyle(
@@ -374,7 +359,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ), SizedBox(height: 8),
+                                      ), const SizedBox(height: 8),
 
                                       Text("Owner: " + data[index]['pet_owner'],
                                         style: const TextStyle(
@@ -391,7 +376,7 @@ class HomeScreen extends StatelessWidget {
                                         // Set the text alignment to center
                                         textDirection: TextDirection
                                             .ltr, // Set the text direction (ltr or rtl)
-                                      ), SizedBox(height: 8),
+                                      ), const SizedBox(height: 8),
 
                                       Text("Phone: " + data[index]['owner_phone'],
                                         style: const TextStyle(
@@ -412,13 +397,13 @@ class HomeScreen extends StatelessWidget {
                                     ],
                                   ),
 
-                                  Row(
+                                  Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       // Your existing widgets above
                                       Padding(
-                                        padding: const EdgeInsets.only(top: 8.0),
+                                        padding: const EdgeInsets.only(top: 1.0),
                                           child: IconButton(
                                             tooltip: "Edit profile",
                                             icon: const Icon(Icons.edit_document),
@@ -442,7 +427,7 @@ class HomeScreen extends StatelessWidget {
                                         ),
 
                                      Padding(
-                                        padding: const EdgeInsets.only(top: 8.0),
+                                        padding: const EdgeInsets.only(top: 1.0),
                                           child: IconButton(
                                             icon: const Icon(Icons.delete),
                                             tooltip: 'Delete Profile',

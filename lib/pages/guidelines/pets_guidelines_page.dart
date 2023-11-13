@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pets_care/pages/guidelines/vaccine_guide.dart';
 import 'package:pets_care/pages/guidelines/vaccine_pets.dart';
-import 'package:pets_care/pages/user_profile/user_profile_page.dart';
 import '../pet_recommendation/pets_recommendations_page.dart';
 import '../home_page/homepage.dart';
 import '../my_pet_card/my_pets_page.dart';
@@ -111,17 +110,6 @@ class GuidelinesLayoutWidgetState
                     );
                   },
                 ),
-                IconButton(
-                  icon: const Icon(Icons.person),
-                  tooltip: "Edit Profile",
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => UserProfile()),
-                    );
-                    // Define the action when this icon is pressed
-                  },
-                ),
               ],
             ),
           ),
@@ -176,11 +164,22 @@ class GuidelinesLayoutWidgetState
                 ),
 
                 // Example item
-                buildListItem('The correct way to feed my pet'),
-                buildListItem('Bath routine'),
-                buildListItem('Recommended vaccines'),
-                buildListItem('Exercise'),
-                buildListItem('Vaccine guide'),
+                Center(
+                  child: SizedBox(
+                    width: 500,
+                    height: 500,
+                    child: Column(
+                    children: [
+                      buildListItem('The correct way to feed my pet'),
+                      buildListItem('Bath routine'),
+                      buildListItem('Recommended vaccines'),
+                      buildListItem('Exercise'),
+                      buildListItem('Vaccine guide'),
+                    ],
+                  ),
+                  ),
+                )
+
               ],
             ),
           ),
@@ -190,7 +189,7 @@ class GuidelinesLayoutWidgetState
   }
   Widget buildListItem(String text) {
     return Padding(                  //left/top/right/bottom
-      padding: EdgeInsets.fromLTRB(16, 0, 16, 35),
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 35),
       child: InkWell(
         onTap: () {
           // Perform actions based on the tapped item

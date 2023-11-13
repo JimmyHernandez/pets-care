@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
-import '../../functions - jimmy/userpicture_input.dart';
-import '../Login/login_screen.dart';
+import '../../functions/userpicture_input.dart';
+import '../login/login_screen.dart';
 
 User? userid = FirebaseAuth.instance.currentUser;
 
@@ -133,11 +133,11 @@ class _UserProfileEditState extends State<UserProfileEdit> {
                   onSaved: (name) {
                     // You can perform additional actions when the name is saved.
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "Your name",
                     prefixIcon: Padding(
-                      padding: const EdgeInsets.all(defaultPadding),
-                      child: const Icon(Icons.person),
+                      padding: EdgeInsets.all(defaultPadding),
+                      child: Icon(Icons.person),
                     ),
                   ),
                 ),
@@ -168,8 +168,8 @@ class _UserProfileEditState extends State<UserProfileEdit> {
                     // Handle the case where the editedName is empty, e.g., show an error message.
                     // You can display a snackbar using ScaffoldMessenger.
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: const Text('Name cannot be empty'),
+                      const SnackBar(
+                        content: Text('Name cannot be empty'),
                       ),
                     );
                   }

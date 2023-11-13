@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pets_care/pages/my_pet_card/my_pets_page.dart';
-import '../../functions - jimmy/pet_registration.dart';
-import '../../functions - jimmy/petspicture_input.dart';
+
+import '../../functions/pet_registration.dart';
+
 
 class PetsProfile extends StatefulWidget {
   const PetsProfile({super.key});
@@ -237,7 +238,7 @@ class PetsProfileState extends State<PetsProfile> {
                                           );
                                           },
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color(0xFF6F35A5), // Change this color to your preferred one
+                                          backgroundColor: const Color(0xFF6F35A5), // Change this color to your preferred one
                                         ),
                                         child: const Text('Save Profile'),
                                       ),

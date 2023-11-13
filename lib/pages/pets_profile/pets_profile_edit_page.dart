@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pets_care/pages/my_pet_card/my_pets_page.dart';
-import '../../functions - jimmy/petspicture_input.dart';
 User? userid = FirebaseAuth.instance.currentUser;
 
 class PetProfileEdit extends StatefulWidget {
@@ -30,7 +29,7 @@ class UserProfileEditState extends State<PetProfileEdit> {
     _petNameController.dispose();
     _ageController.dispose();
     _breedController.dispose();
-    _weightController.dispose();;
+    _weightController.dispose();
     _foodController.dispose();
     _treatsController.dispose();
     _ownerController.dispose();

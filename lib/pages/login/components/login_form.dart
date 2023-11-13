@@ -4,7 +4,8 @@ import 'package:logger/logger.dart';
 import '../../../components/already_have_an_account_acheck.dart';
 import '../../../constants.dart';
 import '../../../pages/home_page/homepage.dart';
-import '../../Signup/signup_screen.dart';
+import '../../sign_up/signup_screen.dart';
+
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -136,7 +137,7 @@ class LoginFormState extends State<LoginForm> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignUpScreen();
+                    return const SignUpScreen();
                   },
                 ),
               );

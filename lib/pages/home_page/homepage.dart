@@ -1,25 +1,22 @@
+import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:pets_care/pages/Login/login_screen.dart';
 import '../guidelines/pets_guidelines_page.dart';
+import '../login/login_screen.dart';
 import '../my_pet_card/my_pets_page.dart';
 import '../pet_recommendation/pets_recommendations_page.dart';
 import '../user_profile/user_profile_page.dart';
 
-User? userid = FirebaseAuth.instance.currentUser;
+User? userId = FirebaseAuth.instance.currentUser;
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   @override
-  Profile14OtherUserWidgetState createState() =>
-      Profile14OtherUserWidgetState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class Profile14OtherUserWidgetState extends State<MainScreen>
-    with TickerProviderStateMixin {
-
+class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
@@ -30,8 +27,7 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
       return null; // No user is currently logged in
     }
     String? userId = currentUser.uid;
-    DocumentSnapshot userDoc =
-    await _db.collection('users').doc(userId).get();
+    DocumentSnapshot userDoc = await _db.collection('users').doc(userId).get();
     if (userDoc.exists) {
       var name = userDoc.get('name'); // Assuming 'name' is the field you want
 
@@ -56,9 +52,9 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const CircularProgressIndicator();
               } else if (snapshot.hasError) {
-                titleText = 'Error: ${snapshot.error}';
+                titleText = 'Error: Something went wrong. Please try again.';
               } else if (snapshot.hasData) {
-                titleText = 'Welcome, ${snapshot.data}';
+                titleText = 'Hi ${snapshot.data} ';
               } else {
                 titleText = 'User is not logged in or name is not available.';
               }
@@ -74,50 +70,66 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
           ),
         ),
         actions: [
-          // Logout button
-          IconButton(
-            icon: const Icon(Icons.logout, color: Color(0xFF6F35A5)),
-            tooltip: 'Logout',
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
-              );
-            },
-          )
+          // Configuration icon with caption
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.settings, color: Color(0xFF6F35A5)),
+                onPressed: () {
+                  // Add your configuration logic here
+                  // For example, you can navigate to a settings screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserProfile()),
+                  );
+                },
+              ),
+              const SizedBox(width: 25), // Add some spacing
+              ],
+          ),
+          // Logout button with caption
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.logout, color: Color(0xFF6F35A5)),
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  );
+                },
+              ),
+              const SizedBox(width: 25), // Add some spacing
+             ],
+          ),
         ],
       ),
-
-        bottomNavigationBar:
-            BottomAppBar(
-            shape: const CircularNotchedRectangle(),
-             child: SizedBox(
-              height: 80.0, // Adjust the height as needed
-              child: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceAround,
-               children: <Widget>[
-
-                IconButton(
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: SizedBox(
+          height: 80.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              IconButton(
                 icon: const Icon(Icons.home),
-                tooltip: 'Home',// You can change this to any icon you prefer
+                tooltip: 'Home',
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const MainScreen()),
+                    MaterialPageRoute(builder: (context) => const MainScreen()),
                   );
-                  // Define the action when this icon is pressed
                 },
               ),
               IconButton(
                 icon: const Icon(Icons.pets),
-                tooltip: "My Pet's",
+                tooltip: "My Pets",
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) =>  const MyPets()),
+                    MaterialPageRoute(builder: (context) => const MyPets()),
                   );
-                  // Define the action when this icon is pressed
                 },
               ),
               IconButton(
@@ -128,7 +140,6 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                     context,
                     MaterialPageRoute(builder: (context) => const PetsGuidelines()),
                   );
-                  // Define the action when this icon is pressed
                 },
               ),
               IconButton(
@@ -142,8 +153,7 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                         return FutureBuilder<List<List<Pet>>>(
                           future: Future.wait([getPets('dog'), getPets('cat')]),
                           builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
+                            if (snapshot.connectionState == ConnectionState.waiting) {
                               return const CircularProgressIndicator();
                             } else if (snapshot.hasError) {
                               return Text('Error: ${snapshot.error}');
@@ -162,23 +172,11 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                   );
                 },
               ),
-              IconButton(
-                icon: const Icon(Icons.person),
-                tooltip: "Edit Profile",
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) =>  UserProfile()),
-                  );
-                  // Define the action when this icon is pressed
-                },
-              ),
-             ],
+
+            ],
           ),
         ),
       ),
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
       backgroundColor: Colors.white,
       body: SafeArea(
         top: true,
@@ -189,7 +187,7 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
               Align(
                 alignment: const AlignmentDirectional(0.00, -1.00),
                 child: Image.asset(
-                  'assets/images/main_banner.png',  // Replace with the actual path to your asset image.
+                  'assets/images/main_banner.png',
                   height: 340,
                   fit: BoxFit.fitHeight,
                 ),
@@ -215,9 +213,9 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                     Padding(
                       padding: EdgeInsets.fromLTRB(16, 0, 16, 35),
                       child: Text(
-                              "It's a pleasure to have you here and welcome you to our exciting web app for pet lovers. On this platform, you can create a personalized profile\n"
-                              "for your pet, where you can store all the important information, from its name and breed to its dietary preferences, among others. Additionally, \n"
-                              "our app will provide you with valuable care tips and informative articles to ensure your furry companion is happy and healthy.",
+                        "It's a pleasure to have you here and welcome you to our exciting web app for pet lovers. On this platform, you can create a personalized profile\n"
+                            "for your pet, where you can store all the important information, from its name and breed to its dietary preferences, among others. Additionally, \n"
+                            "our app will provide you with valuable care tips and informative articles to ensure your furry companion is happy and healthy.",
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w500,
@@ -228,17 +226,10 @@ class Profile14OtherUserWidgetState extends State<MainScreen>
                   ],
                 ),
               ),
-
-
             ],
           ),
         ),
       ),
-
-
-
-
-     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     );
   }
 }

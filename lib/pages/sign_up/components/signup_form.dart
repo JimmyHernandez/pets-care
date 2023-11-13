@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../components/already_have_an_account_acheck.dart';
 import '../../../constants.dart';
-import '../../../functions - jimmy/email_confirmation.dart';
-import '../../../functions - jimmy/user_registration.dart';
-import '../../Login/login_screen.dart';
+import '../../../functions/email_confirmation.dart';
+import '../../../functions/user_registration.dart';
+import '../../login/login_screen.dart';
 
 class SignUpForm extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();

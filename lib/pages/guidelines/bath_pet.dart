@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../functions - jimmy/care_list_item.dart';
+
+import '../../functions/care_list_item.dart';
 
 class BathPet extends StatefulWidget {
   const BathPet({Key? key}) : super(key: key);
@@ -90,32 +91,36 @@ class GuidelinesLayoutWidgetState
                 const Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 35),
                   child: Column(
-                    children: <Widget>[
-                      CareListItem("Gather Supplies: Before you begin, make sure you have all the necessary supplies on hand. This includes pet-specific shampoo, towels, a brush, a leash, and a non-slip mat to place in the tub or sink."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Brush Your Pet: Start by brushing your pet's fur to remove any tangles and loose hair. This will make the bathing process easier and more effective."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Prepare the Bathing Area: Whether you're using a tub, sink, or an outdoor space, ensure it's clean and free from any hazards. Place the non-slip mat in the bottom to prevent your pet from slipping."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Use Lukewarm Water: Fill the tub or sink with lukewarm water. Make sure it's not too hot or too cold, as extreme temperatures can be uncomfortable for your pet."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Wet Your Pet: Gently wet your pet's fur, starting at the neck and working your way down. Be careful around the face and ears, as you don't want water getting into their eyes or ears."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Apply Pet Shampoo: Use a pet-specific shampoo and lather it into your pet's fur. Be sure to follow the instructions on the shampoo bottle. Avoid using human shampoo, as it can be too harsh for your pet's skin."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Rinse Thoroughly: Rinse your pet's fur thoroughly, making sure to remove all the shampoo. Any leftover residue can irritate their skin."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Towel Dry: Gently towel dry your pet, being careful not to rub too vigorously. Some pets may tolerate a hairdryer on a low, cool setting, but be cautious as it can be loud and frightening for some animals."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Brush Again: After your pet is dry, give them a good brushing to prevent matting and to distribute natural oils through their coat."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Reward and Praise: Once the bath is over, give your pet a treat and lots of praise. This will help them associate bath time with positive experiences."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Regularity: The frequency of baths depends on your pet's breed and activity level. Dogs that spend a lot of time outdoors may need more frequent baths, while some cats are excellent self-groomers and require fewer baths."),
-                      SizedBox(height: 25), // Add space here
-                      CareListItem("Consult a Vet: If your pet has specific skin conditions or you're unsure about their grooming needs, consult your veterinarian for advice."),
-                      SizedBox(height: 25), // Add space here
-                   ],
+                    children: [
+                      Column(
+                        children: <Widget>[
+                          CareListItem("Gather Supplies: Before you begin, make sure you have all the necessary supplies on hand. This includes pet-specific shampoo, towels, a brush, a leash, and a non-slip mat to place in the tub or sink."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Brush Your Pet: Start by brushing your pet's fur to remove any tangles and loose hair. This will make the bathing process easier and more effective."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Prepare the Bathing Area: Whether you're using a tub, sink, or an outdoor space, ensure it's clean and free from any hazards. Place the non-slip mat in the bottom to prevent your pet from slipping."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Use Lukewarm Water: Fill the tub or sink with lukewarm water. Make sure it's not too hot or too cold, as extreme temperatures can be uncomfortable for your pet."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Wet Your Pet: Gently wet your pet's fur, starting at the neck and working your way down. Be careful around the face and ears, as you don't want water getting into their eyes or ears."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Apply Pet Shampoo: Use a pet-specific shampoo and lather it into your pet's fur. Be sure to follow the instructions on the shampoo bottle. Avoid using human shampoo, as it can be too harsh for your pet's skin."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Rinse Thoroughly: Rinse your pet's fur thoroughly, making sure to remove all the shampoo. Any leftover residue can irritate their skin."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Towel Dry: Gently towel dry your pet, being careful not to rub too vigorously. Some pets may tolerate a hairdryer on a low, cool setting, but be cautious as it can be loud and frightening for some animals."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Brush Again: After your pet is dry, give them a good brushing to prevent matting and to distribute natural oils through their coat."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Reward and Praise: Once the bath is over, give your pet a treat and lots of praise. This will help them associate bath time with positive experiences."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Regularity: The frequency of baths depends on your pet's breed and activity level. Dogs that spend a lot of time outdoors may need more frequent baths, while some cats are excellent self-groomers and require fewer baths."),
+                          SizedBox(height: 25), // Add space here
+                          CareListItem("Consult a Vet: If your pet has specific skin conditions or you're unsure about their grooming needs, consult your veterinarian for advice."),
+                          SizedBox(height: 25), // Add space here
+                       ],
+                      ),
+                    ],
                   ),
                 )
               ],

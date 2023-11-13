@@ -1,13 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import '../../functions/buildPetListSelection.dart';
 import '../home_page/homepage.dart';
 import '../my_pet_card/my_pets_page.dart';
 import '../guidelines/pets_guidelines_page.dart';
-import '../user_profile/user_profile_page.dart';
-import '../../functions - enyel/buildPetListSelection.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 class Pet {
   final String name;
@@ -248,7 +245,7 @@ class PetsRecommendations extends StatelessWidget {
                 ),
                 IconButton(
                   icon: const Icon(Icons.pets),
-                  tooltip: "My Pet's",
+                  tooltip: "My Pets",
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
@@ -296,16 +293,6 @@ class PetsRecommendations extends StatelessWidget {
                           );
                         },
                       ),
-                    );
-                  },
-                ),
-                IconButton(
-                  icon: const Icon(Icons.person),
-                  tooltip: "Edit Profile",
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => UserProfile()),
                     );
                   },
                 ),

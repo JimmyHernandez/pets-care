@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../components/background.dart';
-import '../../functions - jimmy/responsive.dart';
+import '../../functions/responsive.dart';
 import 'components/login_form.dart';
 import 'components/login_screen_top_image.dart';
 
